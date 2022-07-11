@@ -23,6 +23,17 @@ vi:
       new:
         title: "Thêm mới danh mục"
         button: "Thêm mới"
+      create:
+        success: "Success!"
+        danger: "Erorr!"
+      form:
+        name: "Danh mục"
+      index:
+        title: "Tất Cả Danh Mục"
+        stt: "STT"
+        name: "Tên Danh Mục"
+        action: "Hành Động"
+        new_category: "Thêm mới danh mục"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"

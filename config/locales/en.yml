@@ -23,6 +23,17 @@ en:
       new:
         title: "Add Category"
         button: "Add"
+      create:
+        success: "Success!"
+        danger: "Erorr!"
+      form:
+        name: "Category"
+      index:
+        title: "All Category"
+        stt: "STT"
+        name: "Name"
+        action: "Action"
+        new_category: "New Category"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"

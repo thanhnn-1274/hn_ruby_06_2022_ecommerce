@@ -1,5 +1,7 @@
 class Admin::CategoriesController < Admin::AdminController
-  def index; end
+  def index
+    @pagy, @categories = pagy Category.asc_category_name
+  end
 
   def new
     @category = Category.new
