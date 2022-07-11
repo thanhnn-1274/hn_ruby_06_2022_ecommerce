@@ -1,0 +1,13 @@
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">
+    <h1><%= t "admin.title" %></h1>
+  </a>
+</div>
+<ul class="nav navbar-right top-nav">
+  <% if user_signed_in? %>
+    <li><%= link_to current_user.username, "#" %></li>
+    <li><%= link_to t("layout_header.text_link_log_out"), destroy_user_session_path, method: :delete %></li>
+    <% else %>
+    <li><%= link_to t("layout_header.text_link_log_in"), user_session_path %></li>
+  <% end %>
+</ul>

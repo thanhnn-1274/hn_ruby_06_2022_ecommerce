@@ -1,0 +1,51 @@
+<div class="grid">
+  <div class="grid__row grid-column">
+    <div class="grid-column-2">
+      <nav class="category">
+        <h3 class="category-heading">
+          <i class="fa fa-list-ul" aria-hidden="true"></i>
+          Danh mục
+        </h3>
+        <div class="category-list-container">
+          <ul class="category-list">
+            <%= render "shared/categories" %>
+            <%# <li class="category-item category-item-active">
+              <a href="" class="category-item-link category-item-link-1">Sản phẩm</a>
+            </li>
+            <li class="category-item">
+              <a href="" class="category-item-link">Sách giáo khoa</a>
+            </li> %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="grid-column-10">
+      <div class="home-filter">
+        <span class="filter-span">Sắp xếp theo</span>
+        <button class="filter-button filter-button-active" id="orderNormal">Phổ biến</button>
+        <button class="filter-button" id="orderNew">Mới nhất</button>
+        <button class="filter-button" id="orderSale">Bán chạy</button>
+        <div class="filter-price">
+          <span>Giá</span>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+          <!-- list option -->
+          <ul class="filter-price-list">
+            <li>
+              <a href="#" class="filter-price-link" id="orderAsc">Giá thấp đến cao</a>
+            </li>
+            <li>
+              <a href="#" class="filter-price-link" id="orderDesc">Giá cao đến thấp</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="home-product">
+        <div class="grid__row">
+          <%= render "shared/books_list" %>
+        </div>
+      </div>
+      <div class="home-controller">
+      </div>
+    </div>
+  </div>
+</div>
