@@ -1,4 +1,5 @@
 en:
+  page_title: "Book Store"
   admin:
     layouts:
       header:
@@ -23,9 +24,18 @@ en:
       new:
         title: "Add Category"
         button: "Add"
+      edit:
+        title: "Edit Category"
+        button: "Edit"
       create:
         success: "Success!"
         danger: "Erorr!"
+      update:
+        success: "Update Success!"
+        danger: "Update Erorr!"
+      destroy:
+        success: "Delete Success!"
+        danger: "Delete Erorr!"
       form:
         name: "Category"
       index:
@@ -34,6 +44,8 @@ en:
         name: "Name"
         action: "Action"
         new_category: "New Category"
+      category:
+        delete: "Delete"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
