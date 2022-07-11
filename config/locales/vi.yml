@@ -1,24 +1,24 @@
-en:
+vi:
   admin:
     layouts:
       header:
-        my_account: "My Account"
-        cart: "Cart"
+        my_account: "Tài khoản"
+        cart: "Giỏ hàng"
         bookstore: "Book Store"
-        login: "Log in"
-        logout: "Log out"
+        login: "Đăng nhập"
+        logout: "Đăng xuất"
       footer:
         bookstore: "Book Store"
-        address: "Address"
+        address: "Địa chỉ"
       left:
-        books: "Books"
-        orders: "Order"
-        categories: "Category"
-        users: "User"
-        logout: "Logout"
-        dashboard: "Dashboard"
+        books: "Sách"
+        orders: "Đặt Hàng"
+        categories: "Danh mục"
+        users: "Người Dùng"
+        logout: "Đăng Xuất"
+        dashboard: "Bảng Điều Khiển"
       right:
-        search: "Search"
+        search: "Tìm kiếm"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
