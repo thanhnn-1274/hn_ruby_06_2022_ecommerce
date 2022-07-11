@@ -1,0 +1,21 @@
+vi:
+  admin:
+    layouts:
+      header:
+        my_account: "Tài khoản"
+        cart: "Giỏ hàng"
+        bookstore: "Book Store"
+        login: "Đăng nhập"
+        logout: "Đăng xuất"
+      footer:
+        bookstore: "Book Store"
+        address: "Địa chỉ"
+      left:
+        books: "Sách"
+        orders: "Đặt Hàng"
+        categories: "Danh mục"
+        users: "Người Dùng"
+        logout: "Đăng Xuất"
+        dashboard: "Bảng Điều Khiển"
+      right:
+        search: "Tìm kiếm"
