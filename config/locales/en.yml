@@ -19,6 +19,10 @@ en:
         dashboard: "Dashboard"
       right:
         search: "Search"
+    categories:
+      new:
+        title: "Add Category"
+        button: "Add"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"

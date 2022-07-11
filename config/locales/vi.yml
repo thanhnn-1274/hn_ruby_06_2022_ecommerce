@@ -19,6 +19,10 @@ vi:
         dashboard: "Bảng Điều Khiển"
       right:
         search: "Tìm kiếm"
+    categories:
+      new:
+        title: "Thêm mới danh mục"
+        button: "Thêm mới"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
