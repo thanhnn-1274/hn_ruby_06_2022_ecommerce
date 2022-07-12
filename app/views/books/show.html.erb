@@ -1,0 +1,165 @@
+<div class="container">
+  <div class="grid">
+    <div class="first-book-name">
+      <span class="first-book-name-text">Ebook > Sách > Thông tin sản phẩm</span>
+    </div>
+    <div class="grid__row book-container">
+      <div class="grid-column-4">
+        <a href="#" class="home-product">
+        <div class="product-img" style="background-image: url(https://cdn0.fahasa.com/media/catalog/product/e/s/essential_test_for_toeic_rc_1000_vol_2_khong_cd_1_2018_08_07_10_18_57.JPG);"></div>
+        </a>
+      </div>
+      <div class="grid-column-6">
+        <div class="home-product-info">
+          <h1 class="book-heading"><%= @book.name %></h1>
+          </h1>
+          <div class="product-view-sa">
+            <div class="product-view-sa-one">
+              <div class="product-view-sa-supplier">
+                <span>Nhà cung cấp: </span>
+                <span><%= @book.page_num %></span>
+              </div>
+              <div class="product-view-sa-author">
+                <span>Số hàng: </span>
+                <span><%= @book.quantity %></span>
+              </div>
+              <div class="product-view-sa-two">
+                <div class="product-view-sa-supplier">
+                  <span>Nhà xuất bản: </span>
+                  <span>NXB Văn học</span>
+                </div>
+                <div class="product-view-sa-author">
+                  <span>Hình thức bìa: </span>
+                  <span>Bìa mềm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-rating">
+            <div class="rating-new-star">
+              <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <span class="product-id"></span>
+          </div>
+          <!-- <div class="product-view-sa-author">
+                                <span>Số lượng: </span>
+                            </div> -->
+          <div class="book-item-price">
+            <span class="book-item-price-old"><%= @book.price %>đ</span>
+            <span class="book-item-price-current"><%= @book.price %>đ</span>
+          </div>
+          <div class="expected_delivery">
+            <div class="expected_return-product-policy">
+              <span>Chính sách đổi trả</span>
+              <span>Đổi trả trong 30 ngày</span>
+            </div>
+          </div>
+          <div class="product-view-quantity-box">
+            <label for="qty">Số lượng: </label>
+            <div class="product-view-quantity-box-block">
+              <a class="btn-subtract-qty">
+                <img style="width: 12px; height: auto;"
+                                            src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_minus2x.png">
+              </a>
+              <input type="text" name="qty" id="qty" max="" minvalue="1" text-align="center"
+                                        value="1" onkeypress="validateNumber(event)" onblur="validateQty();" title="SL"
+                                        class="input-text qty">
+              <a class="btn-add-qty">
+                <img style=" width: 12px; height: auto;"
+                                        src="https://cdn0.fahasa.com/skin/frontend/ma_vanese/fahasa/images/ico_plus2x.png">
+              </a>
+            </div>
+          </div>
+          <div class="product_view_add_box">
+            <button class="btn-cart-to-cart">
+              <i class="fa fa-cart-plus" aria-hidden="true"></i>
+              Thêm Vào Giỏ Hàng</button>
+              <a href="<%= buy_user_path %>">
+              <button class="btn-buy-now">Mua Ngay</button>
+              </a>
+            <%# <button class="btn-buy-now">Mua Ngay</button> %>
+            <%# <%= link_to "Mua ngay", buy_user_path, class: "btn-buy-now" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="book-info-content">
+      <hr width="100%" size="8px">
+      <h3>Thông tin sản phẩm: </h3>
+      <br>
+      <h6>Mã hàng: <%= @book.id %></h6>
+      <br>
+      <h6>Nhà cung cấp: <%= @book.page_num %></h6>
+      <br>
+      <h6>Thể loại: <%= @book.category_id %></h6>
+      <br>
+      <h6>Nhà xuất bản: NXB Trẻ</h6>
+      <br>
+      <h6>Năm xuất bản: 2014</h6>
+      <br>
+      <h6>Ngôn ngữ: Tiếng việt</h6>
+      <br>
+      <hr width="100%" size="8px">
+      <h5>Nội dung: <%= @book.description %></h5>
+      <p></p>
+      <hr width="100%" size="8px">
+    </div>
+  </div>
+  <div class="grid">
+    <div class="user-rating-book">
+      <h3 class="mb-3"> Đánh giá sản phẩm </h3>
+      <div id="commentPanel">
+        <!-- <div>
+                            <div class="box">
+                                <div class="box" style="float:left">
+                                    <img src="https://iupac.org/wp-content/uploads/2018/05/default-avatar.png" alt=""
+                                        style="height:30px;width:30px">
+                                </div>
+                                <div class="box" style="margin-left: 40px">
+                                    <h5>Nguyễn Tiến Đàn</h5>
+                                </div>
+                            </div>
+                            <div class="box" style="padding-left:40px;width:50%">
+                                <h6>2021-11-14</h6>
+                                <p>sách dởm</p>
+                            </div>
+                        </div>
+                        <br> -->
+      </div>
+      <form>
+        <label>Đánh giá sản phẩm</label>
+        <textarea class="form-control" placeholder="Nhập nội dung bình luận" required="" name="cmt"
+                            style="width:60%;height:100px"></textarea>
+        <button class="add-comment">Thêm bình luận</button>
+        <label for="rating" id="label-rating-selecter">Điểm đánh giá:</label>
+        <select name="rating" id="rating-selecter">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </form>
+      <hr width="100%" size="4px">
+    </div>
+  </div>
+  <div class="grid">
+    <div class="recomend-product">
+      <div class="title-recomend">SẢN PHẨM TƯƠNG TỰ</div>
+      <div class="grid__row gird__row-limit">
+      </div>
+      <!-- <div class="see-more-product">
+                        <form style="text-align:center" action="sanpham.php?page=1&amp;theloai=Thiếu nhi" method="post">
+                            <button style="width:250px;height:50px" class="btn-see-more">Xem thêm &gt;&gt; </button>
+                        </form>
+                    </div> -->
+    </div>
+  </div>
+</div>

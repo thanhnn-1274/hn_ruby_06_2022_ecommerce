@@ -1,0 +1,63 @@
+<div class="body-app">
+  <div class="my-body-app">
+    <div class="login">
+      <div class="login-title">Chào mừng bạn đến với Ebook. Đăng nhập ngay!</div>
+      <div class="login-form">
+        <div class="login-form-contain">
+          <div class="login-form-head">
+            <h3>Đăng Nhập</h3>
+            <a href="<%= signup_path %>">Đăng Ký</a>
+          </div>
+          <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %>
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
+            <div class="login-form-control">
+              <a href="<%= root_path %>" class="login-form-goback">
+                TRỞ LẠI
+              </a>
+              <%# <button class="login-form-goback">TRỞ LẠI</button> %>
+              <%= f.submit "ĐĂNG NHẬP", class: "login-form-login" %>
+            </div>
+            <%# <%= f.submit "Log in", class: "btn btn-primary" %>
+          <% end %>
+          <div class="login-form-policy">
+            <p>Bằng việc đăng nhập, bạn đã đồng ý với Estore về
+              <a href="" class="login-form-policy-link">
+                Điều khoản dịch vụ
+              </a>&
+              <a href="" class="login-form-policy-link">
+                Chính sách bảo mật
+              </a>
+            </p>
+          </div>
+          <div class="alertLogin"></div>
+          <%# <div class="login-form-control">
+            <button class="login-form-goback">TRỞ LẠI</button>
+            <button class="login-form-login">ĐĂNG NHẬP</button>
+          </div> %>
+          <div class="IFLxoY">
+            <div class="_3svg61"></div>
+            <span class="_1ZEpVL">HOẶC</span>
+            <div class="_3svg61"></div>
+          </div>
+          <div class="login-form-social">
+            <a href="" class="social-facebook">
+              <i class="footer-icon fa fa-facebook-official"></i>
+              <p>Kết nối với FaceBook</p>
+            </a>
+            <a href="" class="social-google">
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+              <p>Kết nối với Google</p>
+            </a>
+          </div>
+          <div class="login-form-switch">
+            Bạn mới biết đến Estore ?
+            <a href="<%= signup_path %>" class="login-switch-login">Đăng Ký</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="body-app">
+  <div class="my-body-app">
+    <div class="signup">
+      <div class="signup-title">Chào mừng bạn đến với Ebook. Đăng ký ngay!</div>
+      <div class="signup-form">
+        <div class="signup-form-contain">
+          <div class="signup-form-head">
+            <h3>Đăng ký</h3>
+            <a href="<%= login_path %>">Đăng nhập</a>
+          </div>
+          <%= form_for @user do |f| %>
+            <%= render 'shared/error_messages' %>
+            <%= f.label :name, t(".name") %>
+            <%= f.text_field :name, class: "form-control" %>
+            <%= f.label :email, t(".email") %>
+            <%= f.email_field :email, class: "form-control" %>
+            <%= f.label :password, t(".password") %>
+            <%= f.password_field :password, class: "form-control" %>
+            <%= f.label :password_confirmation, t(".confirmation") %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+            <div class="signup-form-control">
+              <a href="<%= root_path %>" >
+                <button class="signup-form-goback">TRỞ LẠI</button>
+              </a>
+              <%= f.submit "ĐĂNG KÝ", class: "signup-form-signup" %>
+            </div>
+          <% end %>
+          <div class="signup-form-policy">
+            <p>Bằng việc đăng kí, bạn đã đồng ý với Estore về
+              <a href="" class="signup-form-policy-link">
+                Điều khoản dịch vụ
+              </a>&
+              <a href="" class="signup-form-policy-link">
+                Chính sách bảo mật
+              </a>
+            </p>
+          </div>
+          <div class="IFLxoY">
+            <div class="_3svg61"></div>
+            <span class="_1ZEpVL">HOẶC</span>
+            <div class="_3svg61"></div>
+          </div>
+          <div class="signup-form-social">
+            <a href="" class="social-facebook">
+              <i class="footer-icon fa fa-facebook-official"></i>
+              <p>Kết nối với FaceBook</p>
+            </a>
+            <a href="" class="social-google">
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+              <p>Kết nối với Google</p>
+            </a>
+          </div>
+          <div class="signup-form-switch">
+            Bạn đã có tài khoản ?
+            <a href="<%= login_path %>" class="signup-switch-login">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
