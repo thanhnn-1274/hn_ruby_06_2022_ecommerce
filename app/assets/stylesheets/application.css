@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'responsive';
+@import 'bootstrap';
+@import 'sb-admin-2.min';
