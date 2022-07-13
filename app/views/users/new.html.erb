@@ -6,23 +6,23 @@
         <div class="signup-form-contain">
           <div class="signup-form-head">
             <h3><%= t ".sign_up" %></h3>
-            <a href="<%= login_path %>"><%= t ".sign_in" %></a>
+            <%= link_to t(".sign_in"), login_path %>
           </div>
           <%= form_for @user do |f| %>
             <%= render "shared/error_messages" %>
-            <%= f.label :name, t ".name" %>
+            <%= f.label :name, t(".name") %>
             <%= f.text_field :name, class: "form-control" %>
-            <%= f.label :email, t ".email" %>
+            <%= f.label :email, t(".email") %>
             <%= f.email_field :email, class: "form-control" %>
-            <%= f.label :password, t ".password" %>
+            <%= f.label :password, t(".password") %>
             <%= f.password_field :password, class: "form-control" %>
-            <%= f.label :password_confirmation, t ".confirmation" %>
+            <%= f.label :password_confirmation, t(".confirmation") %>
             <%= f.password_field :password_confirmation, class: "form-control" %>
             <div class="signup-form-control">
               <a href="<%= root_path %>" >
                 <button class="signup-form-goback"><%= t ".go_back" %></button>
               </a>
-              <%= f.submit t ".sign_up", class: "signup-form-signup" %>
+              <%= f.submit t(".sign_up"), class: "signup-form-signup" %>
             </div>
           <% end %>
           <div class="signup-form-policy">
@@ -52,7 +52,7 @@
           </div>
           <div class="signup-form-switch">
             <%= t ".have_account" %>
-            <a href="<%= login_path %>" class="signup-switch-login"><%= t ".sign_in" %></a>
+            <%= link_to t(".sign_in"), login_path, class="signup-switch-login" %>
           </div>
         </div>
       </div>
