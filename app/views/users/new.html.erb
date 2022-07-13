@@ -1,0 +1,61 @@
+<div class="body-app">
+  <div class="my-body-app">
+    <div class="signup">
+      <div class="signup-title"><%= t ".welcome_to" %></div>
+      <div class="signup-form">
+        <div class="signup-form-contain">
+          <div class="signup-form-head">
+            <h3><%= t ".sign_up" %></h3>
+            <a href="<%= login_path %>"><%= t ".sign_in" %></a>
+          </div>
+          <%= form_for @user do |f| %>
+            <%= render "shared/error_messages" %>
+            <%= f.label :name, t ".name" %>
+            <%= f.text_field :name, class: "form-control" %>
+            <%= f.label :email, t ".email" %>
+            <%= f.email_field :email, class: "form-control" %>
+            <%= f.label :password, t ".password" %>
+            <%= f.password_field :password, class: "form-control" %>
+            <%= f.label :password_confirmation, t ".confirmation" %>
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+            <div class="signup-form-control">
+              <a href="<%= root_path %>" >
+                <button class="signup-form-goback"><%= t ".go_back" %></button>
+              </a>
+              <%= f.submit t ".sign_up", class: "signup-form-signup" %>
+            </div>
+          <% end %>
+          <div class="signup-form-policy">
+            <p><%= t ".policy_accept" %>
+              <a href="" class="signup-form-policy-link">
+                <%= t ".policy_2" %>
+              </a>&
+              <a href="" class="signup-form-policy-link">
+                <%= t ".policy_3" %>
+              </a>
+            </p>
+          </div>
+          <div class="IFLxoY">
+            <div class="_3svg61"></div>
+            <span class="_1ZEpVL"><%= t ".or_1" %></span>
+            <div class="_3svg61"></div>
+          </div>
+          <div class="signup-form-social">
+            <a href="" class="social-facebook">
+              <i class="footer-icon fa fa-facebook-official"></i>
+              <p><%= t ".connect_facebook" %></p>
+            </a>
+            <a href="" class="social-google">
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+              <p><%= t ".connect_google" %></p>
+            </a>
+          </div>
+          <div class="signup-form-switch">
+            <%= t ".have_account" %>
+            <a href="<%= login_path %>" class="signup-switch-login"><%= t ".sign_in" %></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
