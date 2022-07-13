@@ -1,0 +1,48 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <%= link_to t(".dashboard"), "#",
+    class: "sidebar-brand d-flex align-items-center justify-content-center"
+  %>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to "#", class: "nav-link collapsed" do %>
+      <i class="fa fa-fw fa-cog"></i>
+      <span><%= t ".orders" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to "#", class: "nav-link collapsed" do %>
+      <i class="fa fa-book"></i>
+      <span><%= t ".books" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to "#", class: "nav-link collapsed" do %>
+      <i class="fa fa-user"></i>
+      <span><%= t ".users" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to "#", class: "nav-link collapsed" do %>
+      <i class="fa fa-th"></i>
+      <span><%= t ".categories" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <%= link_to "#", method: :delete, class: "nav-link collapsed" do %>
+      <i class="fa fa-sign-out"></i>
+      <span><%= t ".logout" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
+    <div class = "nav-link collapsed">
+      <i class="fa fa-language"></i>
+      <%= link_to "English", locale:"en" %>
+      <%= link_to "Vietnamese", locale:"vi" %>
+    </div>
+  </li>
+</ul>

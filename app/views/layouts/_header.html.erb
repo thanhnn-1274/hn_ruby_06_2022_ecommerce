@@ -1,0 +1,107 @@
+<header class="header">
+  <div class="grid">
+    <nav class="header__navbar">
+      <ul class="header__navbar-list">
+        <li class="header__navbar-item">
+        <%= t ".li_store" %>
+        </li>
+        <li class="header__navbar-item header__navbar-item-connect">
+          <%= t ".li_connect" %>
+          <a href="#" class="header__navbar-item-link">
+            <i class="header__navbar-icon fa fa-facebook-official"></i>
+          </a>
+          <a href="#" class="header__navbar-item-link">
+            <i class="header__navbar-icon fa fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="header__navbar-list">
+        <li class="header__navbar-item header__navbar-item-hasnotify">
+          <i class="fa fa-bell" aria-hidden="true"></i>
+          <a href="#" class="header__navbar-item-link">
+            <%= t ".a_notification" %>
+          </a>
+          <div class="header__notify">
+            <header class="header__notify-head">
+              <h3><%= t ".a_notification_new" %></h3>
+            </header>
+          </div>
+        </li>
+        <li class="header__navbar-item">
+          <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+          <a href="" class="header__navbar-item-link">
+            <%= t(".a_help") %>
+          </a>
+        </li>
+      <% if logged_in? %>
+        <li class="header__navbar-item header__navbar-user">
+          <img src="#" alt="" class="header__navbar-userimg">
+          <span class="header__navbar-userspan">
+            <%= @current_user.name %>
+          </span>
+          <ul class="navbar__user-menu">
+            <li>
+              <a href="/users/<%= current_user.id %>">
+                <%= t ".account_me" %>
+              </a>
+            </li>
+            <li>
+              <a href="/personalshop/">
+                <%= t ".store_me" %>
+              </a>
+            </li>
+            <li>
+              <a href="/cart/">
+                <%= t ".card" %>
+              </a>
+            </li>
+            <li>
+              <%= link_to "", logout_path, method: :delete %>
+            </li>
+          </ul>
+        </li>
+        <% else %>
+        <a href="<%= signup_path %>" class="register_link">
+          <li class="header__navbar-item header__navbar-item-register">
+            <%= t ".signin" %>
+          </li>
+        </a>
+        <a href="<%= login_path %>" class="login_link">
+          <li class="header__navbar-item header__navbar-item-register">
+            <%= t ".signup" %>
+          </li>
+        </a>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="header-with-search">
+      <div class="header__logo">
+        <a href="<%= root_path %>">
+          <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+          <span class="logo-text">
+            <% t ".ebook" %>
+          </span>
+        </a>
+      </div>
+      <div class="header__search">
+        <input type="text" class="header__search-input" placeholder="">
+        <div class="header__search-select">
+          <span><%= t ".search" %></span>
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </div>
+        <button class="header__search-btn">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="header__cart">
+        <div class="header__cart-wrap">
+          <i class="header__cart-icon fa fa-shopping-cart"></i>
+          <span class="header__cart-number">0</span>
+          <div class="header__cart-list no-cart">
+            <h4><%= t ".h4" %></h4>
+            <ul class="cart__list-item">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
