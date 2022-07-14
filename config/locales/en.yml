@@ -46,6 +46,42 @@ en:
         new_category: "New Category"
       category:
         delete: "Delete"
+    books:
+      new:
+        title: "Add Book"
+        button: "Add"
+      create:
+        success: "Success"
+        danger: "Danger"
+      index:
+        stt: "STT"
+        name: "Name"
+        price: "Price"
+        category: "Category"
+        author: "Author"
+        quantity: "Quantity"
+        image: "Image"
+        action: "Action"
+        title: "All Book"
+        new_book: "New Book"
+      form:
+        input_name_label: "Name"
+        input_name: "Enter Name"
+        input_price_label: "Price"
+        input_price: "Enter Price"
+        category: "Category"
+        input_publisher_label: "Publisher"
+        input_publisher_name: "Enter Publisher"
+        book_authors: "Author"
+        description: "Description"
+        input_description: "Enter Description"
+        input_image: "Image"
+        input_page_name: "Page Number"
+        input_page_name: "Enter Number"
+        input_quantity_label: "Quantity"
+        input_quantity_name: "Enter Quantity"
+        input_page_label: "Page Number"
+        input_page_name: "Enter Page Number"
   layouts:
     header:
       li_store: "In the row on app"
@@ -131,3 +167,9 @@ en:
       connect_google: "Connect with Google"
       have_account: "Do you already have an account ?"
       new_member: "Are you new member ?"
+  books:
+    invalid_format: "must be a valid image format"
+    invalid_size: "should be less than 5MB"
+    create:
+      success: "Success!"
+      danger: "Erorr!"

@@ -46,6 +46,42 @@ vi:
         new_category: "Thêm mới danh mục"
       category:
         delete: "Xóa"
+    books:
+      new:
+        title: "Thêm mới sách"
+        button: "Thêm"
+      create:
+        success: "Success"
+        danger: "Danger"
+      index:
+        stt: "STT"
+        name: "Tên sách"
+        price: "Giá"
+        category: "Loại Sách"
+        author: "Tác Giả"
+        quantity: "Số lượng"
+        image: "Hình Ảnh"
+        action: "Hành Động"
+        title: "Tất cả sách"
+        new_book: "Tạo Sách Mới"
+      form:
+        input_name_label: "Tên Sách"
+        input_name: "Enter Name"
+        input_price_label: "Giá"
+        input_price: "Enter Price"
+        category: "Loại Sách"
+        input_publisher_label: "Nhà xuất bản"
+        input_publisher_name: "Enter Publisher"
+        book_authors: "Tác Giả"
+        description: "Mô Tả"
+        input_description: "Enter Description"
+        input_image: "Hình Ảnh"
+        lable_page_name: "Số trang"
+        input_page_name: "Enter Number"
+        input_quantity_label: "Số Lượng"
+        input_quantity_name: "Enter Quantity"
+        input_page_label: "Số trang"
+        input_page_name: "Enter Page Number"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
@@ -81,7 +117,6 @@ vi:
       selling: "Bán chạy"
       order_1: "Giá thấp đến cao"
       order_2: "Giá cao đến thấp"
-
   users:
     new:
       name: "Tên"
@@ -133,3 +168,17 @@ vi:
       connect_google: "Kết nối với Google"
       have_account: "Bạn đã có tài khoản ?"
       new_member: "Bạn mới biết đến Estore ?"
+  books:
+    invalid_format: "must be a valid image format"
+    invalid_size: "should be less than 5MB"
+    create:
+      success: "Thêm sách thành công!"
+      danger: "Thêm sách thất bại!"
+  activerecord:
+    errors:
+      models:
+        micropost:
+          attributes:
+            image:
+              too_big: "không quá 5MB"
+              wrong_format: "Phải là một định dạng hình ảnh hợp lệ"

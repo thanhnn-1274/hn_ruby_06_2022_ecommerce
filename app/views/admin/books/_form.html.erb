@@ -1,0 +1,59 @@
+<%= form_for [:admin, @book], html: {class: "row g-3"} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="col-md-12 required">
+    <%= f.label :name, t(".input_name_label") %>
+    <%= f.text_field :name,
+        {class: "form-control", placeholder: t(".input_name")} %>
+  </div>
+  <div class="col-md-12 required">
+    <%= f.label :category_id, t(".category") %>
+    <%= collection_select(:book, :category_id, @categories, :id, :name,
+                         {},
+                         {class: "form form-control"}) %>
+  </div>
+  <div class="col-md-12 required">
+    <%= f.label :author_id, t(".book_authors") %>
+    <%= collection_select(:book, :author_id, @authors, :id, :name,
+                         {},
+                         {class: "form-control select2"}) %>
+  </div>
+  <div class="col-md-6 required">
+    <%= f.label :publisher_name, t(".input_publisher_label") %>
+    <%= f.text_field :publisher_name,
+        {class: "form-control", placeholder: t(".input_publisher_name")} %>
+  </div>
+  <div class="col-md-6 required">
+    <%= f.label :page_number, t(".input_page_label") %>
+    <%= f.text_field :page_num,
+        {class: "form-control", placeholder: t(".input_page_name")} %>
+  </div>
+  <div class="col-md-6 required">
+    <%= f.label :quantity, t(".input_quantity_label") %>
+    <%= f.text_field :quantity,
+        {class: "form-control", placeholder: t(".input_quantity_name")} %>
+  </div>
+  <div class="col-md-6 required">
+    <%= f.label :price, t(".input_price_label") %>
+    <%= f.number_field :price,
+        {class: "form-control",
+         placeholder: t(".input_price"),
+         min: Settings.min_book_price_length,
+         max: Settings.max_book_price_length} %>
+  </div>
+  <div class="col-md-12 required">
+    <%= f.label :description, t(".description") %>
+    <%= f.text_area :description, {class: "form-control",
+                                   placeholder: t(".input_description")} %>
+  </div>
+  <div class="col-md-12 row g-3">
+    <div class="col-sm-8">
+      <%= f.label :image, t("image") %>
+      <%= f.file_field :image,
+          {accept: Settings.image_formats,
+          class: "form-control-file border", placeholder: t(".input_image")} %>
+    </div>
+  </div>
+  <div class="col-12 required">
+    <%= f.submit yield(:button_text), class: "btn btn-primary mt-5" %>
+  </div>
+<% end %>
