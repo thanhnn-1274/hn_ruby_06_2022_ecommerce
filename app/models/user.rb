@@ -25,9 +25,9 @@ class User < ApplicationRecord
                                maximum: Settings.user.address_max_length},
                                allow_nil: true
 
-  validates :phone_num,
-            length: {minimum: Settings.user.min_phone,
-                     maximum: Settings.user.max_phone}, allow_nil: true
+  validates :phone_num, length: {minimum: Settings.user.min_phone,
+                                 maximum: Settings.user.max_phone},
+                                 allow_nil: true
 
   validates :avatar,
             content_type: {in: Settings.user.image.image_path,

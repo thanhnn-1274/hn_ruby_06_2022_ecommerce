@@ -5,6 +5,10 @@ body {
   overflow-x: hidden;
 }
 
+.body-history{
+  min-height: 600px;
+}
+
 .layout_padding {
   padding: 20px 0;
 }

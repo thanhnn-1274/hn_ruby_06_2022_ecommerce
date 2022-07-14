@@ -289,9 +289,9 @@ en:
   time:
     formats:
       default: ! "%Y-%m-%d"
-      long: ! "%B %d, %Y"
+      long: ! "%d %b %Y @ %l:%M"
       short: ! "%b %d"
-      custom: ! "%A, %M %B, %Y @ %l:%M %P"
+      custom: ! "%A, %d %b %Y @ %l:%M %P"
   carts:
     create:
       danger_quantily: "Please enter right quantily"
@@ -337,3 +337,23 @@ en:
       success_checkout: "success checkout"
       danger_checkout: "fial checkout"
       order_fail: "Fail to create order"
+    index:
+      title: "My Order"
+      all: "All"
+      pending: "Pending"
+      accepted: "Delivery"
+      complete: "Complete"
+      canceled: "Cancelled"
+      stt: "STT"
+      code: "Orders Code"
+      created_at: "Created At"
+      updated_at: "updated_at"
+      total_money: "Total Money"
+      status: "Status"
+      action: "Action"
+    order:
+      pending: "Pending"
+      accepted: "Accepted"
+      rejected: "Rejected"
+      canceled: "Canceled"
+      complete: "Complete"
