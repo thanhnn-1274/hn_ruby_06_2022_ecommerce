@@ -5,4 +5,5 @@ class Category < ApplicationRecord
             uniqueness: true
 
   scope :asc_category_name, ->{order name: :asc}
+  scope :latest_category, ->{order(created_at: :desc)}
 end

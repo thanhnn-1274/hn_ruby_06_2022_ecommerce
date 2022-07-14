@@ -109,6 +109,10 @@ vi:
     error_messages:
       the_form: "Biểu mẫu chứa"
       error: "lỗi"
+    books:
+      is_sold: "Đã bán 88"
+      ha_noi: "Hà Nội"
+      is_love: "Yêu thích"
 
   sessions:
     new:

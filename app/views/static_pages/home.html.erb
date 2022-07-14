@@ -8,7 +8,7 @@
         </h3>
         <div class="category-list-container">
           <ul class="category-list">
-            <%= render "categories/index" %>
+            <%= render partial: "shared/category", collection: @categories %>
           </ul>
         </div>
       </nav>
@@ -34,8 +34,9 @@
       </div>
       <div class="home-product">
         <div class="grid__row">
-          <%= render "books/index" %>
+          <%= render partial: "shared/book", collection: @books %>
         </div>
+        <%== pagy_nav(@pagy) %>
       </div>
       <div class="home-controller">
       </div>
