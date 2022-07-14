@@ -119,6 +119,27 @@ vi:
         canceled: "Đã hủy"
         complete: "Hoàn thành"
 
+        total_money: "Tổng Đơn Hàng"
+        status: "Trạng Thái"
+        action: "Hành Động"
+      reason:
+        text_reason: "Lý Do: "
+        text_money: "Tổng số tiền: "
+      status_form:
+        status: "Trạng Thái : "
+        submit: "Xác Nhận"
+        canceled: "Đã Hủy"
+        complete: "Hoàn Thành"
+      show:
+        order_detail: "Chi Tiết Đơn Hàng"
+        stt: "STT"
+        book_name: "Tên Sách"
+        price: "Giá"
+        quantity: "Số lượng"
+        total_money: "Tổng"
+      update:
+        success: "Cập nhật trạng thái đơn hàng thành công!"
+        danger: "Cập nhật trạng thái thất bại"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"

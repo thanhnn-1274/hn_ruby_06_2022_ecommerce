@@ -1,0 +1,13 @@
+<% if order.canceled? %>
+  <hr>
+  <h4><%= t ".text_reason" %></h4>
+  <p class="text-start">
+    <%= order.reason %>
+  </p>
+<% else %>
+  <hr>
+  <h4><%= t ".text_money" %></h4>
+  <p class="text-start">
+    <%= total_money_order order_details %>
+  </p>
+<% end %>
