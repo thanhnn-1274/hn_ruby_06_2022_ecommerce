@@ -16,5 +16,37 @@ class Order < ApplicationRecord
 
   scope :status_order, ->(type){where status: type}
   scope :latest_order, ->{order created_at: :desc}
+  scope :time_order, ->(type){order updated_at: type}
   scope :status_order, ->(type){where status: type}
+  scope :total_money, ->(type){order total_money: type}
+  scope :search, (lambda do |key|
+    where "name LIKE ? or id LIKE ?", "%#{key}%", "%#{key}%"
+  end)
+
+  def send_mail_accepted
+    AcceptedOrderJob.set(wait: Settings.number_15.seconds).perform_later self
+  end
+
+  def send_mail_canceled
+    CanceledOrderJob.set(wait: Settings.number_15.seconds).perform_later self
+  end
+
+  def send_mail_complete
+    CompleteOrderJob.set(wait: Settings.number_15.seconds).perform_later self
+  end
+
+  def handle_order order_params
+    ActiveRecord::Base.transaction do
+      update!(status: order_params["status"].to_i)
+      return true unless complete?
+
+      ActiveRecord::Base.transaction(requires_new: true) do
+        order_details.each do |order_detail|
+          quantity = order_detail.book.quantity - order_detail.quantity
+          order_detail.book.update!(quantity: quantity)
+          raise ActiveRecord::Rollback if quantity.negative?
+        end
+      end
+    end
+  end
 end

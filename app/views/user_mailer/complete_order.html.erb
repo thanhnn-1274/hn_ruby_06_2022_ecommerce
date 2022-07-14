@@ -1,0 +1,25 @@
+<h1>
+  <%= t ".order_information" %><%= @order.id %>
+</h1>
+
+<h2>
+  <%= t ".hello" %><%= @order.user.name %>
+</h2>
+
+<div>
+  <%= "#{t ".text_1"} #{@order.created_at}, #{t ".text_2"}" %>
+  <ul>
+    <% @order.order_details.each do |item| %>
+      <li>
+        <%= "#{item.book.name} - #{number_to_currency(item.price)}
+         - #{item.quantity} - #{number_to_currency(item.total_money)}"
+        %>
+      </li>
+    <% end %>
+  </ul>
+  <%= "#{t ".text_3"} #{number_to_currency(@order.total_money)}" %>
+</div>
+
+<h3>
+  <%= t ".status" %>
+</h3>

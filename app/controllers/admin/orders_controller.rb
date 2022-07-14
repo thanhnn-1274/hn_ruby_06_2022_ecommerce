@@ -1,9 +1,14 @@
 class Admin::OrdersController < Admin::AdminController
   before_action :find_order, only: %i(show update)
   before_action :load_order_details, only: %i(show)
+  before_action :check_status_order, only: %i(update)
 
   def index
-    @pagy, @orders = pagy Order.latest_order
+    if params[:status]
+      filter
+    else
+      @pagy, @orders = pagy Order.latest_order
+    end
   end
 
   def show
@@ -11,8 +16,9 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   def update
-    if @order.update(status: order_params["status"].to_i)
+    if @order.handle_order order_params
       flash[:success] = t(".success")
+      send_mail_notification
     else
       flash.now[:danger] = t(".danger")
     end
@@ -20,6 +26,7 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   private
+
   def order_params
     params.require(:order).permit(:status)
   end
@@ -28,7 +35,7 @@ class Admin::OrdersController < Admin::AdminController
     @order_details = @order.order_details
     return if @order_details
 
-    flash[:danger] = t "not_found"
+    flash[:danger] = t ".not_found"
     redirect_to admin_order_path
   end
 
@@ -39,5 +46,31 @@ class Admin::OrdersController < Admin::AdminController
 
     flash[:warning] = t(".not_found")
     redirect_to root_path
+  end
+
+  def check_status_order
+    return if @order.pending? || @order.accepted?
+
+    flash[:danger] = t ".danger"
+    redirect_to admin_orders_path
+  end
+
+  def filter
+    sort
+    statuses = Order.statuses.values
+    return unless statuses.include? params[:status].to_i
+
+    @pagy, @orders = pagy(@orders.status_order(params[:status].to_sym))
+  end
+
+  def send_mail_notification
+    status = @order.status
+    @order.send "send_mail_#{status}"
+  end
+
+  def sort
+    @pagy, @orders = pagy(Order.search(params[:search])
+                               .time_order(params[:updated_at].to_sym)
+                               .total_money(params[:price].to_sym))
   end
 end

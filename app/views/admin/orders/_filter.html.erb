@@ -1,0 +1,9 @@
+<%= form_with url: admin_orders_path, method: :get do |f| %>
+  <div class="input-group mb-3">
+    <%= f.select :status, select_status, {selected: params[:status]}, class: "form-select" %>
+    <%= f.select :updated_at, select_time, {selected: params[:updated_at]}, class: "form-select" %>
+    <%= f.select :price, select_price, {selected: params[:price]}, class: "form-select" %>
+    <%= f.text_field :search, class: "form-control" %>
+    <%= f.submit t(".submit"), class: "btn btn-outline-primary" %>
+  </div>
+<% end %>

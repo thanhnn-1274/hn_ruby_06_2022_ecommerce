@@ -34,6 +34,7 @@ class Book < ApplicationRecord
   scope :search, (lambda do |key|
     where "name LIKE ? or description LIKE ?", "%#{key}%", "%#{key}%"
   end)
+
   delegate :name, to: :category, prefix: :category, allow_nil: true
   delegate :name, to: :author, prefix: :author, allow_nil: true
 

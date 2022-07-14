@@ -1,7 +1,7 @@
 <div class="grid-column-new2">
   <a href="<%= book_path book.id %>" class="home-product-item">
     <% if book.image.attached?%>
-      <div class="product-item-img" style="background-image: url(<%= book.image %>);"></div>
+      <div class="product-item-img" style="background-image: url(<%= rails_blob_url book.image %>);"></div>
     <% else %>
       <div class="product-item-img" style="background-image: url(<%= book.thumbnail %>);"></div>
     <% end %>

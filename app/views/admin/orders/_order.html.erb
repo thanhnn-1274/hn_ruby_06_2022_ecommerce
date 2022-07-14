@@ -3,7 +3,7 @@
   <td><%= order.name %></td>
   <td><%= order.phone_num %></td>
   <td><%= order.address %></td>
-  <td><%= l order.created_at, format: :custom %></td>
+  <td><%= l order.updated_at, format: :custom %></td>
   <%= status_order order.status.to_sym %>
   <td>
     <%= link_to admin_order_path(order.id), remote: true do %>

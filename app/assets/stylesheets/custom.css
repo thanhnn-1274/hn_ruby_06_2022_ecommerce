@@ -1373,6 +1373,11 @@ a:focus {
   border-top: 1px solid rgba(0, 0, 0, 0.09);
 }
 
+.category-active{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
 .category-item-link-1{
   color: var(--primary-color);
   font-weight: 600;
