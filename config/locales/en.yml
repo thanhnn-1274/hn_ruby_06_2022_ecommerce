@@ -164,6 +164,8 @@ en:
       connect_google: "Connect with Google"
       have_account: "Do you already have an account ?"
       new_member: "Are you new member ?"
+    create:
+      invalid: "Invalid username or password"
   books:
     invalid_format: "must be a valid image format"
     invalid_size: "should be less than 5MB"
@@ -178,3 +180,29 @@ en:
             image:
               too_big: "should be less than 5MB"
               wrong_format: "must be a valid image format"
+
+  books:
+    show:
+      ebook_book: "Ebook > Book > Product detail"
+      book_id: "book id: "
+      book_quantity: "book quantity: "
+      book_publisher: "Publisher name: "
+      book_page: "Page num: "
+      return_book: "return policy"
+      return_time: "return book in 30 days"
+      book_detail: "Product detail: "
+      book_content: "Content:"
+      not_found: "Book not found"
+    add_cart_form:
+      book_quantity: "Quantity:  "
+      add_to_cart: "Add to cart"
+      buy_now: "Buy now"
+
+  number:
+     currency:
+        format:
+          unit: "$"
+          delimiter: ","
+          separator: "."
+          precision: 2
+          format: "%n%u"

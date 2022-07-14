@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="grid">
+    <div class="first-book-name">
+      <span class="first-book-name-text"><%= t ".ebook_book" %></span>
+    </div>
+    <div class="grid__row book-container">
+      <div class="grid-column-4">
+        <a href="#" class="home-product">
+          <% if @book.image.attached?%>
+            <div class="product-img" style="background-image: url(<%= @book.image %>);"></div>
+          <% else %>
+            <div class="product-img" style="background-image: url(<%= @book.thumbnail %>);"></div>
+          <% end %>
+        </a>
+      </div>
+      <div class="grid-column-6">
+        <div class="home-product-info">
+          <h1 class="book-heading"><%= @book.name %></h1>
+        </h1>
+        <div class="product-view-sa">
+          <div class="product-view-sa-one">
+            <div class="product-view-sa-supplier">
+              <span><%= t ".book_id" %></span>
+              <span><%= @book.id %></span>
+            </div>
+            <div class="product-view-sa-author">
+              <span><%= t ".book_quantity" %></span>
+              <span><%= @book.quantity %></span>
+            </div>
+            <div class="product-view-sa-two">
+              <div class="product-view-sa-supplier">
+                <span><%= t ".book_publisher" %></span>
+                <span><%= @book.publisher_name %></span>
+              </div>
+              <div class="product-view-sa-author">
+                <span><%= t ".book_page" %></span>
+                <span><%= @book.page_num %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-rating">
+          <div class="rating-new-star">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+          </div>
+          <span class="product-id"></span>
+        </div>
+        <div class="book-item-price">
+          <span class="book-item-price-current"><%= number_to_currency @book.price %></span>
+        </div>
+        <div class="expected_delivery">
+          <div class="expected_return-product-policy">
+            <span><%= t ".return_book" %></span>
+            <span><%= t ".return_time" %></span>
+          </div>
+        </div>
+        <%= render "books/add_cart_form" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="grid">
+  <div class="book-info-content">
+    <h5><%= t ".book_content" %><%= @book.description %></h5>
+  </div>
+</div>

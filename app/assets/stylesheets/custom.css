@@ -1081,6 +1081,11 @@ a:focus {
   color: var(--white-color);
 }
 
+.header__logo a:hover{
+  text-decoration: none;
+  color: var(--white-color);
+}
+
 .header__logo a i{
   font-size: 5.0rem;
 }
@@ -1521,6 +1526,7 @@ a:focus {
 .home-product-item:hover{
   transform: translateY(-1px);
   box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+  text-decoration: none;
 }
 
 .product-item-img{
@@ -2280,4 +2286,739 @@ html {
   padding-left: 5px;
   padding-right: 5px;
   width: 60%;
+}
+
+.first-book-name{
+  display: flex;
+  font-size: 1.8rem;
+  padding: 20px 0;
+  align-items: center;
+}
+
+/* thong bao da mua */
+.aleart-success{
+  position: fixed;
+  top: 36%;
+  right: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  width: 320px;
+  height: 160px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border: 2px solid rgb(16, 182, 16);
+  border-radius: 4px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  animation: fadeOut linear 1s 2s forwards;
+  opacity: 0.7;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 0.6;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+.aleart-success-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: rgb(9, 224, 9);
+}
+
+.aleart-success-text{
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+
+.book-container{
+  background-color: var(--white-color);
+}
+
+.home-product{
+  padding: 15px;
+}
+
+.home-product-info{
+  padding: 30px 35px 0 30px;
+}
+
+.product-img{
+  background-color: var(--white-color);
+  height: 430px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: 50%;
+  background-position-y: center;
+  margin: 0 30px;
+}
+
+.book-heading{
+  font-size: 3rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 3rem;
+  padding-bottom: 18px;
+  margin: 0;
+}
+
+.product-view-sa{
+  padding-bottom: 10px;
+}
+
+.product-view-sa-supplier{
+  display: inline-block;
+  width: 60%;
+  padding-right: 15px;
+  font-size: 1.6rem;
+}
+
+.product-view-sa-supplier span:nth-of-type(2) {
+  font-weight: 600;
+}
+
+.product-view-sa-author{
+  display: inline-block;
+  width: 39%;
+  padding-left: 15px;
+  font-size: 1.6rem;
+  padding-bottom: 4px;
+}
+
+.product-view-sa-author span:nth-of-type(2) {
+  font-weight: 600;
+}
+
+.product-rating{
+  display: flex;
+  padding-bottom: 16px;
+}
+
+.rating-new-star{
+  color: rgb(248, 221, 66);
+  font-size: 1.6rem;
+  padding-right: 6px;
+}
+
+.product-rating span{
+  font-size: 1.6rem;
+  color: #333;
+  margin-left: 14px;
+}
+
+.book-item-price{
+  display: flex;
+  align-items: center;
+  padding: 20px 0 20px;
+  /* background-color: #f5f5f5; */
+}
+
+.book-item-price-old{
+  font-size: 2.4rem;
+  color: #666;
+  text-decoration: line-through;
+
+}
+
+.book-item-price-current{
+  font-size: 4.4rem;
+  color: var(--primary-color);
+  margin-left: 30px;
+  font-weight: 600;
+}
+
+.expected_delivery{
+  font-size: 1.6rem;
+  padding: 10px 0;
+}
+
+.expected_delivery-address{
+  padding-bottom: 6px;
+}
+
+.expected_delivery-address span:nth-child(1){
+  margin-right: 50px;
+}
+
+.expected_return-product-policy span:nth-child(1){
+  margin-right: 58px;
+}
+
+.product-view-quantity-box{
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  /* height: 32px; */
+}
+
+.product-view-quantity-box label {
+  font-size: 2.4rem;
+  font-weight: 650;
+  padding: 0 8px 0 0;
+  margin-bottom: 0;
+  text-align: left;
+  max-width: 260px;
+  min-width: 150px;
+  color: #333;
+}
+
+.product-view-quantity-box-block{
+  display: flex;
+  align-items: center;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.btn-subtract-qty{
+  padding: 0 8px 4px 16px;
+  margin: auto;
+  text-align: center;
+}
+
+.product-view-quantity-box-block #qty {
+  border: none !important;
+  /* border: none;
+  border-left: 1px solid #c1c1c1;
+  border-right: 1px solid #c1c1c1; */
+
+  width: 3em!important;
+  color: #0D0E0F;
+  font-weight: 700;
+  font-size: 1.6em;
+  height: 100%;
+  text-align: center;
+}
+
+a.btn-add-qty {
+  padding: 0px 16px 0 8px;
+  margin: auto;
+  text-align: center;
+}
+
+.product_view_add_box{
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+  height: 48px;
+}
+
+.btn-cart-to-cart{
+  background-color: rgba(255,87,34,0.1);
+  border: 1px solid #ee4d2d;
+  min-width: 120px;
+  outline: none;
+  border-radius: 3px;
+  padding: 0 20px;
+  height: 100%;
+  margin-right: 15px;
+  font-size: 1.8rem;
+  color: #ee4d2d;
+  cursor: pointer;
+}
+
+.btn-cart-to-cart i{
+  font-size: 2.4rem;
+  padding-right: 6px;
+}
+
+.btn-cart-to-cart:hover{
+  background-color: rgba(230, 94, 49, 0.05);
+}
+
+.btn-buy-now{
+  background-color: var(--primary-color);
+  border: none;
+  width: 150px;
+  height: 100%;
+  padding: 12px 0;
+  outline: none;
+  border-radius: 3px;
+  font-size: 1.8rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.btn-buy-now:hover{
+  background-color: #f16b50;
+}
+
+.book-info-content{
+  margin-top: 30px;
+  background-color: var(--white-color);
+}
+
+.book-info-content h3{
+  font-size: 2.4rem;
+  font-weight: 700;
+  padding: 10px 14px;
+  margin: 10px 0 0;
+}
+
+.book-info-content h6{
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 400;
+  padding: 2px 14px;
+  margin: 0;
+}
+
+.book-info-content h5{
+  font-size: 2rem;
+  padding: 2px 14px;
+  margin: 10px 0;
+}
+
+.book-info-content p{
+  margin: 0;
+  padding: 4px 30px 4px 14px;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-bottom: 30px;
+}
+
+.mb-3{
+  padding: 14px 0;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.user-rating-book{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 14px;
+  background-color: var(--white-color);
+}
+
+.user-rating-book .box h5{
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.user-rating-book .box h6{
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.user-rating-book .box p{
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.user-rating-book form label{
+  display: inline-block;
+  font-size: 1.6rem;
+  margin-top: 6px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;;
+  border-radius: 2px;
+  appearance: none;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.add-comment{
+  background-color: rgba(255,87,34,0.1);
+  border: 1px solid #ee4d2d;
+  min-width: 120px;
+  outline: none;
+  border-radius: 3px;
+  padding: 10px 0px;
+  height: 100%;
+  margin: 20px 20px 20px 0px;
+  font-size: 1.8rem;
+  color: #ee4d2d;
+  cursor: pointer;
+}
+
+.add-comment:hover{
+  background-color: rgba(230, 94, 49, 0.05);
+}
+
+.recomend-product{
+  margin-top: 60px;
+  padding-bottom: 60px;
+}
+
+.gird__row-limit{
+  max-height: 350px;
+  overflow: hidden;
+}
+
+.title-recomend{
+  font-size: 2rem;
+  padding: 6px 0;
+  color: #333;
+}
+
+.see-more-product{
+  margin: 10px 0;
+}
+
+.btn-see-more{
+  background-color: rgba(255,87,34,0.1);
+  border: 1px solid #ee4d2d;
+  outline: none;
+  border-radius: 3px;
+  padding: 4pxpx 0px;
+  height: 100%;
+  margin: 20px 0;
+  font-size: 1.8rem;
+  color: #ee4d2d;
+  cursor: pointer;
+}
+
+.btn-see-more:hover{
+  background-color: rgba(230, 94, 49, 0.05);
+}
+
+
+#rating-selecter {
+  font-size: 1.6rem;
+}
+
+#label-rating-selecter {
+  font-size: 1.6rem;
+}
+
+.plus-img{
+  width: 12px;
+  height:auto;
+}
+
+
+.body-app{
+  background-color: #f5f5f5;
+}
+
+/* thong bao da mua */
+.aleart-success{
+  position: fixed;
+  top: 36%;
+  right: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  width: 320px;
+  height: 160px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border: 2px solid rgb(16, 182, 16);
+  border-radius: 4px;
+  animation: fadeOut linear 1s 2s forwards;
+  opacity: 0.7;
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 0.6;
+  }
+  to {
+      opacity: 0;
+  }
+}
+
+.aleart-success-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  color: rgb(9, 224, 9);
+}
+
+.aleart-success-text{
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.my-body-2-app{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.product-contain-title{
+  font-size: 3.6rem;
+  color: var(--primary-color);
+  padding: 50px 0;
+  line-height: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-contain-body{
+  background-color: var(--white-color);
+}
+
+.contain-body-head{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 3px;
+  height: 55px;
+  font-size: 16px;
+  background: rgb(255, 255, 255);
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  color: rgb(136, 136, 136);
+  padding: 0px 20px;
+}
+
+.head-product-name{
+  color: rgba(0, 0, 0, 0.8);
+  width: 46.2795%;
+}
+
+.head-product-price{
+  width: 15.8802%;
+  text-align: center;
+}
+
+.head-product-number{
+  width: 15.4265%;
+  text-align: center;
+}
+
+.head-product-allprice{
+  width: 10.4356%;
+  text-align: center;
+}
+
+.head-product-delete{
+  width: 12.7042%;
+  text-align: center;
+}
+
+.product-body-main{
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 2px;
+  margin: 22px 20px;
+}
+
+.body-main-product{
+  margin-top: 0px;
+  padding: 16px 0px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.main-product-imgandtext{
+  display: flex;
+  width: 31%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.product-imgandtext-img img{
+  background-position: 50% center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+}
+
+.product-imgandtext-text span{
+  display: block;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.main-product-seemore{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 176px;
+}
+
+.product-seemore-btn{
+  background-color: rgba(255,87,34,0.1);
+  border: 1px solid #ee4d2d;
+  outline: none;
+  border-radius: 3px;
+  padding: 6px 4px;
+  height: 100%;
+  font-size: 1.8rem;
+  color: #ee4d2d;
+  cursor: pointer;
+}
+
+.product-seemore-btn:hover{
+  background-color: rgba(230, 94, 49, 0.05);
+}
+
+.main-product-price{
+  width: 15.8802%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.product-price-old{
+  color: rgba(0, 0, 0, 0.54);
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.main-product-number{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15.4265%;
+  font-size: 1.6rem;
+}
+
+.main-product-number label{
+  margin-right: 6px;
+}
+
+.main-product-number input{
+  width: 50px;
+}
+
+.main-product-allprice{
+  width: 10.4356%;
+  text-align: center;
+  color: rgb(238, 77, 45);
+  font-size: 1.6rem;
+}
+
+.main-product-delete{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 12%;
+  margin-right: 6px;
+}
+
+.product-delete-btn{
+  background-color: rgba(104, 28, 5, 0.1);
+  border: 1px solid #0e0301;
+  outline: none;
+  border-radius: 3px;
+  padding: 4px 4pxpx;
+  height: 100%;
+  font-size: 1.8rem;
+  color: #0f0908;
+  cursor: pointer;
+}
+
+.product-delete-btn:hover{
+  background-color: #dad5d4;
+}
+
+._2aRlry {
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 1px;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.product-buy-payment{
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+.buy-payment-top{
+  background-color: var(--white-color);
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment-top-how{
+  font-size: 2.6rem;
+  color: rgb(34, 34, 34);
+}
+
+.payment-top-when{
+  font-size: 2rem;
+  color: rgb(34, 34, 34);
+}
+
+.buy-payment-main{
+  background: rgb(255, 254, 251);
+  border-top: 1px solid rgb(241, 240, 237);
+  padding-top: 15px;
+  display: flex;
+}
+
+.payment-main-empty-left{
+  width: 72%;
+}
+
+.payment-main-content{
+  font-size: 1.8rem;
+  width: 28%;
+  margin-right: 30px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.main-content-price, .main-content-ship, .main-content-pay{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pay-all-price{
+  color: var(--primary-color);
+  font-size: 3.4rem;
+}
+
+.main-content-buy{
+  padding: 30px 0;
+  display: flex;
+  justify-content: right;
+}
+
+.content-buy-btn{
+  background-color: var(--primary-color);
+  border: none;
+  width: 200px;
+  height: 40px;
+  outline: none;
+  border-radius: 3px;
+  font-size: 1.8rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.content-buy-btn:hover{
+  background-color: #f16b50;
+}
+
+.book-info-hr{
+  width: 100%;
+  height: 8px;
 }
