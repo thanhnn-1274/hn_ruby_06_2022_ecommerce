@@ -67,7 +67,7 @@ en:
         success: "Delete Success!"
         danger: "Delete Erorr!"
       index:
-        stt: "STT"
+        stt: "Code"
         name: "Name"
         price: "Price"
         category: "Category"
@@ -77,6 +77,8 @@ en:
         action: "Action"
         title: "All Book"
         new_book: "New Book"
+        sold: "Sold"
+        search: "Search"
       edit:
         title: "Edit Book"
         button: "Edit"
@@ -108,6 +110,9 @@ en:
         address: "Address"
         action: "Action"
         not_found: "Not Found Order Details"
+        total_order: "Total Order"
+        total_money_order: "Total Money Order"
+        search: "Search"
     orders:
       index:
         title: "All Order"
@@ -125,6 +130,10 @@ en:
         complete: "Complete"
         canceled: "Cancelled"
         danger: "Cancel Failed"
+        price_desc: "Low to high price"
+        price_asc: "Price high to low"
+        latest: "Latest"
+        oldest: "Oldest"
     orders:
       index:
         title: "All Order"
@@ -252,6 +261,9 @@ en:
     comment_form:
       comment_btn: "comment"
       compost_new: "Compost new micropost..."
+      is_sold: "Sold"
+      ha_noi: "Ha Noi"
+      is_love: "Favourite"
   sessions:
     new:
       name: "name"
@@ -317,7 +329,7 @@ en:
   time:
     formats:
       default: ! "%Y-%m-%d"
-      long: ! "%d %b %Y @ %l:%M"
+      long: ! "%d %b %Y @ %l:%M %P"
       short: ! "%b %d"
       custom: ! "%A, %d %b %Y @ %l:%M %P"
   carts:

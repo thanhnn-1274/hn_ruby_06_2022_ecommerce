@@ -27,12 +27,15 @@ class Book < ApplicationRecord
             numericality: {greater_than_or_equal_to: Settings.min_quantity,
                            only_integer: true}
 
+  scope :view_desc, ->{order view: :desc}
+  scope :sort_sold, ->(type){order sold: type}
   scope :asc_name, ->{order name: :asc}
   scope :latest_book, ->{order created_at: :desc}
   scope :sort_price, ->(type){order price: type}
   scope :by_ids, ->(ids){where id: ids}
-  scope :search, (lambda do |key|
-    where "name LIKE ? or description LIKE ?", "%#{key}%", "%#{key}%"
+  scope :search_by_name, (lambda do |key|
+    where "name LIKE ? or description LIKE ? or id LIKE ?",
+          "%#{key}%", "%#{key}%", "%#{key}%"
   end)
 
   delegate :name, to: :category, prefix: :category, allow_nil: true
@@ -40,5 +43,9 @@ class Book < ApplicationRecord
 
   def display_image
     image.variant resize_to_limit: Settings.image_book_admin
+  end
+
+  def update_view
+    increment!(:view, 1)
   end
 end

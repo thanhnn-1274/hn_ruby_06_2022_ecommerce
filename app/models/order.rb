@@ -42,11 +42,18 @@ class Order < ApplicationRecord
 
       ActiveRecord::Base.transaction(requires_new: true) do
         order_details.each do |order_detail|
-          quantity = order_detail.book.quantity - order_detail.quantity
-          order_detail.book.update!(quantity: quantity)
-          raise ActiveRecord::Rollback if quantity.negative?
+          new_quantity = order_detail.book.quantity - order_detail.quantity
+          sold = order_detail.book.sold + order_detail.quantity
+          update_order order_detail, new_quantity, sold
+          raise ActiveRecord::Rollback if new_quantity.negative?
         end
       end
     end
+  end
+
+  private
+
+  def update_order order_detail, new_quantity, sold
+    order_detail.book.update!(quantity: new_quantity, sold: sold)
   end
 end
