@@ -75,14 +75,17 @@
         <% end %>
       </div>
       <div class="header__search">
-        <input type="text" class="header__search-input" placeholder="">
-        <div class="header__search-select">
-          <span><%= t ".search" %></span>
-          <i class="fa fa-angle-down" aria-hidden="true"></i>
-        </div>
-        <button class="header__search-btn">
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
+        <%= form_tag root_path, class: "header__search", method: :GET do %>
+          <%= text_field_tag :search, params[:search], placeholder: t(".placeholder"),
+                  class: "header__search-input" %>
+          <div class="header__search-select">
+            <span><%= t ".search" %></span>
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </div>
+          <%= button_tag :submit, class: "header__search-btn" do %>
+            <i class="fa fa-search" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
       </div>
       <div class="header__cart">
         <div class="header__cart-wrap">

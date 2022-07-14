@@ -140,6 +140,9 @@ vi:
       update:
         success: "Cập nhật trạng thái đơn hàng thành công!"
         danger: "Cập nhật trạng thái thất bại"
+        total_money: "Tổng Đơn Hàng"
+        status: "Trạng Thái"
+        action: "Hành Động"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
@@ -151,7 +154,7 @@ vi:
       store_me: "Cửa hàng của tôi"
       card: "Đơn mua"
       ebook: "Ebook"
-      search: "tim kiem"
+      search: "tim kiem  "
       h4: "Sản phẩm đã thêm"
       signin: "Đăng ký"
       signup: "Đăng nhập"
@@ -159,6 +162,7 @@ vi:
       no_product: "Chưa có sản phẩm"
       have_add: "Sản phẩm đã thêm"
       see_cart: "Xem giỏ hàng"
+      placeholder: "Nhập để tìm kiếm sản phẩm"
     footer:
       h3_take: "Chăm sóc khách hàng"
       h3_into: "Giới thiệu"

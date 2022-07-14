@@ -8,4 +8,24 @@ class BooksController < ApplicationController
     flash[:warning] = t ".not_found"
     redirect_to root_path
   end
+
+  def sort
+    if params[:sort]
+      @pagy, @books = sort_by params[:sort]
+      respond_to :js
+    else
+      redirect_to root_url
+    end
+  end
+
+  private
+
+  def sort_by params
+    case params.to_sym
+    when :latest
+      pagy Book.latest_book, link_extra: 'data-remote="true"'
+    when :asc, :desc
+      pagy Book.sort_price(params.to_sym), link_extra: 'data-remote="true"'
+    end
+  end
 end
