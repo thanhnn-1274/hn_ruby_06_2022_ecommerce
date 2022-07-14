@@ -80,3 +80,31 @@ vi:
       selling: "Bán chạy"
       order_1: "Giá thấp đến cao"
       order_2: "Giá cao đến thấp"
+
+  users:
+    new:
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      confirmation: "Xác nhận mật khẩu"
+      btn_create: "Tạo tài khoản"
+      welcome_to: "Chào mừng bạn đến với Ebook. Đăng ký ngay!"
+      sign_up: "ĐĂNG KÝ"
+      sign_in: "Đăng nhập"
+      go_back: "TRỞ LẠI"
+      policy_accept: "Bằng việc đăng kí, bạn đã đồng ý với Estore về"
+      policy_2: "Điều khoản dịch vụ"
+      policy_3: "Chính sách bảo mật"
+      or_1: "HOẶC"
+      connect_facebook: "Kết nối với FaceBook"
+      connect_google: "Kết nối với Google"
+      have_account: "Bạn đã có tài khoản ?"
+    show:
+      not_found: "Không tìm thấy user"
+    create:
+      welcome_to: "Chào mừng đến với Sample App!"
+      danger: "Tạo thất bại"
+  shared:
+    error_messages:
+      the_form: "Biểu mẫu chứa"
+      error: "lỗi"
