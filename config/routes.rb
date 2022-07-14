@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories
       resources :books
+      resources :users
       get "/home", to: "static_pages#home"
+      root "books#index"
     end
     root "static_pages#home"
     get "/signup", to: "users#new"

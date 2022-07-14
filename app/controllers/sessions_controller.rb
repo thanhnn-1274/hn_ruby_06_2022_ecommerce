@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate params[:session][:password]
       log_in user
-      redirect_to login_path
+      redirect user
     else
       flash.now[:danger] = t ".invalid"
       render :new
@@ -17,5 +17,15 @@ class SessionsController < ApplicationController
     log_out if logged_in?
 
     redirect_to root_path
+  end
+
+  private
+
+  def redirect user
+    if user.admin?
+      redirect_to admin_home_path
+    else
+      redirect_to root_path
+    end
   end
 end

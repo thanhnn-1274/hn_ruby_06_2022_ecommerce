@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+  enum role: {admin: 0, customer: 1}
+  USER_ATTRS = %w(name email password password_confirmation).freeze
+  GET_ALL = %w(id name email phone_num address).freeze
+
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
-  USER_ATTRS = %w(name email password password_confirmation).freeze
   before_save :downcase_email
 
   validates :email, presence: true,
@@ -16,6 +19,9 @@ class User < ApplicationRecord
     if: :password
 
   has_secure_password
+
+  scope :asc_name, ->{order name: :asc}
+  scope :get_all, ->{select(GET_ALL).where(role: :customer)}
 
   private
 

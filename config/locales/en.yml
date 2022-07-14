@@ -1,5 +1,6 @@
 en:
   page_title: "Book Store"
+  admin_danger: "You do not have permission to access this page!!"
   admin:
     layouts:
       header:
@@ -53,6 +54,12 @@ en:
       create:
         success: "Success"
         danger: "Danger"
+      update:
+        success: "Update Success!"
+        danger: "Update Erorr!"
+      destroy:
+        success: "Delete Success!"
+        danger: "Delete Erorr!"
       index:
         stt: "STT"
         name: "Name"
@@ -64,6 +71,9 @@ en:
         action: "Action"
         title: "All Book"
         new_book: "New Book"
+      edit:
+        title: "Edit Book"
+        button: "Edit"
       form:
         input_name_label: "Name"
         input_name: "Enter Name"
@@ -82,6 +92,14 @@ en:
         input_quantity_name: "Enter Quantity"
         input_page_label: "Page Number"
         input_page_name: "Enter Page Number"
+    users:
+      index:
+        title: "All User"
+        stt: "STT"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        action: "Action"
   layouts:
     header:
       li_store: "In the row on app"
@@ -144,7 +162,6 @@ en:
     error_messages:
       the_form: "The form contains"
       error: "error"
-
   sessions:
     new:
       name: "name"
