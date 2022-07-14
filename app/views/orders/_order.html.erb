@@ -6,9 +6,9 @@
   <td><%= number_to_currency(order.total_money) %></td>
   <%= status_order order.status.to_sym %>
   <td>
-    <%= link_to "#", remote: true do %>
-        <label class="btn btn-warning btn-lg">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
+    <%= link_to order_path(order.id), remote: true do %>
+        <label class="btn btn-warning">
+        <i class="fa fa-info-circle fs-3" aria-hidden="true"></i>
       </label>
     <% end %>
   </td>

@@ -16,4 +16,5 @@ class Order < ApplicationRecord
 
   scope :status_order, ->(type){where status: type}
   scope :latest_order, ->{order created_at: :desc}
+  scope :status_order, ->(type){where status: type}
 end

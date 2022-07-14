@@ -1,0 +1,66 @@
+<div class="modal fade fs-3" id="order-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fs-3">
+          <%= t ".order_detail" %>
+        </h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-4">
+            <%= status_order_details order.status %>
+          </div>
+           <div class="col-4 text-danger">
+            <%= "#{t ".order_id"}: #{order.id}" %>
+          </div>
+          <div class="col-4">
+            <% if order.pending? %>
+              <button type="button" class="btn btn-danger float-end fs-3" data-bs-toggle="collapse"
+                      data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <%= t ".btn" %>
+              </button>
+            <% end %>
+          </div>
+        </div>
+        <hr>
+        <div class="table-responsive table-striped row">
+          <table class=" table table-sm" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr class="table-info">
+                <th><%= t ".stt" %></th>
+                <th><%= t ".book_name" %></th>
+                <th><%= t ".price" %></th>
+                <th><%= t ".quantity" %></th>
+                <th><%= t ".total_money" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render partial: "order_details", collection: order_details,
+                                            as: :od %>
+            </tbody>
+          </table>
+          <h2> <%= t(".total") %><%= number_to_currency(total_money_order order_details) %></h2>
+          <hr>
+          <div class="collapse" id="collapseExample">
+            <%= form_for @order do |f| %>
+              <%= render "shared/error_messages", object: f.object %>
+              <div class="mb-2">
+                <%= f.label :reason, t(".reason"), class: "form-label text-danger" %>
+                <%= f.text_area :reason, rows: 5, class: "form-control", required: true %>
+              </div>
+              <div class="mb-2">
+                <%= f.submit t(".confirm"), class: "btn btn-danger fs-3" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

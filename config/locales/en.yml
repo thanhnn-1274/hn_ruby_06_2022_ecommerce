@@ -101,6 +101,7 @@ en:
         phone: "Phone"
         address: "Address"
         action: "Action"
+        not_found: "Not Found Order Details"
     orders:
       index:
         title: "All Order"
@@ -146,7 +147,7 @@ en:
         total_money: "Total Money"
       update:
         success: "Success!"
-        danger: "Update Fail!"
+        danger: "Update Erorr!"
   layouts:
     header:
       li_store: "In the row on app"
@@ -182,6 +183,7 @@ en:
       selling: "Selling"
       order_1: "Low to high price"
       order_2: "Price high to low"
+      not_found: "Not Found Order"
 
   users:
     new:
@@ -347,13 +349,35 @@ en:
       stt: "STT"
       code: "Orders Code"
       created_at: "Created At"
-      updated_at: "updated_at"
+      updated_at: "Updated At"
       total_money: "Total Money"
       status: "Status"
       action: "Action"
+      danger: "Cancel Failed"
+      not_found: "Not Found Order Details"
     order:
       pending: "Pending"
       accepted: "Accepted"
       rejected: "Rejected"
       canceled: "Canceled"
       complete: "Complete"
+    show:
+      btn: "Cancel Order"
+      order_detail: "Order Detail"
+      reason: "Reason: "
+      confirm: "Confirm"
+      order_id: "Order Code"
+      stt: "STT"
+      book_name: "Book Name"
+      price: "Price"
+      quantity: "Quantity"
+      total_money: "Total Money"
+      total: "Total: "
+      pending: "Pending"
+      accepted: "Accepted"
+      rejected: "Rejected"
+      canceled: "Canceled"
+      complete: "Complete"
+    update:
+      success: "Success!"
+      danger: "Update Fail!"

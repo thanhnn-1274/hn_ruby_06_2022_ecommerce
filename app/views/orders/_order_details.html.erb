@@ -1,0 +1,17 @@
+<tr>
+  <td>
+    <%= od_counter + 1 %>
+  </td>
+  <td>
+    <%= od.book.name %>
+  </td>
+  <td>
+    <%= number_to_currency(od.price) %>
+  </td>
+  <td>
+    <%= od.quantity %>
+  </td>
+  <td>
+    <%= number_to_currency(od.total_money) %>
+  </td>
+</tr>
