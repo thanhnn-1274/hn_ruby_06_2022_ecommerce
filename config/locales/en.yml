@@ -108,7 +108,10 @@ en:
     error_messages:
       the_form: "The form contains"
       error: "error"
-
+    books:
+      is_sold: "Is sold 88"
+      ha_noi: "Hà Nội"
+      is_love: "Is love"
   sessions:
     new:
       name: "name"
