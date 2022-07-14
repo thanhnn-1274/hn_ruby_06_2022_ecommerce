@@ -56,3 +56,22 @@ end
                created_at: (rand*30).days.ago
   )
 end
+
+10.times do |n|
+  name = Faker::Name.unique.name
+  phone_num = Faker::PhoneNumber.unique.phone_number
+  address = Faker::Address.full_address
+  total_money = Faker::Number.between(from: 50, to: 1000)
+  status = Faker::Number.between(from: 0, to: 4)
+  note = Faker::Lorem.paragraph
+
+  Order.create!(
+    name: name,
+    phone_num: phone_num,
+    address: address,
+    total_money: total_money,
+    status: status,
+    note: note,
+    user_id: User.all.pluck(:id).sample
+  )
+end

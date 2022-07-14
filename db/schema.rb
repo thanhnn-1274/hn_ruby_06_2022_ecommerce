@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_163433) do
     t.decimal "rate_avg", precision: 2, scale: 1
     t.text "description"
     t.bigint "category_id"
-    t.bigint "author_id", null: false
+    t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_id"], name: "index_books_on_author_id"
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(version: 2022_07_13_163433) do
   create_table "comments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "content"
     t.integer "rate"
-    t.bigint "user_id", null: false
-    t.bigint "book_id", null: false
+    t.bigint "user_id"
+    t.bigint "book_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_comments_on_book_id"
@@ -86,8 +86,8 @@ ActiveRecord::Schema.define(version: 2022_07_13_163433) do
     t.decimal "price", precision: 10, scale: 2
     t.integer "quantity"
     t.decimal "total_money", precision: 10, scale: 2, default: "0.0"
-    t.bigint "book_id", null: false
-    t.bigint "order_id", null: false
+    t.bigint "book_id"
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["book_id"], name: "index_order_details_on_book_id"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_163433) do
     t.integer "status", default: 0
     t.text "reason"
     t.decimal "total_money", precision: 10, scale: 2, default: "0.0"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"
