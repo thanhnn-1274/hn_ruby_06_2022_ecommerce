@@ -108,3 +108,23 @@ en:
     error_messages:
       the_form: "The form contains"
       error: "error"
+
+  sessions:
+    new:
+      name: "name"
+      email: "Email"
+      password: "password"
+      confirmation: "confirmation"
+      btn_create: "Create account"
+      welcome_to: "Welcome to Ebooks. Register now!"
+      sign_up: "REGISTER"
+      sign_in: "Log in"
+      go_back: "GO BACK"
+      policy_accept: "By registering, you agree to Estore about"
+      policy_2: "Terms of Service"
+      policy_3: "Privacy Policy"
+      or_1: "OR"
+      connect_facebook: "Connect with Facebook"
+      connect_google: "Connect with Google"
+      have_account: "Do you already have an account ?"
+      new_member: "Are you new member ?"
