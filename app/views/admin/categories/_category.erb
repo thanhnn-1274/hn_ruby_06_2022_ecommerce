@@ -2,12 +2,12 @@
   <td><%= category_counter + 1 %></td>
   <td><%= category.name %></td>
   <td>
-    <%= link_to "#" do %>
+    <%= link_to edit_admin_category_path(category) do %>
       <label class="btn btn-warning">
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </label>
     <% end %>
-    <%= link_to "#",method: :delete,
+    <%= link_to admin_category_path(category),method: :delete,
                                       data: {confirm: "Delete"},
                                       remote: true,
                                       class: "book_delete" do %>
