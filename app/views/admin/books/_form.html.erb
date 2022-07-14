@@ -34,11 +34,9 @@
   </div>
   <div class="col-md-6 required">
     <%= f.label :price, t(".input_price_label") %>
-    <%= f.number_field :price,
-        {class: "form-control",
-         placeholder: t(".input_price"),
-         min: Settings.min_book_price_length,
-         max: Settings.max_book_price_length} %>
+    <%= f.text_field :price,
+        {class: "form-control", placeholder: t(".input_price")}
+    %>
   </div>
   <div class="col-md-12 required">
     <%= f.label :description, t(".description") %>
