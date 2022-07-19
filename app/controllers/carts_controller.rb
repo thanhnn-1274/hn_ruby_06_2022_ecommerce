@@ -2,6 +2,7 @@ class CartsController < ApplicationController
   before_action :logged_in_user, only: %i(index create)
   before_action :init_cart, only: %i(index create)
   before_action :load_product, only: %i(create)
+  before_action :load_products, only: :index
 
   def index; end
 

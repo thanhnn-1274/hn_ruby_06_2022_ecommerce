@@ -258,3 +258,17 @@ en:
       danger_book: "Book not found"
     index:
       my_cart: "My cart"
+      product: "Product"
+      price: "Price"
+      number: "Quantily"
+      money: "Amount"
+      manipulation: "manipulation"
+      pay_how: "How to pay?"
+      pay_when: "Pay when recieve"
+      total_pay: "Total pay"
+      buy_now: "By now"
+    product:
+      product_id: "product_id "
+      product_quantily: "quantily: "
+      delete: "delete"
+      edit: "update"

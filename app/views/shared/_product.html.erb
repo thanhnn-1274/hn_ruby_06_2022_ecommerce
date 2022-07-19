@@ -1,0 +1,12 @@
+<li class="cart__item">
+  <img src="<%= product.thumbnail %>" alt="" class="cart__list-img">
+  <div class="card__item-head">
+    <h5><%= product.name %>
+    </h5>
+    <div class="cart__item-allprice">
+      <span class="cart__item-price"><%= product.price %></span>
+      <span class="cart__item-multiply">x</span>
+      <span class="cart__item-quantity"><%=init_cart["#{product.id}"] %></span>
+    </div>
+  </div>
+</li>

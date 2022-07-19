@@ -135,6 +135,9 @@ vi:
       signin: "Đăng ký"
       signup: "Đăng nhập"
       logout: "Đăng xuất"
+      no_product: "Chưa có sản phẩm"
+      have_add: "Sản phẩm đã thêm"
+      see_cart: "Xem giỏ hàng"
     footer:
       h3_take: "Chăm sóc khách hàng"
       h3_into: "Giới thiệu"
@@ -263,3 +266,17 @@ vi:
       danger_book: "Không tìm thấy sách"
     index:
       my_cart: "Giỏ Hàng Của Tôi"
+      product: "Sản phẩm"
+      price: "Đơn giá"
+      number: "Số lượng"
+      money: "Số tiền"
+      manipulation: "Thao tác"
+      pay_how: "Phương thức thanh toán"
+      pay_when: "Thanh toán khi nhận hàng"
+      total_pay: "Tổng thanh toán"
+      buy_now: "Mua ngay"
+    product:
+      product_id: "Mã: "
+      product_quantily: "Số lượng: "
+      delete: "Xóa"
+      edit: "Sửa"

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include CartsHelper
 
   before_action :set_locale
+  before_action :init_cart, :load_products
 
   private
   def set_locale
@@ -21,5 +22,10 @@ class ApplicationController < ActionController::Base
     store_location
     flash[:danger] = t("users.before_action.please_login")
     redirect_to login_path
+  end
+
+  def load_products
+    clean_carts
+    @products = Book.by_ids @carts.keys
   end
 end

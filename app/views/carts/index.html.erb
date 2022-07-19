@@ -4,6 +4,36 @@
       <div class="product-contain-title">
         <%= t ".my_cart" %>
       </div>
+      <div class="product-contain-body">
+        <div class="contain-body-head">
+          <div class="head-product-name"><%= t ".product" %></div>
+          <div class="head-product-price"><%= t ".price" %></div>
+          <div class="head-product-number"><%= t ".number" %></div>
+          <div class="head-product-allprice"><%= t ".money" %></div>
+          <div class="head-product-delete"><%= t ".manipulation" %></div>
+        </div>
+        <div class="product-body-main", id="cart_products">
+          <%= render partial: "carts/product", collection: @products %>
+          <div class="product-buy-payment">
+            <div class="buy-payment-top">
+              <div class="payment-top-how"><%= t ".pay_how" %></div>
+              <div class="payment-top-when"><%= t ".pay_when" %></div>
+            </div>
+            <div class="buy-payment-main">
+              <div class="payment-main-empty-left"></div>
+              <div class="payment-main-content">
+                <div class="main-content-pay">
+                  <div><%= t ".total_pay" %></div>
+                  <div class="pay-all-price"><%= number_to_currency total_price %></div>
+                </div>
+                <div class="main-content-buy">
+                  <button class="content-buy-btn"><%= t ".buy_now" %></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
