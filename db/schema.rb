@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_163433) do
     t.integer "quantity"
     t.decimal "rate_avg", precision: 2, scale: 1
     t.text "description"
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.bigint "author_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

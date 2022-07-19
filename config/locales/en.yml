@@ -144,10 +144,7 @@ en:
     error_messages:
       the_form: "The form contains"
       error: "error"
-    books:
-      is_sold: "Is sold 88"
-      ha_noi: "Hà Nội"
-      is_love: "Is love"
+
   sessions:
     new:
       name: "name"
@@ -173,3 +170,11 @@ en:
     create:
       success: "Success!"
       danger: "Erorr!"
+  activerecord:
+    errors:
+      models:
+        micropost:
+          attributes:
+            image:
+              too_big: "should be less than 5MB"
+              wrong_format: "must be a valid image format"

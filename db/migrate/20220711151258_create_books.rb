@@ -10,8 +10,8 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.decimal :rate_avg, precision: 2, scale: 1
       t.text :description
 
-      t.references :category, null: false, foreign_key: true
-      t.references :author, null: false, foreign_key: true
+      t.references :category, null: true, foreign_key: true
+      t.references :author, null: true, foreign_key: true
 
       t.timestamps
     end

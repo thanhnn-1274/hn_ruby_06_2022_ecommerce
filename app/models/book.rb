@@ -6,7 +6,7 @@ class Book < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
   belongs_to :author
-  belongs_to :category
+  belongs_to :category, optional: true
 
   validates :name, presence: true,
             length: {maximum: Settings.max_name_book_length}

@@ -51,8 +51,14 @@ vi:
         title: "Thêm mới sách"
         button: "Thêm"
       create:
-        success: "Success"
-        danger: "Danger"
+        success: "Tạo mới thành công"
+        danger: "Tạo mới thất bại"
+      update:
+        success: "Cập nhật thành công"
+        danger: "Cập nhật thất bại"
+      destroy:
+        success: "Xóa thành công"
+        danger: "Xóa thất bại"
       index:
         stt: "STT"
         name: "Tên sách"
@@ -64,6 +70,9 @@ vi:
         action: "Hành Động"
         title: "Tất cả sách"
         new_book: "Tạo Sách Mới"
+      edit:
+        title: "Chỉnh Sửa Sách"
+        button: "Chỉnh Sửa"
       form:
         input_name_label: "Tên Sách"
         input_name: "Enter Name"
