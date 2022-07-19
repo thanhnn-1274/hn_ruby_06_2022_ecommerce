@@ -4,7 +4,7 @@
     <h5><%= product.name %>
     </h5>
     <div class="cart__item-allprice">
-      <span class="cart__item-price"><%= product.price %></span>
+      <span class="cart__item-price"><%= number_to_currency product.price %></span>
       <span class="cart__item-multiply">x</span>
       <span class="cart__item-quantity"><%=init_cart["#{product.id}"] %></span>
     </div>

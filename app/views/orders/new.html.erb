@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row-checkout row">
+    <div class="col-60">
+      <div class="container-checkout">
+        <div class="row">
+          <div class="text-center order_new_form">
+            <h1><%= t ".payment" %></h1>
+          </div>
+          <%= form_for @order do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+            <%= f.label :name, t(".name") %>
+            <%= f.text_field :name, value: current_user.name, class: "form-control" %>
+            <%= f.label :address, t(".address") %>
+            <%= f.text_field :address, value: current_user.address, class: "form-control" %>
+            <%= f.label :phone_num, t(".phone_num") %>
+            <%= f.text_field :phone_num, value: current_user.phone_num, class: "form-control" %>
+            <%= f.hidden_field :total_money, value: total_price, class: "form-control" %>
+            <%= f.submit t(".submit_pay"), class: "checkout_btn_submit" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-40">
+      <div class="container-checkout">
+        <h4 class="cart-h4"><%= t ".cart" %> <span class="price"><i class="fa fa-cart-plus"></i> <b><%= count_carts %></b></span></h4>
+        <%= render partial: "shared/product", collection: @products %>
+        <hr>
+        <p class="checkout_total_text"><%= t ".total" %> <span class="price"><b><%= number_to_currency total_price %></b></span></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -323,3 +323,17 @@ en:
     destroy:
       success_delete: "success delete"
       fail_delete: "fail delete"
+  orders:
+    new:
+      payment: "payment"
+      submit_pay: "checkout"
+      cart: "Cart"
+      total: "Total"
+      danger_quantity: "Product %{prod_id} is out of stock, please update quantity"
+      name: "Name"
+      address: "Address"
+      phone_num: "Phone number"
+    create:
+      success_checkout: "success checkout"
+      danger_checkout: "fial checkout"
+      order_fail: "Fail to create order"

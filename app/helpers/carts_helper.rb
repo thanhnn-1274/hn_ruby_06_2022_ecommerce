@@ -26,10 +26,26 @@ module CartsHelper
     end
   end
 
+  def clear_carts
+    user_id = session[:user_id]
+    session["cart_#{user_id}"] = {}
+  end
+
   def init_cart
     user_id = session[:user_id]
     session["cart_#{user_id}"] ||= {}
     @carts = session["cart_#{user_id}"] ||= {}
     clean_carts
+  end
+
+  def check_product_quantity
+    @products.each do |item|
+      product_id = item.id.to_i
+      quantity = @carts[product_id.to_s]
+      if item.quantity < quantity
+        flash[:danger] = t(".danger_quantity", prod_id: product_id)
+        redirect_to carts_path
+      end
+    end
   end
 end
