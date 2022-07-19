@@ -158,6 +158,8 @@ vi:
     create:
       welcome_to: "Chào mừng đến với Sample App!"
       danger: "Tạo thất bại"
+    before_action:
+      please_login: "Vui lòng đăng nhập"
   shared:
     error_messages:
       the_form: "Biểu mẫu chứa"
@@ -227,3 +229,12 @@ vi:
           separator: "."
           precision: 2
           format: "%n%u"
+  carts:
+    create:
+      danger_quantily: "Vui lòng nhập đúng số lượng sản phẩm"
+      have_book: "Sách đã có trong giỏ hàng"
+      success_add: "Thêm vào giỏ hàng thành công"
+    load_product:
+      danger_book: "Không tìm thấy sách"
+    index:
+      my_cart: "Giỏ Hàng Của Tôi"

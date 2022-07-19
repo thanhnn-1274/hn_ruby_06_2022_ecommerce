@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :books, only: %i(show)
+    resources :carts, only: %i(create index)
   end
 end
