@@ -177,6 +177,8 @@ vi:
       connect_google: "Kết nối với Google"
       have_account: "Bạn đã có tài khoản ?"
       new_member: "Bạn mới biết đến Estore ?"
+    create:
+      invalid: "Tên đăng nhập hoặc mật khẩu không đúng"
   books:
     invalid_format: "must be a valid image format"
     invalid_size: "should be less than 5MB"
@@ -191,3 +193,29 @@ vi:
             image:
               too_big: "không quá 5MB"
               wrong_format: "Phải là một định dạng hình ảnh hợp lệ"
+
+  books:
+    show:
+      ebook_book: "Ebook > Sách > Thông tin sản phẩm"
+      book_id: "Mã sách: "
+      book_quantity: "Số lượng: "
+      book_publisher: "Nhà xuất bản: "
+      book_page: "Số trang: "
+      return_book: "Chính sách đổi trả"
+      return_time: "Đổi trả trong 30 ngày"
+      book_detail: "Thông tin sản phẩm: "
+      book_content: "Nội dung:"
+      not_found: "Không tìm thấy book"
+    add_cart_form:
+      book_quantity: "Số lượng: "
+      add_to_cart: "Thêm Vào Giỏ Hàng"
+      buy_now: "Mua Ngay"
+
+  number:
+     currency:
+        format:
+          unit: "VND"
+          delimiter: ","
+          separator: "."
+          precision: 2
+          format: "%n%u"
