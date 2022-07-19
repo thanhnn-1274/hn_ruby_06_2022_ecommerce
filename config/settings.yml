@@ -8,3 +8,13 @@ user:
     name_max_length: 20
   password_validates:
     password_min_length: 6
+max_name_book_length: 100
+min_book_price_length: 0
+max_book_price_length: 1000000
+max_description_length: 60000
+image_format: ["image/jpeg", "image/gif", "image/png"]
+image_size: 5
+
+min_page: 0
+min_quantity: 0
+image_book_admin: [200, 250]

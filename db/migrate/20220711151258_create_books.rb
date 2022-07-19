@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :name, null: false
       t.decimal :price, precision: 10, scale: 2
       t.integer :page_num
-      t.string :image
+      t.string :thumbnail
       t.string :publisher_name
       t.integer :quantity
       t.decimal :rate_avg, precision: 2, scale: 1
