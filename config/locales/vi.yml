@@ -1,5 +1,6 @@
 vi:
   page_title: "Cửa Hàng Sách"
+  admin_danger: "Bạn không có quyền truy cập trang này"
   admin:
     layouts:
       header:
@@ -91,6 +92,14 @@ vi:
         input_quantity_name: "Enter Quantity"
         input_page_label: "Số trang"
         input_page_name: "Enter Page Number"
+    users:
+      index:
+        title: "Tất Cả Người Dùng"
+        stt: "STT"
+        email: "Email"
+        phone: "Số Điện Thoại"
+        address: "Địa Chỉ"
+        action: "Hành Động"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
@@ -157,7 +166,6 @@ vi:
       is_sold: "Đã bán 88"
       ha_noi: "Hà Nội"
       is_love: "Yêu thích"
-
   sessions:
     new:
       name: "Tên"

@@ -18,7 +18,7 @@
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
-    <%= link_to "#", class: "nav-link collapsed" do %>
+    <%= link_to admin_users_path, class: "nav-link collapsed" do %>
       <i class="fa fa-user"></i>
       <span><%= t ".users" %></span>
     <% end %>
@@ -32,7 +32,7 @@
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
-    <%= link_to "#", method: :delete, class: "nav-link collapsed" do %>
+    <%= link_to logout_path, method: :delete, class: "nav-link collapsed" do %>
       <i class="fa fa-sign-out"></i>
       <span><%= t ".logout" %></span>
     <% end %>

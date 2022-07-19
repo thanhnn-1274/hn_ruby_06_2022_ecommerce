@@ -9,6 +9,34 @@ end
   Author.create!(name: name, description: description)
 end
 
+User.create!(
+  name: "Admin User",
+  email: "admin@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  role: 0,
+  phone_num: "0589122355"
+)
+
+
+50.times do |n|
+  name = Faker::Name.unique.name
+  email = "test-#{n+1}@gmail.com"
+  phone_num = Faker::PhoneNumber.unique.phone_number
+  address = Faker::Address.full_address
+  password = "password"
+
+  User.create!(
+    name: name,
+    email: email,
+    password: password,
+    password_confirmation: password,
+    address: address,
+    phone_num: phone_num
+  )
+end
+
+
 50.times do
   name = Faker::Book.unique.title
   description = Faker::Lorem.sentence(word_count: 50)
