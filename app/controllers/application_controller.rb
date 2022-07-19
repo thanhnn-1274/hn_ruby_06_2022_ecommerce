@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   protect_from_forgery with: :exception
   include SessionsHelper
+  include CartsHelper
 
   before_action :set_locale
 
@@ -18,7 +19,7 @@ class ApplicationController < ActionController::Base
     return if logged_in?
 
     store_location
-    flash[:danger] = t(".danger")
+    flash[:danger] = t("users.before_action.please_login")
     redirect_to login_path
   end
 end

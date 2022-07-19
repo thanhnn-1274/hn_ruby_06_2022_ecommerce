@@ -158,6 +158,8 @@ en:
     create:
       welcome_to: "Welcome to the Sample App!"
       danger: "Create failure"
+    before_action:
+      please_login: "Please login"
   shared:
     error_messages:
       the_form: "The form contains"
@@ -223,3 +225,12 @@ en:
           separator: "."
           precision: 2
           format: "%n%u"
+  carts:
+    create:
+      danger_quantily: "Please enter right quantily"
+      have_book: "Book already have in cart"
+      success_add: "Add product success"
+    load_product:
+      danger_book: "Book not found"
+    index:
+      my_cart: "My cart"

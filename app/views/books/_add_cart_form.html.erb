@@ -1,18 +1,19 @@
-<div class="product-view-quantity-box">
-  <label for="qty"><%= t ".book_quantity" %></label>
-  <div class="product-view-quantity-box-block">
-    <a class="btn-subtract-qty">
-      <%= image_tag("ico_minus2x.png", class: "plus-img") %>
-    </a>
-    <input type="text" name="qty" id="qty" max="" minvalue="1" text-align="center" value="1" class="input-text qty">
-    <a class="btn-add-qty">
-      <%= image_tag("ico_plus2x.png", class: "plus-img") %>
-    </a>
+<%= form_with url: carts_path(id: @book.id), method: :post do |f| %>
+  <div class="product-view-quantity-box">
+    <label for="qty"><%= t ".book_quantity" %></label>
+    <div class="product-view-quantity-box-block">
+      <a class="btn-subtract-qty">
+        <%= image_tag("ico_minus2x.png", class: "plus-img") %>
+      </a>
+      <%= f.number_field :quantily, value: 1, max: @book.quantity, min: Settings.carts.min_quantily, class: "form-control input-text qty", id: "qty" %>
+      <a class="btn-add-qty">
+        <%= image_tag("ico_plus2x.png", class: "plus-img") %>
+      </a>
+    </div>
   </div>
-</div>
-<div class="product_view_add_box">
-  <button class="btn-cart-to-cart">
-    <i class="fa fa-cart-plus" aria-hidden="true"></i>
-    <%= t ".add_to_cart" %></button>
-  <button class="btn-buy-now"><%= t ".buy_now" %></button>
-</div>
+  <div class="product_view_add_box">
+    <button class="btn-cart-to-cart">
+      <i class="fa fa-cart-plus" aria-hidden="true"></i>
+      <%= t ".add_to_cart" %></button>
+  </div>
+<% end %>
