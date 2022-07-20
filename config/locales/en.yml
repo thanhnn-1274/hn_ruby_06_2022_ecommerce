@@ -207,6 +207,19 @@ en:
       danger: "Create failure"
     before_action:
       please_login: "Please login"
+      not_correct: "User not correct"
+    update:
+      update_success: "Update success"
+      update_fail: "Update fail"
+    edit:
+      edit_user: "Edit user"
+      submit_edit: "Edit"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      confirmation: "Password Confirmation"
+      phone_num: "phone num"
+      address: "address"
   shared:
     error_messages:
       the_form: "The form contains"

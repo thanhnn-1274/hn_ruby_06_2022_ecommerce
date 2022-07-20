@@ -1,0 +1,29 @@
+<div class="edit-div-form">
+  <div class="text-center">
+    <h1><%= t ".edit_user" %></h1>
+  </div>
+  <%= form_for @user, class: "edit-form", html: {multipart: true } do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="col-md-4">
+      <div id="box-avatar-edit">
+        <%= avatar_image(@user.avatar, "img-thumbnail") %>
+      </div>
+      <%= f.file_field :avatar, accept: Settings.user.image.image_accept, id: "input-avatar" %>
+    </div>
+    <div class="col-md-8">
+      <%= f.label :name, t(".name") %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= f.label :email, t(".email") %>
+      <%= f.email_field :email, class: "form-control" %>
+      <%= f.label :password, t(".password") %>
+      <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :password_confirmation, t(".confirmation") %>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%= f.label :phone_num, t(".phone_num") %>
+      <%= f.text_field :phone_num, class: "form-control" %>
+      <%= f.label :address, t(".address") %>
+      <%= f.text_field :address, class: "form-control" %>
+      <%= f.submit t(".submit_edit"), class: "signup-form-signup" %>
+    </div>
+  <% end %>
+</div>
