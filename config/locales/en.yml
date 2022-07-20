@@ -272,3 +272,11 @@ en:
       product_quantily: "quantily: "
       delete: "delete"
       edit: "update"
+      confirm_delete: "Are you sure to delete"
+    update:
+      success_update: "Success update"
+      danger_quantily: "danger quantily"
+      fail_update: "fail update"
+    destroy:
+      success_delete: "success delete"
+      fail_delete: "fail delete"

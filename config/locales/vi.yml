@@ -280,3 +280,11 @@ vi:
       product_quantily: "Số lượng: "
       delete: "Xóa"
       edit: "Sửa"
+      confirm_delete: "Bạn có chắc muốn xóa"
+    update:
+      success_update: "Cập nhật thành công"
+      danger_quantily: "Nhập số lượng không đúng"
+      fail_update: "Cập nhật thất bại"
+    destroy:
+      success_delete: "Xóa thành công"
+      fail_delete: "Xóa thất bại"
