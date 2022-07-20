@@ -29,7 +29,7 @@ class Book < ApplicationRecord
 
   scope :asc_name, ->{order name: :asc}
   scope :latest_book, ->{order(created_at: :desc)}
-
+  scope :by_ids, ->(ids){where id: ids}
   delegate :name, to: :category, prefix: :category, allow_nil: true
   delegate :name, to: :author, prefix: :author, allow_nil: true
 

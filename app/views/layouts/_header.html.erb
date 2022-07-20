@@ -3,7 +3,7 @@
     <nav class="header__navbar">
       <ul class="header__navbar-list">
         <li class="header__navbar-item">
-        <%= t ".li_store" %>
+          <%= t ".li_store" %>
         </li>
         <li class="header__navbar-item header__navbar-item-connect">
           <%= t ".li_connect" %>
@@ -33,55 +33,46 @@
             <%= t(".a_help") %>
           </a>
         </li>
-      <% if logged_in? %>
-        <li class="header__navbar-item header__navbar-user">
-          <img src="#" alt="" class="header__navbar-userimg">
-          <span class="header__navbar-userspan">
-            <%= @current_user.name %>
-          </span>
-          <ul class="navbar__user-menu">
-            <li>
-              <a href="/users/<%= current_user.id %>">
-                <%= t ".account_me" %>
-              </a>
-            </li>
-            <li>
-              <a href="/personalshop/">
-                <%= t ".store_me" %>
-              </a>
-            </li>
-            <li>
-              <a href="/cart/">
-                <%= t ".card" %>
-              </a>
-            </li>
-            <li>
-              <%= link_to t(".logout"), logout_path, method: :delete %>
-            </li>
-          </ul>
-        </li>
+        <% if logged_in? %>
+          <li class="header__navbar-item header__navbar-user">
+            <img src="#" alt="" class="header__navbar-userimg">
+            <span class="header__navbar-userspan">
+              <%= @current_user.name %>
+            </span>
+            <ul class="navbar__user-menu">
+              <li>
+                <%= link_to t(".account_me"), "#" %>
+              </li>
+              <li>
+                <%= link_to t(".card"), "#" %>
+              </li>
+              <li>
+                <%= link_to t(".logout"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
         <% else %>
-        <a href="<%= signup_path %>" class="register_link">
-          <li class="header__navbar-item header__navbar-item-register">
-            <%= t ".signin" %>
-          </li>
-        </a>
-        <a href="<%= login_path %>" class="login_link">
-          <li class="header__navbar-item header__navbar-item-register">
-            <%= t ".signup" %>
-          </li>
-        </a>
+          <%= link_to signup_path, class: "register_link" do %>
+            <li class="header__navbar-item header__navbar-item-register">
+              <%= t ".signin" %>
+            </li>
+          <% end %>
+          <%= link_to login_path, class: "login_link" do %>
+            <li class="header__navbar-item header__navbar-item-register">
+              <%= t ".signup" %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </nav>
     <div class="header-with-search">
       <div class="header__logo">
-        <a href="<%= root_path %>">
+        <%= link_to root_path do %>
           <i class="fa fa-graduation-cap" aria-hidden="true"></i>
           <span class="logo-text">
             <%= t ".ebook" %>
           </span>
-        </a>
+        <% end %>
       </div>
       <div class="header__search">
         <input type="text" class="header__search-input" placeholder="">
@@ -96,12 +87,24 @@
       <div class="header__cart">
         <div class="header__cart-wrap">
           <i class="header__cart-icon fa fa-shopping-cart"></i>
-          <span class="header__cart-number">0</span>
+          <span class="header__cart-number"><%= count_carts %></span>
           <div class="header__cart-list no-cart">
-            <h4><%= t ".h4" %></h4>
-            <ul class="cart__list-item">
-            </div>
+            <% if count_carts == 0 %>
+              <%= image_tag("no-cart.png", class: "no__cart-img") %>
+              <p><%= t ".no_product" %></p>
+            <% else %>
+              <h4><%= t ".have_add" %></h4>
+              <ul class="cart__list-item">
+                <%= render partial: "shared/product", collection: @products %>
+              </ul>
+              <div class="cart__foot">
+                <%= link_to carts_path do %>
+                  <button class="cart__item-btn"><%= t ".see_cart" %></button>
+                <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </header>

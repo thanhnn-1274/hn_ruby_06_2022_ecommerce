@@ -1,0 +1,33 @@
+<div class="body-main-product">
+  <div class="main-product-imgandtext">
+    <div class="product-imgandtext-img">
+      <img src="<%= product.thumbnail %>" alt="">
+    </div>
+    <div class="product-imgandtext-text">
+      <span><%= product.name%></span>
+      <span><%= t ".product_id"%><%= product.id%></span>
+    </div>
+  </div>
+  <div class="main-product-seemore"></div>
+  <div class="main-product-price">
+    <div class="product-price-current"><%= number_to_currency product.price %></div>
+  </div>
+  <div class="main-product-number">
+    <%= form_with url: cart_path(id: product.id), method: :put, remote: true do |f| %>
+      <%= f.number_field :quantily, value: init_cart["#{product.id}"],
+        max: product.quantity, min: Settings.carts.min_quantily, class: "form-control" %>
+    </div>
+    <div class="main-product-allprice">
+      <span><%= number_to_currency total_price_book(product.id) %></span>
+    </div>
+    <div class="main-product-delete">
+      <%= link_to cart_path(id: product.id), method: :delete,
+        data: {confirm: t(".confirm_delete")} do %>
+        <button class="product-delete-btn"><%= t ".delete"%></button>
+      <% end %>
+      <%= f.button type: :submit, class: "product-delete-btn" do %>
+        <%= t ".edit"%>
+      <% end %>
+    <% end %>
+  </div>
+</div>
