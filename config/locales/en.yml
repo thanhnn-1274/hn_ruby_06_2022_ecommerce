@@ -96,10 +96,28 @@ en:
       index:
         title: "All User"
         stt: "STT"
+        name: "Name"
         email: "Email"
         phone: "Phone"
         address: "Address"
         action: "Action"
+    orders:
+      index:
+        title: "All Order"
+        stt: "STT"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        created_at: "Created At"
+        status: "Status"
+        action: "Action"
+      order:
+        pending: "Pending"
+        accepted: "Accepted"
+        rejected: "Rejected"
+        canceled: "Canceled"
+        complete: "Complete"
   layouts:
     header:
       li_store: "In the row on app"
@@ -225,6 +243,12 @@ en:
           separator: "."
           precision: 2
           format: "%n%u"
+  time:
+    formats:
+      default: ! "%Y-%m-%d"
+      long: ! "%B %d, %Y"
+      short: ! "%b %d"
+      custom: ! "%A, %M %B, %Y @ %l:%M %P"
   carts:
     create:
       danger_quantily: "Please enter right quantily"

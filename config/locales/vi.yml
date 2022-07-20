@@ -96,10 +96,29 @@ vi:
       index:
         title: "Tất Cả Người Dùng"
         stt: "STT"
+        name: "Tên"
         email: "Email"
         phone: "Số Điện Thoại"
         address: "Địa Chỉ"
         action: "Hành Động"
+    orders:
+      index:
+        title: "Tất Cả Đơn Hàng"
+        stt: "STT"
+        name: "Tên"
+        email: "Email"
+        phone: "Điện Thoại"
+        address: "Địa Chỉ"
+        created_at: "Ngày tạo"
+        status: "Trạng Thái"
+        action: "Hành Động"
+      order:
+        pending: "Chưa giải quyết"
+        accepted: "Đang giao hàng"
+        rejected: "Đã từ chối"
+        canceled: "Đã hủy"
+        complete: "Hoàn thành"
+
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
@@ -229,6 +248,12 @@ vi:
           separator: "."
           precision: 2
           format: "%n%u"
+  time:
+    formats:
+      default: ! "%Y-%m-%d"
+      long: ! "%B %d, %Y"
+      short: ! "%b %d"
+      custom: ! "%A, %M %B, %Y @ %l:%M %P"
   carts:
     create:
       danger_quantily: "Vui lòng nhập đúng số lượng sản phẩm"

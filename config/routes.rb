@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :categories
       resources :books
       resources :users
+      resources :orders
       get "/home", to: "static_pages#home"
       root "books#index"
     end
