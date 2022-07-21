@@ -203,6 +203,19 @@ vi:
       danger: "Tạo thất bại"
     before_action:
       please_login: "Vui lòng đăng nhập"
+      not_correct: "Không đúng user"
+    update:
+      update_success: "Cập nhật thành công"
+      update_fail: "Cập nhật thất bại"
+    edit:
+      edit_user: "Cập nhật người dùng"
+      submit_edit: "Sửa"
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      confirmation: "Xác nhận mật khẩu"
+      phone_num: "Số điện thoại"
+      address: "Địa chỉ"
   shared:
     error_messages:
       the_form: "Biểu mẫu chứa"
