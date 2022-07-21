@@ -28,8 +28,12 @@ class Book < ApplicationRecord
                            only_integer: true}
 
   scope :asc_name, ->{order name: :asc}
-  scope :latest_book, ->{order(created_at: :desc)}
+  scope :latest_book, ->{order created_at: :desc}
+  scope :sort_price, ->(type){order price: type}
   scope :by_ids, ->(ids){where id: ids}
+  scope :search, (lambda do |key|
+    where "name LIKE ? or description LIKE ?", "%#{key}%", "%#{key}%"
+  end)
   delegate :name, to: :category, prefix: :category, allow_nil: true
   delegate :name, to: :author, prefix: :author, allow_nil: true
 

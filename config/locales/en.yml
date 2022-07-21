@@ -158,10 +158,11 @@ en:
       store_me: "My store"
       card: "Purchase form"
       ebook: "Ebook"
-      search: "search"
+      search: "search    "
       h4: "Product added"
       signin: "login"
       signup: "logout"
+      placeholder: "Enter search book"
     footer:
       h3_take: "Customer care"
       h3_into: "Introduce"

@@ -8,13 +8,16 @@ Rails.application.routes.draw do
       get "/home", to: "static_pages#home"
       root "books#index"
     end
+
     root "static_pages#home"
+    get "/my-order", to: "order#history"
     get "/signup", to: "users#new"
     resources :users, except: :index
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    resources :books, only: %i(show)
+    get "/books", to: "books#sort"
+    resources :books, :categories, only: %i(show)
     resources :carts, only: %i(create index update destroy)
   end
 end

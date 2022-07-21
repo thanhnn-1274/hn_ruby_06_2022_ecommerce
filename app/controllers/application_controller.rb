@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   include CartsHelper
+  include BooksHelper
 
   before_action :set_locale
   before_action :init_cart, :load_products

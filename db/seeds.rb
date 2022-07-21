@@ -37,7 +37,7 @@ User.create!(
 end
 
 
-50.times do
+100.times do
   name = Faker::Book.unique.title
   description = Faker::Lorem.sentence(word_count: 50)
   price = Faker::Commerce.price(range: 1..100.0)
