@@ -109,6 +109,17 @@ en:
         email: "Email"
         phone: "Phone"
         address: "Address"
+        total_money: "Total Money"
+        status: "Status"
+        action: "Action"
+    orders:
+      index:
+        title: "All Order"
+        stt: "STT"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
         created_at: "Created At"
         status: "Status"
         action: "Action"
@@ -118,6 +129,24 @@ en:
         rejected: "Rejected"
         canceled: "Canceled"
         complete: "Complete"
+      reason:
+        text_reason: "Reason: "
+        text_money: "Total amount: "
+      status_form:
+        status: "Status: "
+        submit: "Submit"
+        canceled: "Canceled"
+        complete: "Complete"
+      show:
+        order_detail: "Order Detail"
+        stt: "STT"
+        book_name: "Book Name"
+        price: "Price"
+        quantity: "Quantity"
+        total_money: "Total Money"
+      update:
+        success: "Success!"
+        danger: "Update Fail!"
   layouts:
     header:
       li_store: "In the row on app"

@@ -1,0 +1,12 @@
+<% case order.status.to_sym %>
+<% when :pending, :accepted %>
+  <%= form_for [:admin, order], html: {class: "form-inline"} do |f| %>
+    <%= f.label :status, t(".status"), class: "mr-sm-2" %>
+    <%= f.select :status, select_status(order.status.to_sym), {}, {class: "form-control"} %>
+    <%= f.submit t(".submit"), class: "btn btn-primary ml-3" %>
+  <% end %>
+<% when :canceled %>
+  <p class="text-danger"><%= t ".canceled" %></p>
+<% when :complete %>
+  <p class="text-success"><%= t ".complete" %></p>
+<% end %>

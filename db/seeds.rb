@@ -40,7 +40,7 @@ end
 50.times do
   name = Faker::Book.unique.title
   description = Faker::Lorem.sentence(word_count: 50)
-  price = Faker::Commerce.price(range: 1..100.0, as_string: true)
+  price = Faker::Commerce.price(range: 1..100.0)
   publisher_name = Faker::Book.publisher
   quantity = Faker::Number.between(from: 50, to: 100)
   thumbnail = Faker::Avatar.image
@@ -62,8 +62,8 @@ end
   phone_num = Faker::PhoneNumber.unique.phone_number
   address = Faker::Address.full_address
   total_money = Faker::Number.between(from: 50, to: 1000)
-  status = Faker::Number.between(from: 0, to: 4)
-  note = Faker::Lorem.paragraph
+  status = Faker::Number.between(from: 0, to: 3)
+  reason = Faker::Lorem.paragraph
 
   Order.create!(
     name: name,
@@ -71,7 +71,21 @@ end
     address: address,
     total_money: total_money,
     status: status,
-    note: note,
+    reason: reason,
     user_id: User.all.pluck(:id).sample
+  )
+end
+
+100.times do |n|
+  price = Faker::Commerce.price(range: 1..100.0)
+  quantity = Faker::Number.between(from: 1, to: 5)
+  total_money = price * quantity
+
+  OrderDetail.create!(
+    price: price,
+    quantity: quantity,
+    total_money: total_money,
+    book_id: Book.all.pluck(:id).sample,
+    order_id: Order.all.pluck(:id).sample
   )
 end

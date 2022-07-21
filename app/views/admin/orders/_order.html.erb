@@ -6,7 +6,7 @@
   <td><%= l order.created_at, format: :custom %></td>
   <%= status_order order.status.to_sym %>
   <td>
-    <%= link_to "#" do %>
+    <%= link_to admin_order_path(order.id), remote: true do %>
         <label class="btn btn-warning">
         <i class="fa fa-info-circle" aria-hidden="true"></i>
       </label>
