@@ -76,6 +76,25 @@ end
   )
 end
 
+50.times do |n|
+  name = Faker::Name.unique.name
+  phone_num = Faker::PhoneNumber.unique.phone_number
+  address = Faker::Address.full_address
+  total_money = Faker::Number.between(from: 50, to: 1000)
+  status = Faker::Number.between(from: 0, to: 3)
+  reason = Faker::Lorem.paragraph
+
+  Order.create!(
+    name: name,
+    phone_num: phone_num,
+    address: address,
+    total_money: total_money,
+    status: status,
+    reason: reason,
+    user_id: 2
+  )
+end
+
 100.times do |n|
   price = Faker::Commerce.price(range: 1..100.0)
   quantity = Faker::Number.between(from: 1, to: 5)

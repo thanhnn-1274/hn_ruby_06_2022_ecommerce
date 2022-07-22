@@ -292,9 +292,9 @@ vi:
   time:
     formats:
       default: ! "%Y-%m-%d"
-      long: ! "%B %d, %Y"
+      long: ! "%d %b %Y @ %l:%M"
       short: ! "%b %d"
-      custom: ! "%A, %M %B, %Y @ %l:%M %P"
+      custom: ! "%A, %d %b %Y @ %l:%M %P"
   carts:
     create:
       danger_quantily: "Vui lòng nhập đúng số lượng sản phẩm"
@@ -340,3 +340,23 @@ vi:
       success_checkout: "Đặt hàng thành công"
       danger_checkout: "Đặt hàng thất bại"
       order_fail: "Tạo đơn hàng thất bại"
+    index:
+      title: "Lịch Sử Đơn Hàng"
+      all: "Tất Cả"
+      pending: "Chờ Xác Nhận"
+      accepted: "Đang Giao Hàng"
+      complete: "Hoàn Thành"
+      canceled: "Đã Hủy"
+      stt: "STT"
+      code: "Mã Đơn Hàng"
+      created_at: "Ngày Ghi Nhận"
+      updated_at: "Cập Nhật Mới"
+      total_money: "Giá Trị"
+      status: "Trạng Thái"
+      action: "Hành Động"
+    order:
+      pending: "Chờ xác nhận"
+      accepted: "Đang giao hàng"
+      rejected: "Đã từ chối"
+      canceled: "Đã hủy"
+      complete: "Hoàn thành"

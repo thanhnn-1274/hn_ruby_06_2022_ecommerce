@@ -18,6 +18,22 @@ class OrdersController < ApplicationController
     end
   end
 
+  def index
+    @orders = current_user.orders.latest_order
+  end
+
+  def sort
+    statuses = Order.statuses.keys
+
+    @orders = current_user.orders.latest_order
+
+    if statuses.include? params[:sort]
+      @orders = @orders.status_order(params[:sort].to_sym)
+    end
+
+    respond_to :js
+  end
+
   private
 
   def order_params

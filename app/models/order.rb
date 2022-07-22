@@ -4,7 +4,6 @@ class Order < ApplicationRecord
   has_many :order_details, dependent: :destroy
   belongs_to :user
 
-  scope :latest_order, ->{order created_at: :desc}
   validates :name, presence: true,
     length: {minimum: Settings.user.name_validates.name_min_length,
              maximum: Settings.user.name_validates.name_max_length}
@@ -14,4 +13,7 @@ class Order < ApplicationRecord
   validates :phone_num, presence: true,
     length: {minimum: Settings.user.min_phone,
              maximum: Settings.user.max_phone}
+
+  scope :status_order, ->(type){where status: type}
+  scope :latest_order, ->{order created_at: :desc}
 end
