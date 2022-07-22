@@ -6,7 +6,7 @@ user:
     email_length_range: 20..255
   name_validates:
     name_max_length: 50
-    name_min_length: 6
+    name_min_length: 2
   password_validates:
     password_min_length: 6
   image:
@@ -14,8 +14,8 @@ user:
     image_accept: "image/jpeg,image/gif,image/png"
   address_min_length: 2
   address_max_length: 250
-  min_phone: 8
-  max_phone: 11
+  min_phone: 6
+  max_phone: 20
 image:
   default_avatar: "default-avatar.png"
 max_name_book_length: 100

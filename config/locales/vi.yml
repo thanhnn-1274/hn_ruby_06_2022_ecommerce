@@ -326,3 +326,17 @@ vi:
     destroy:
       success_delete: "Xóa thành công"
       fail_delete: "Xóa thất bại"
+  orders:
+    new:
+      payment: "Đặt hàng"
+      submit_pay: "Mua hàng"
+      cart: "Cart"
+      total: "Tổng cộng"
+      danger_quantity: "Sản phẩm %{prod_id} đã hết hàng, vui lòng xóa hoắc cập nhật số lượng"
+      name: "Tên"
+      address: "Địa chỉ"
+      phone_num: "Số điện thoại"
+    create:
+      success_checkout: "Đặt hàng thành công"
+      danger_checkout: "Đặt hàng thất bại"
+      order_fail: "Tạo đơn hàng thất bại"

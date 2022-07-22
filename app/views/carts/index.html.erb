@@ -27,7 +27,9 @@
                   <div class="pay-all-price"><%= number_to_currency total_price %></div>
                 </div>
                 <div class="main-content-buy">
-                  <button class="content-buy-btn"><%= t ".buy_now" %></button>
+                  <%= link_to new_order_path do %>
+                    <button class="content-buy-btn"><%= t ".buy_now" %></button>
+                  <% end %>
                 </div>
               </div>
             </div>

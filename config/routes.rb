@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     get "/books", to: "books#sort"
     resources :books, :categories, only: %i(show)
     resources :carts, only: %i(create index update destroy)
+    resources :orders, only: %i(new create)
   end
 end
