@@ -1707,6 +1707,7 @@ a:focus {
 
 .body-app{
   background-color: #f5f5f5;
+  min-height: 900px;
 }
 
 .my-body-app{
@@ -2518,7 +2519,7 @@ a.btn-add-qty {
 .product_view_add_box{
   display: flex;
   align-items: center;
-  margin-top: 60px;
+  margin: 30px 0;
   height: 48px;
 }
 
@@ -2668,6 +2669,7 @@ a.btn-add-qty {
 .recomend-product{
   margin-top: 60px;
   padding-bottom: 60px;
+  background-color: white;
 }
 
 .gird__row-limit{
@@ -3076,7 +3078,7 @@ a.btn-add-qty {
 }
 
 .row-checkout{
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 hr {
@@ -3108,4 +3110,80 @@ span.price {
   color: var(--white-color);
   cursor: pointer;
   margin-top: 10px;
+}
+
+.comment_area{
+  width: 60%;
+  height: 100px;
+}
+
+.comment-image{
+  width: 200px;
+  height: 100px;
+}
+
+.comment-userimg{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  float: left
+}
+
+.rating>input {
+  display: none
+}
+
+.rating>label {
+  position: relative;
+  width: 19px;
+  font-size: 25px;
+  color: #ff0000;
+  cursor: pointer
+}
+.rating>label::before {
+  content: "\2605";
+  position: absolute;
+  opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+  opacity: 1 !important
+}
+.rating>input:checked~label:before {
+  opacity: 1
+}
+.rating:hover>input:checked~label:before {
+  opacity: 0.4
+}
+
+.comment-area textarea {
+  resize: none;
+  border: 1px solid #ad9f9f
+}
+
+.image-input{
+  display: block;
+}
+
+.submit-contain{
+  width: 10%;
+}
+
+.box-comment{
+  display: flex;
+  padding: 40px 0;
+}
+
+.box-comment-left{
+  margin: 0 20px;
+}
+
+.box-comment-right{
+  font-size: 18px;
 }

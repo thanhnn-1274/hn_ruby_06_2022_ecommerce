@@ -7,7 +7,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.string :thumbnail
       t.string :publisher_name
       t.integer :quantity
-      t.decimal :rate_avg, precision: 2, scale: 1
+      t.decimal :rate_avg, precision: 2, scale: 1, default: 0
       t.text :description
 
       t.references :category, null: true, foreign_key: true

@@ -1,4 +1,6 @@
 vi:
+  js:
+    error_comment: "Không thể tạo bình luận! Kiểm tra đã nhập đúng nội dung và rating chưa"
   page_title: "Cửa Hàng Sách"
   admin_danger: "Bạn không có quyền truy cập trang này"
   price_desc: "Giá từ cao đến thấp"
@@ -239,10 +241,16 @@ vi:
     error_messages:
       the_form: "Biểu mẫu chứa"
       error: "lỗi"
-    books:
-      is_sold: "Đã bán 88"
+    book:
+      is_sold: "Đã bán"
       ha_noi: "Hà Nội"
       is_love: "Yêu thích"
+    book_comment:
+      posted: "Đăng"
+      ago: "trước"
+    comment_form:
+      comment_btn: "đánh giá"
+      compost_new: "Nhập nội dung đánh giá"
   sessions:
     new:
       name: "Tên"
@@ -291,6 +299,7 @@ vi:
       book_detail: "Thông tin sản phẩm: "
       book_content: "Nội dung:"
       not_found: "Không tìm thấy book"
+      comment_book: "Đánh giá sản phẩm"
     add_cart_form:
       book_quantity: "Số lượng: "
       add_to_cart: "Thêm Vào Giỏ Hàng"

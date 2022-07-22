@@ -1,0 +1,24 @@
+<%= form_for @comment, :remote => true do |f| %>
+  <div id="comment-error"></div>
+  <div class="comment-box ml-2">
+    <div class="comment-area">
+      <%= f.text_area :content, placeholder: t(".compost_new"), class: "comment_area", id: "comment-area" %>
+      <span class="image-input">
+        <%= f.file_field :image, accept: Settings.user.image.image_accept, id: "comment-image" %>
+      </span>
+    </div>
+    <div class="rating-contain">
+      <div class="rating" id="comment-rate">
+        <input type="radio" name="comment[rate]" value="5" id="5"><label for="5">☆</label>
+        <input type="radio" name="comment[rate]" value="4" id="4"><label for="4">☆</label>
+        <input type="radio" name="comment[rate]" value="3" id="3"><label for="3">☆</label>
+        <input type="radio" name="comment[rate]" value="2" id="2"><label for="2">☆</label>
+        <input type="radio" name="comment[rate]" value="1" id="1"><label for="1">☆</label>
+      </div>
+    </div>
+  </div>
+  <%= f.hidden_field :book_id, value: params[:id] %>
+  <div class="submit-contain">
+    <%= f.submit t(".comment_btn"), class: "checkout_btn_submit" %>
+  </div>
+<% end %>

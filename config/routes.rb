@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     resources :books, :categories, only: %i(show)
     resources :carts, only: %i(create index update destroy)
     resources :orders, only: %i(new create index show update)
+    resources :comments, only: :create
   end
 end
