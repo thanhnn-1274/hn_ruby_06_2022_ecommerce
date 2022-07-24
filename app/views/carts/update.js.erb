@@ -1,0 +1,6 @@
+$("#cart-total-money").html(
+  "<%= number_to_currency total_price %>"
+);
+$("#item-product-allprice_<%=@product.id%>").html(
+  "<%= number_to_currency total_price_book(@product.id) %>"
+);

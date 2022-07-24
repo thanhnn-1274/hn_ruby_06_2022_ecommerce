@@ -2491,6 +2491,8 @@ html {
 }
 
 .btn-subtract-qty{
+  border: none;
+  background-color: white;
   padding: 0 8px 4px 16px;
   margin: auto;
   text-align: center;
@@ -2511,6 +2513,16 @@ html {
 }
 
 a.btn-add-qty {
+  border: none;
+  background-color: white;
+  padding: 0px 16px 0 8px;
+  margin: auto;
+  text-align: center;
+}
+
+.btn-add-qty {
+  border: none;
+  background-color: white;
   padding: 0px 16px 0 8px;
   margin: auto;
   text-align: center;
@@ -2913,6 +2925,10 @@ a.btn-add-qty {
 
 .main-product-number input{
   width: 50px;
+  height: 100%;
+  border-top: none;
+  border-bottom: none;
+  text-align: center;
 }
 
 .main-product-allprice{
@@ -3145,6 +3161,10 @@ span.price {
   color: #ff0000;
   cursor: pointer
 }
+
+.user-rating-book form label {
+  font-size: 24px;
+}
 .rating>label::before {
   content: "\2605";
   position: absolute;
@@ -3165,6 +3185,10 @@ span.price {
 .comment-area textarea {
   resize: none;
   border: 1px solid #ad9f9f
+}
+
+.comment-area {
+  font-size: 18px;
 }
 
 .image-input{

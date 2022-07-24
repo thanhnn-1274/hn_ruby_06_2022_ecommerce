@@ -14,9 +14,9 @@
             <%= f.label :password, t(".password")  %>
             <%= f.password_field :password, class: "form-control" %>
             <div class="login-form-control">
-              <a href="<%= root_path %>" class="login-form-goback">
-                <%= t ".go_back" %>
-              </a>
+              <%= link_to root_path do %>
+                <button class="login-form-goback"><%= t ".go_back" %></button>
+              <% end %>
               <%= f.submit t(".sign_in"), class: "login-form-login" %>
             </div>
           <% end %>

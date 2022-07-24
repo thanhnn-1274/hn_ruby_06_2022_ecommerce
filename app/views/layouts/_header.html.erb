@@ -90,14 +90,14 @@
       <div class="header__cart">
         <div class="header__cart-wrap">
           <i class="header__cart-icon fa fa-shopping-cart"></i>
-          <span class="header__cart-number"><%= count_carts %></span>
+          <span class="header__cart-number", id="header-count-carts"><%= count_carts %></span>
           <div class="header__cart-list no-cart">
             <% if count_carts == 0 %>
               <%= image_tag("no-cart.png", class: "no__cart-img") %>
               <p><%= t ".no_product" %></p>
             <% else %>
               <h4><%= t ".have_add" %></h4>
-              <ul class="cart__list-item">
+              <ul class="cart__list-item", id="header-cart-list">
                 <%= render partial: "shared/product", collection: @products %>
               </ul>
               <div class="cart__foot">
