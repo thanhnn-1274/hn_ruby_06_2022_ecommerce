@@ -112,6 +112,7 @@ vi:
         created_at: "Ngày tạo"
         status: "Trạng Thái"
         action: "Hành Động"
+        not_found: "Không tìm thấy chi tiết đơn hàng"
       order:
         pending: "Chưa giải quyết"
         accepted: "Đang giao hàng"
@@ -182,6 +183,7 @@ vi:
       selling: "Bán chạy"
       order_1: "Giá thấp đến cao"
       order_2: "Giá cao đến thấp"
+      not_found: "Không tìm thấy đơn hàng"
   users:
     new:
       name: "Tên"
@@ -284,7 +286,7 @@ vi:
   number:
      currency:
         format:
-          unit: "VND"
+          unit: "đ"
           delimiter: ","
           separator: "."
           precision: 2
@@ -354,9 +356,31 @@ vi:
       total_money: "Giá Trị"
       status: "Trạng Thái"
       action: "Hành Động"
+      danger: "Hủy đơn hàng thất bại"
+      not_found: "Không tìm thấy chi tiết đơn hàng"
     order:
       pending: "Chờ xác nhận"
       accepted: "Đang giao hàng"
       rejected: "Đã từ chối"
       canceled: "Đã hủy"
       complete: "Hoàn thành"
+    show:
+      btn: "Hủy Đơn Hàng"
+      order_detail: "Chi Tiết Đơn Hàng"
+      reason: "Lý do: "
+      confirm: "Xác Nhận"
+      order_id: "Mã Đơn Hàng"
+      stt: "STT"
+      book_name: "Tên Sách"
+      price: "Giá"
+      quantity: "Số lượng"
+      total_money: "Tổng"
+      total: "Tổng: "
+      pending: "Chờ xác nhận"
+      accepted: "Đang giao hàng"
+      rejected: "Đã từ chối"
+      canceled: "Đã hủy"
+      complete: "Hoàn thành"
+    update:
+      success: "Cập nhật trạng thái đơn hàng thành công!"
+      danger: "Cập nhật trạng thái thất bại"

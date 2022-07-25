@@ -3,6 +3,9 @@ class OrdersController < ApplicationController
   before_action :init_cart
   before_action :load_products
   before_action :check_product_quantity, only: %i(new create)
+  before_action :find_order, only: %i(show update)
+  before_action :load_order_details, only: %i(show)
+  before_action :check_status_order, only: %i(update)
 
   def new
     @order = current_user.orders.build
@@ -34,10 +37,28 @@ class OrdersController < ApplicationController
     respond_to :js
   end
 
+  def update
+    if @order.update(reason: params_reason[:reason], status: :canceled)
+
+      flash[:success] = t ".success"
+    else
+      flash.now[:danger] = t ".danger"
+    end
+    redirect_to orders_url
+  end
+
+  def show
+    respond_to :js
+  end
+
   private
 
   def order_params
     params.require(:order).permit Order::ORDER_ATTRS
+  end
+
+  def params_reason
+    params.require(:order).permit :reason
   end
 
   def create_order_detail
@@ -52,6 +73,14 @@ class OrdersController < ApplicationController
     end
   end
 
+  def load_order_details
+    @order_details = @order.order_details
+    return if @order_details
+
+    flash[:danger] = t ".not_found"
+    redirect_to orders_url
+  end
+
   def create_transaction
     ActiveRecord::Base.transaction do
       @order.save!
@@ -63,5 +92,21 @@ class OrdersController < ApplicationController
   rescue StandardError
     flash[:danger] = t ".danger_checkout"
     redirect_to carts_path
+  end
+
+  def find_order
+    @order = Order.find_by id: params[:id]
+
+    return if @order
+
+    flash[:warning] = t ".not_found"
+    redirect_to root_path
+  end
+
+  def check_status_order
+    return if @order.pending?
+
+    flash[:danger] = t ".danger"
+    redirect_to orders_path
   end
 end

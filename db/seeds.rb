@@ -66,7 +66,7 @@ end
   reason = Faker::Lorem.paragraph
 
   Order.create!(
-    name: name,
+    name: User.find(2).name,
     phone_num: phone_num,
     address: address,
     total_money: total_money,
