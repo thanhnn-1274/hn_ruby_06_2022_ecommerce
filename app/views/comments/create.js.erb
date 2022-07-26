@@ -1,0 +1,18 @@
+<% if @status %>
+  $("#all-comments").prepend(
+    "<%= j (render("shared/book_comment", comment: @comment)) %>"
+  );
+  $("#comment-area").val("");
+  $("#comment-image").val("");
+  $("input:radio[name='comment[rate]']").each(function(i) {
+    this.checked = false;
+  });
+  $("#book-info-star").html(
+    "<%= j render_star(@comment.book.rate_avg) %>"
+  );
+  $("#comment-error").html("")
+<% else %>
+  $("#comment-error").html(
+    "<%= j (render("shared/error_messages", object: @comment)) %>"
+  );
+<% end %>

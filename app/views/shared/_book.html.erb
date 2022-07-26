@@ -9,19 +9,15 @@
       <%= book.name %>
     </h4>
     <div class="product-item-price">
-      <span class="product-item-price-old"><%= book.price %></span>
-      <span class="product-item-price-current"><%= book.price %></span>
+      <span class="product-item-price-old"></span>
+      <span class="product-item-price-current"><%= number_to_currency book.price %></span>
     </div>
     <div class="product-item-rating">
       <span class="rating-heart">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
       </span>
       <div class="rating-star">
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
-        <i class="fa fa-star" aria-hidden="true"></i>
+        <%= render_star(book.rate_avg) %>
       </div>
       <span class="rating-number-sold"><%= t(".is_sold") %></span>
     </div>

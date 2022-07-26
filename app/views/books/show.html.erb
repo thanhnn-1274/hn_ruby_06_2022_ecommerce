@@ -40,12 +40,8 @@
           </div>
         </div>
         <div class="product-rating">
-          <div class="rating-new-star">
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
+          <div class="rating-new-star" id="book-info-star">
+            <%= render_star(@book.rate_avg) %>
           </div>
           <span class="product-id"></span>
         </div>
@@ -66,5 +62,19 @@
 <div class="grid">
   <div class="book-info-content">
     <h5><%= t ".book_content" %><%= @book.description %></h5>
+  </div>
+</div>
+<% if logged_in? %>
+  <div class="grid">
+    <div class="user-rating-book">
+      <h3 class="mb-3"> <%= t ".comment_book" %> </h3>
+      <%= render "shared/comment_form" %>
+      <hr>
+    </div>
+  </div>
+<% end %>
+<div class="grid">
+  <div class="recomend-product" id="all-comments">
+    <%= render partial: "shared/book_comment", collection: @comments, as: :comment %>
   </div>
 </div>

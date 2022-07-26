@@ -1,4 +1,6 @@
 en:
+  js:
+    error_comment: "Can not comment! Check the contain and rating is true or not"
   page_title: "Book Store"
   admin_danger: "You do not have permission to access this page!!"
   price_desc: "Low to high price"
@@ -240,6 +242,16 @@ en:
     error_messages:
       the_form: "The form contains"
       error: "error"
+    book:
+      is_sold: "Is sold"
+      ha_noi: "Hà Nội"
+      is_love: "Is love"
+    book_comment:
+      posted: "Posted"
+      ago: "ago"
+    comment_form:
+      comment_btn: "comment"
+      compost_new: "Compost new micropost..."
   sessions:
     new:
       name: "name"
@@ -288,6 +300,7 @@ en:
       book_detail: "Product detail: "
       book_content: "Content:"
       not_found: "Book not found"
+      comment_book: "Comment book"
     add_cart_form:
       book_quantity: "Quantity:  "
       add_to_cart: "Add to cart"
