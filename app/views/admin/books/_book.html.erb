@@ -5,8 +5,8 @@
   <td><%= book.category_name %></td>
   <td><%= book.author_name %></td>
   <td><%= book.quantity %></td>
-  <% if book.image.attached?%>
-    <td><%= image_tag book.display_image%></td>
+  <% if book.image.attached? %>
+    <td><%= image_tag book.display_image %></td>
   <% else %>
     <td><%= image_tag book.thumbnail %></td>
   <% end %>

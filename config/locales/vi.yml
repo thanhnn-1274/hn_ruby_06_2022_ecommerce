@@ -1,6 +1,10 @@
 vi:
   page_title: "Cửa Hàng Sách"
   admin_danger: "Bạn không có quyền truy cập trang này"
+  price_desc: "Giá từ cao đến thấp"
+  price_asc: "Giá từ thấp đến cao"
+  latest: "Mới nhất"
+  oldest: "Cũ nhất"
   admin:
     layouts:
       header:
@@ -109,10 +113,16 @@ vi:
         email: "Email"
         phone: "Điện Thoại"
         address: "Địa Chỉ"
-        created_at: "Ngày tạo"
+        created_at: "Cập Nhật Mới"
         status: "Trạng Thái"
         action: "Hành Động"
         not_found: "Không tìm thấy chi tiết đơn hàng"
+        all: "Tất Cả"
+        pending: "Chờ Xác Nhận"
+        accepted: "Đang Giao Hàng"
+        complete: "Hoàn Thành"
+        canceled: "Đã Hủy"
+        danger: "Hủy đơn hàng thất bại"
       order:
         pending: "Chưa giải quyết"
         accepted: "Đang giao hàng"
@@ -138,12 +148,15 @@ vi:
         price: "Giá"
         quantity: "Số lượng"
         total_money: "Tổng"
+        order_id: "Mã Đơn Hàng"
       update:
         success: "Cập nhật trạng thái đơn hàng thành công!"
         danger: "Cập nhật trạng thái thất bại"
         total_money: "Tổng Đơn Hàng"
         status: "Trạng Thái"
         action: "Hành Động"
+      filter:
+        submit: "Lọc"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
@@ -384,3 +397,28 @@ vi:
     update:
       success: "Cập nhật trạng thái đơn hàng thành công!"
       danger: "Cập nhật trạng thái thất bại"
+  user_mailer:
+    canceled_order:
+      subject_canceled: "Đơn Hàng Đã Bị Hủy"
+      order_information: "Thông tin đơn hàng #ID: "
+      hello: "Xin chào, "
+      text_1: "Bạn đã đặt hàng bên cửa hàng chúng tôi vào lúc"
+      text_2: "gồm những sản phẩm sau:"
+      text_3: "Giá trị đơn hàng là:"
+      status: "Đơn hàng đã được chủ cửa hủy."
+    accepted_order:
+      subject_accepted: "Đơn Hàng Đã Được Chấp Nhận"
+      order_information: "Thông tin đơn hàng #ID: "
+      hello: "Xin chào, "
+      text_1: "Bạn đã đặt hàng bên cửa hàng chúng tôi vào lúc"
+      text_2: "gồm những sản phẩm sau:"
+      text_3: "Giá trị đơn hàng là:"
+      status: "Đơn hàng đã được chủ cửa hàng chấp nhận."
+    complete_order:
+      subject_complete: "Đơn Hàng Đã Được Giao"
+      order_information: "Thông tin đơn hàng #ID: "
+      hello: "Xin chào, "
+      text_1: "Bạn đã đặt hàng bên cửa hàng chúng tôi vào lúc"
+      text_2: "gồm những sản phẩm sau:"
+      text_3: "Giá trị đơn hàng là:"
+      status: "Đơn hàng đã được giao"

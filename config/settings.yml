@@ -30,3 +30,4 @@ min_quantity: 0
 image_book_admin: [200, 250]
 carts:
   min_quantily: 0
+number_15: 15

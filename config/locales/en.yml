@@ -1,6 +1,10 @@
 en:
   page_title: "Book Store"
   admin_danger: "You do not have permission to access this page!!"
+  price_desc: "Low to high price"
+  price_asc: "Price high to low"
+  latest: "Latest"
+  oldest: "Oldest"
   admin:
     layouts:
       header:
@@ -113,6 +117,12 @@ en:
         total_money: "Total Money"
         status: "Status"
         action: "Action"
+        all: "All"
+        pending: "Pending"
+        accepted: "Delivery"
+        complete: "Complete"
+        canceled: "Cancelled"
+        danger: "Cancel Failed"
     orders:
       index:
         title: "All Order"
@@ -121,7 +131,7 @@ en:
         email: "Email"
         phone: "Phone"
         address: "Address"
-        created_at: "Created At"
+        created_at: "Updated At"
         status: "Status"
         action: "Action"
       order:
@@ -145,9 +155,12 @@ en:
         price: "Price"
         quantity: "Quantity"
         total_money: "Total Money"
+        order_id: "Order Code"
       update:
         success: "Success!"
         danger: "Update Erorr!"
+      filter:
+        submit: "Submit"
   layouts:
     header:
       li_store: "In the row on app"
@@ -381,3 +394,28 @@ en:
     update:
       success: "Success!"
       danger: "Update Fail!"
+  user_mailer:
+    canceled_order:
+      subject_canceled: "Order Canceled"
+      order_information: "Information order #ID: "
+      hello: "Hello, "
+      text_1: "You have placed your order in our store at"
+      text_2: "includes the following products:"
+      text_3: "The order value is:"
+      status: "The order has been cancelled."
+    accepted_order:
+      subject_accepted: "Order Accepted"
+      order_information: "Information order #ID: "
+      hello: "Hello, "
+      text_1: "You have placed your order in our store at"
+      text_2: "includes the following products:"
+      text_3: "The order value is:"
+      status: "The order has been accepted by the store owner."
+    complete_order:
+      subject_complete: "Đơn Hàng Đã Được Giao"
+      order_information: "Information order #ID: "
+      hello: "Hello, "
+      text_1: "You have placed your order in our store at"
+      text_2: "includes the following products:"
+      text_3: "The order value is:"
+      status: "Order has been delivered"
