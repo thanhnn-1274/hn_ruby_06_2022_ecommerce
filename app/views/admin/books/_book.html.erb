@@ -1,10 +1,11 @@
 <tr>
-  <td><%= book_counter + 1 %></td>
+  <td><%= book.id %></td>
   <td><%= book.name %></td>
   <td><%= book.price %></td>
   <td><%= book.category_name %></td>
   <td><%= book.author_name %></td>
   <td><%= book.quantity %></td>
+  <td><%= book.sold %></td>
   <% if book.image.attached? %>
     <td><%= image_tag book.display_image %></td>
   <% else %>
@@ -16,7 +17,7 @@
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </label>
     <% end %>
-    <%= link_to admin_book_path(book), method: :delete,
+    <%= link_to "#", method: :delete,
                       data: {confirm: "Delete"},
                       remote: true,
                       class: "book_delete" do %>

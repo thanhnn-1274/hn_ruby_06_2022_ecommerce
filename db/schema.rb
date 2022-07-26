@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2022_07_13_163433) do
     t.string "publisher_name"
     t.integer "quantity"
     t.decimal "rate_avg", precision: 2, scale: 1, default: "0.0"
+    t.integer "sold", default: 0
+    t.integer "view", default: 0
     t.text "description"
     t.bigint "category_id"
     t.bigint "author_id"

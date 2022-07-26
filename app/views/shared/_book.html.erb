@@ -19,7 +19,7 @@
       <div class="rating-star">
         <%= render_star(book.rate_avg) %>
       </div>
-      <span class="rating-number-sold"><%= t(".is_sold") %></span>
+      <span class="rating-number-sold"><%= "#{t(".is_sold")}: #{book.sold}" %></span>
     </div>
     <div class="product-item-origin">
       <span><%= t(".ha_noi") %></span>

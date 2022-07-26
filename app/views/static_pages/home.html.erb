@@ -17,7 +17,7 @@
       <div class="home-filter">
         <span class="filter-span"><%= t ".order_by" %></span>
         <%= button_to t(".popular"), books_path, method: :get, params: {sort: :popular},
-          class: "filter-button filter-button-active", id: "orderNormal"
+          class: "filter-button filter-button-active", id: "orderNormal", remote: true
         %>
         <%= button_to t(".latest"), books_path, method: :get, params: {sort: :latest},
           class: "filter-button", id: "orderNew", remote: true
@@ -55,3 +55,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "home.js", media: "all", "data-turbolinks-track": "reload" %>

@@ -67,7 +67,7 @@ vi:
         success: "Xóa thành công"
         danger: "Xóa thất bại"
       index:
-        stt: "STT"
+        stt: "Mã Sách"
         name: "Tên sách"
         price: "Giá"
         category: "Loại Sách"
@@ -76,7 +76,9 @@ vi:
         image: "Hình Ảnh"
         action: "Hành Động"
         title: "Tất cả sách"
+        sold: "Đã Bán"
         new_book: "Tạo Sách Mới"
+        search: "Tìm Kiếm"
       edit:
         title: "Chỉnh Sửa Sách"
         button: "Chỉnh Sửa"
@@ -107,6 +109,9 @@ vi:
         phone: "Số Điện Thoại"
         address: "Địa Chỉ"
         action: "Hành Động"
+        total_order: "Tổng Số Đơn Hàng"
+        total_money_order: "Tổng Tiền"
+        search: "Tìm Kiếm"
     orders:
       index:
         title: "Tất Cả Đơn Hàng"
@@ -125,6 +130,10 @@ vi:
         complete: "Hoàn Thành"
         canceled: "Đã Hủy"
         danger: "Hủy đơn hàng thất bại"
+        price_desc: "Giá từ cao đến thấp"
+        price_asc: "Giá từ thấp đến cao"
+        latest: "Mới nhất"
+        oldest: "Cũ nhất"
       order:
         pending: "Chưa giải quyết"
         accepted: "Đang giao hàng"
@@ -316,7 +325,7 @@ vi:
   time:
     formats:
       default: ! "%Y-%m-%d"
-      long: ! "%d %b %Y @ %l:%M"
+      long: ! "%d %b %Y @ %l:%M %P"
       short: ! "%b %d"
       custom: ! "%A, %d %b %Y @ %l:%M %P"
   carts:

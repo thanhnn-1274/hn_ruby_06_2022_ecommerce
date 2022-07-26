@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       resources :books
       resources :users
       resources :orders
-      get "/home", to: "static_pages#home"
-      root "books#index"
+      get "/home", to: "orders#index"
+      root "orders#index"
     end
 
     root "static_pages#home"

@@ -38,6 +38,10 @@ class User < ApplicationRecord
   scope :asc_name, ->{order name: :asc}
   scope :get_all, ->{select(GET_ALL).where(role: :customer)}
 
+  scope :search_by_name, (lambda do |key|
+    where "name LIKE ? or phone_num LIKE ? ", "%#{key}%", "%#{key}%"
+  end)
+
   private
 
   def downcase_email
