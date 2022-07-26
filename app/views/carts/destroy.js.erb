@@ -1,0 +1,12 @@
+$("#cart_products").html(
+  "<%= j render partial: "carts/product", collection: @products %>"
+);
+$("#cart-total-money").html(
+  "<%= number_to_currency total_price %>"
+);
+$("#header-count-carts").html(
+  "<%= count_carts %>"
+);
+$("#header-cart-list").html(
+  "<%= j render partial: "shared/product", collection: @products %>"
+);

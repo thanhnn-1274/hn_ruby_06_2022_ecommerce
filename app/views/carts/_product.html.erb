@@ -1,7 +1,11 @@
 <div class="body-main-product">
   <div class="main-product-imgandtext">
     <div class="product-imgandtext-img">
-      <img src="<%= product.thumbnail %>" alt="">
+      <% if product.image.attached? %>
+        <%= image_tag(product.image) %>
+      <% else %>
+        <%= image_tag(product.thumbnail) %>
+      <% end %>
     </div>
     <div class="product-imgandtext-text">
       <span><%= product.name%></span>
@@ -13,21 +17,26 @@
     <div class="product-price-current"><%= number_to_currency product.price %></div>
   </div>
   <div class="main-product-number">
-    <%= form_with url: cart_path(id: product.id), method: :put, remote: true do |f| %>
-      <%= f.number_field :quantily, value: init_cart["#{product.id}"],
-        max: product.quantity, min: Settings.carts.min_quantily, class: "form-control" %>
-    </div>
-    <div class="main-product-allprice">
-      <span><%= number_to_currency total_price_book(product.id) %></span>
-    </div>
-    <div class="main-product-delete">
-      <%= link_to cart_path(id: product.id), method: :delete,
-        data: {confirm: t(".confirm_delete")} do %>
-        <button class="product-delete-btn"><%= t ".delete"%></button>
-      <% end %>
-      <%= f.button type: :submit, class: "product-delete-btn" do %>
-        <%= t ".edit"%>
-      <% end %>
+    <%= form_tag cart_path(id: product.id), id: "update-form-cart", method: :put, remote: true do %>
+      <div class="product-view-quantity-box-block">
+        <button class="btn-subtract-qty">
+          <%= image_tag("ico_minus2x.png", class: "plus-img") %>
+        </button>
+        <%= number_field_tag :quantily, init_cart["#{product.id}"], class: "form-control input-text",
+          max: product.quantity, min: Settings.carts.min_quantily %>
+        <button class="btn-add-qty">
+          <%= image_tag("ico_plus2x.png", class: "plus-img") %>
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <div class="main-product-allprice">
+    <span id="item-product-allprice_<%=product.id%>"><%= number_to_currency total_price_book(product.id) %></span>
+  </div>
+  <div class="main-product-delete">
+    <%= link_to cart_path(id: product.id), method: :delete,
+        data: {confirm: t(".confirm_delete")}, remote: true do %>
+      <button class="product-delete-btn"><%= t ".delete"%></button>
     <% end %>
   </div>
 </div>

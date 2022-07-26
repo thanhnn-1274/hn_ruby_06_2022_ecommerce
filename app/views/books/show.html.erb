@@ -7,7 +7,7 @@
       <div class="grid-column-4">
         <a href="#" class="home-product">
           <% if @book.image.attached?%>
-            <div class="product-img" style="background-image: url(<%= @book.image %>);"></div>
+            <div class="product-img" style="background-image: url(<%= url_for(@book.image) %>);"></div>
           <% else %>
             <div class="product-img" style="background-image: url(<%= @book.thumbnail %>);"></div>
           <% end %>
@@ -58,6 +58,7 @@
       </div>
     </div>
   </div>
+  <%= javascript_pack_tag "update_cart", "data-turbolinks-track": "reload" %>
 </div>
 <div class="grid">
   <div class="book-info-content">

@@ -1,5 +1,9 @@
 <li class="cart__item">
-  <img src="<%= product.thumbnail %>" alt="" class="cart__list-img">
+  <% if product.image.attached? %>
+    <%= image_tag(product.image, class: "cart__list-img") %>
+  <% else %>
+    <%= image_tag(product.thumbnail, class: "cart__list-img") %>
+  <% end %>
   <div class="card__item-head">
     <h5><%= product.name %>
     </h5>

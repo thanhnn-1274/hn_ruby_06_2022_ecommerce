@@ -4,6 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :book
 
   has_one_attached :image
+  delegate :name, to: :user, prefix: :user, allow_nil: true
   validates :content, presence: true,
     length: {minimum: Settings.comment.content_min_length,
              maximum: Settings.comment.content_max_length}
