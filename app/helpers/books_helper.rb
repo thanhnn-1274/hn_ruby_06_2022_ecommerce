@@ -1,14 +1,4 @@
 module BooksHelper
-  def search
-    search_text = params[:search_text]
-    @books = if search_text.blank?
-               Book.all
-             else
-               Book.search(search_text)
-             end
-    render :home
-  end
-
   def render_star star
     temp = []
     stared = star.to_i

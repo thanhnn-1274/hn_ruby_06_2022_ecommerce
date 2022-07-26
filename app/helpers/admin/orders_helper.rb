@@ -36,9 +36,4 @@ module Admin::OrdersHelper
       sum + order_detail.price * order_detail.quantity
     end
   end
-
-  def search
-    search_text = params[:search]
-    @orders = search_text.blank? ? Order.all : Order.search(search_text)
-  end
 end

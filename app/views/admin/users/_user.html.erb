@@ -4,6 +4,8 @@
   <td><%= user.email %></td>
   <td><%= user.phone_num %></td>
   <td><%= user.address %></td>
+  <td><%= user.orders.count %></td>
+  <td><%= number_to_currency total_money_orders(user) %></td>
   <td>
     <%= link_to "#" do %>
         <label class="btn btn-warning">

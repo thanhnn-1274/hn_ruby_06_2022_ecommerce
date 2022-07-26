@@ -1,15 +1,6 @@
 <div id="content-wrapper" class="d-flex flex-column">
   <div id="content">
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-      <%= form_tag("#", method: :get, class: "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search") do %>
-        <%= text_field_tag :admin_search, params[:admin_search],
-                                          class: "form-control bg-light border-0 small",
-                                          placeholder: t(".search") %>
-        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-          <%= t ".search" %>
-          <i class="fa fa-search" aria-hidden="true"></i>
-        <% end %>
-      <% end %>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow d-sm-none">
           <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
