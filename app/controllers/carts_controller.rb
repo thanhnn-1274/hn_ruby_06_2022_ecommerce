@@ -4,6 +4,8 @@ class CartsController < ApplicationController
   before_action :load_product, only: %i(create update destroy)
   before_action :load_products, only: %i(index update destroy)
 
+  authorize_resource class: false
+
   def index; end
 
   def create

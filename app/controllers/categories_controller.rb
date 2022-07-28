@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  authorize_resource
+
   before_action :find_category, only: %i(show)
   before_action :load_book, only: %i(show)
 

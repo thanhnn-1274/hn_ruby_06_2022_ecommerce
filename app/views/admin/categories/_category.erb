@@ -7,7 +7,7 @@
         <i class="fa fa-pencil" aria-hidden="true"></i>
       </label>
     <% end %>
-    <%= link_to "#",method: :delete,
+    <%= link_to admin_category_path(category),method: :delete,
                                       data: {confirm: "Delete"},
                                       remote: true,
                                       class: "book_delete" do %>

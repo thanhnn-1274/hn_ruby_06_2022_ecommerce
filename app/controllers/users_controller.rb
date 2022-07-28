@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :find_user, except: %i(new create)
   before_action :correct_user, only: %i(update)
 
+  authorize_resource
+
   def show
     @user = User.find_by id: params[:id]
     return if @user

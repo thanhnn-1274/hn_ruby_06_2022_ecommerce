@@ -2,6 +2,8 @@ class Admin::BooksController < Admin::AdminController
   before_action :load_category_author, only: %i(new edit update)
   before_action :find_book, only: %i(edit update destroy)
 
+  authorize_resource
+
   def new
     @book = Book.new
   end
@@ -23,7 +25,8 @@ class Admin::BooksController < Admin::AdminController
     @pagy, @books = pagy Book.sort_sold(:desc).asc_name
     return if params[:admin_search].blank?
 
-    @pagy, @books = pagy Book.search_by_name(params[:admin_search].squish)
+    @pagy, @books = pagy Book.search_by_name_description(params[:admin_search]
+                                                         .squish)
   end
 
   def update

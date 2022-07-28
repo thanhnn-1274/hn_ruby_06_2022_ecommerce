@@ -1,6 +1,8 @@
 class Admin::CategoriesController < Admin::AdminController
   before_action :find_category, only: %i(edit update destroy)
 
+  authorize_resource
+
   def index
     @pagy, @categories = pagy Category.asc_category_name
   end

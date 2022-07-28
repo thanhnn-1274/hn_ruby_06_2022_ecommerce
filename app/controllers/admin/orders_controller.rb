@@ -3,6 +3,8 @@ class Admin::OrdersController < Admin::AdminController
   before_action :load_order_details, only: %i(show)
   before_action :check_status_order, only: %i(update)
 
+  authorize_resource
+
   def index
     if params[:status]
       filter

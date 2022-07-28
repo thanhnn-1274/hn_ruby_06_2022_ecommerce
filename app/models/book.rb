@@ -33,7 +33,7 @@ class Book < ApplicationRecord
   scope :latest_book, ->{order created_at: :desc}
   scope :sort_price, ->(type){order price: type}
   scope :by_ids, ->(ids){where id: ids}
-  scope :search_by_name, (lambda do |key|
+  scope :search_by_name_description, (lambda do |key|
     where "name LIKE ? or description LIKE ? or id LIKE ?",
           "%#{key}%", "%#{key}%", "%#{key}%"
   end)

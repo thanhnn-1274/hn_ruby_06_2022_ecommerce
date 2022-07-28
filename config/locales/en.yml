@@ -3,6 +3,7 @@ en:
     error_comment: "Can not comment! Check the contain and rating is true or not"
   page_title: "Book Store"
   admin_danger: "You do not have permission to access this page!!"
+  access_denied: "Access denied. You are not authorized to access the requested page."
   price_desc: "Low to high price"
   price_asc: "Price high to low"
   latest: "Latest"

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :users
       resources :orders
       get "/home", to: "orders#index"
-      root "orders#index"
+      root "/orders#index"
     end
 
     root "static_pages#home"
