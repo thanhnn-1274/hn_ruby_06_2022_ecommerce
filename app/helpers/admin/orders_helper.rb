@@ -19,7 +19,7 @@ module Admin::OrdersHelper
     when :accepted
       Order.statuses.select{|k, _v| %w(canceled complete).include?(k)}
     when :all
-      {"all" => -1}.merge(Order.statuses)
+      {"all" => ""}.merge(Order.statuses)
     end
   end
 

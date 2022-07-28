@@ -1,0 +1,33 @@
+<div class="grid">
+  <div class="grid__row grid-column">
+    <div class="grid-column-2">
+      <nav class="category">
+        <h3 class="category-heading">
+          <i class="fa fa-list-ul" aria-hidden="true"></i>
+          <%= t ".category" %>
+        </h3>
+        <div class="category-list-container">
+          <ul class="category-list">
+            <%= render partial: "shared/category", collection: @categories %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="grid-column-10">
+      <div class="home-filter">
+        <%= render "filter" %>
+      </div>
+      <div class="home-product">
+        <div class="grid__row" id="home-product">
+          <%= render partial: "shared/book", collection: @books %>
+        </div>
+      </div>
+      <div id="pagy">
+        <%= render "shared/pagy", locals: {pagy: @pagy} %>
+      </div>
+      <div class="home-controller">
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "home.js", media: "all", "data-turbolinks-track": "reload" %>

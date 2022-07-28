@@ -7,15 +7,13 @@ Rails.application.routes.draw do
       resources :users
       resources :orders
       get "/home", to: "orders#index"
-      root "/orders#index"
+      root "orders#index"
     end
 
-    root "static_pages#home"
+    root "books#index"
     devise_for :users, skip: :omniauth_callbacks
-    get "/my-order", to: "orders#sort"
     resources :users, except: :index
-    get "/books", to: "books#sort"
-    resources :books, :categories, only: %i(show)
+    resources :books, only: %i(show index)
     resources :carts, only: %i(create index update destroy)
     resources :orders, only: %i(new create index show update)
     resources :comments, only: :create

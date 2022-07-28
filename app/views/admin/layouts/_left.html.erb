@@ -32,7 +32,7 @@
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
-    <%= link_to logout_path, method: :delete, class: "nav-link collapsed" do %>
+    <%= link_to destroy_user_session_path, method: :delete, class: "nav-link collapsed" do %>
       <i class="fa fa-sign-out"></i>
       <span><%= t ".logout" %></span>
     <% end %>

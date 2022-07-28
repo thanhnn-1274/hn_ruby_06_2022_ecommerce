@@ -1,0 +1,7 @@
+<% status = %w(all pending accepted complete canceled) %>
+<% status.each_with_index do |item, index| %>
+  <%= search_form_for @search_orders, as: :p, remote: true do |f| %>
+    <%= f.hidden_field :status_cont, value: "#{status_value index}" %>
+    <%= f.submit t(".#{item}"),  class: "btn btn-outline-danger fs-2" %>
+  <% end %>
+<% end %>

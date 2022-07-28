@@ -4,6 +4,7 @@ class Ability
   def initialize user
     can %i(read sort), Book
     can :read, Category
+
     if user&.admin?
       can :manage, :all
     elsif user&.customer?

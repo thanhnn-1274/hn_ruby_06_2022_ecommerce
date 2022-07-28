@@ -6,11 +6,8 @@ class Admin::OrdersController < Admin::AdminController
   authorize_resource
 
   def index
-    if params[:status]
-      filter
-    else
-      @pagy, @orders = pagy Order.latest_order
-    end
+    @search = Order.ransack(params[:q])
+    @pagy, @orders = pagy @search.result.latest_order
   end
 
   def show
@@ -55,24 +52,5 @@ class Admin::OrdersController < Admin::AdminController
 
     flash[:danger] = t ".danger"
     redirect_to admin_orders_path
-  end
-
-  def filter
-    sort
-    statuses = Order.statuses.values
-    return unless statuses.include? params[:status].to_i
-
-    @pagy, @orders = pagy(@orders.status_order(params[:status].to_sym))
-  end
-
-  def send_mail_notification
-    status = @order.status
-    @order.send "send_mail_#{status}"
-  end
-
-  def sort
-    @pagy, @orders = pagy(Order.search(params[:search])
-                               .time_order(params[:updated_at].to_sym)
-                               .total_money(params[:price].to_sym))
   end
 end

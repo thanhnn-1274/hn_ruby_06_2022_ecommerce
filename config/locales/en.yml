@@ -79,7 +79,9 @@ en:
         title: "All Book"
         new_book: "New Book"
         sold: "Sold"
+      search:
         search: "Search"
+        placeholder: "Enter book or description"
       edit:
         title: "Edit Book"
         button: "Edit"
@@ -113,7 +115,9 @@ en:
         not_found: "Not Found Order Details"
         total_order: "Total Order"
         total_money_order: "Total Money Order"
+      search:
         search: "Search"
+        placeholder: "Enter name or phone number"
     orders:
       index:
         title: "All Order"
@@ -318,7 +322,17 @@ en:
       book_quantity: "Quantity:  "
       add_to_cart: "Add to cart"
       buy_now: "Buy now"
-
+    index:
+      category: "Category"
+    filter:
+      order_by: "Sorted by"
+      popular: "Popular"
+      latest: "Latest"
+      price: "Price"
+      selling: "Selling"
+      order_1: "Low to high price"
+      order_2: "Price high to low"
+      not_found: "Not Found Order"
   number:
      currency:
         format:
@@ -380,11 +394,6 @@ en:
       order_fail: "Fail to create order"
     index:
       title: "My Order"
-      all: "All"
-      pending: "Pending"
-      accepted: "Delivery"
-      complete: "Complete"
-      canceled: "Cancelled"
       stt: "STT"
       code: "Orders Code"
       created_at: "Created At"
@@ -420,6 +429,12 @@ en:
     update:
       success: "Success!"
       danger: "Update Fail!"
+    filter:
+      all: "All"
+      pending: "Pending"
+      accepted: "Delivery"
+      complete: "Complete"
+      canceled: "Cancelled"
   user_mailer:
     canceled_order:
       subject_canceled: "Order Canceled"

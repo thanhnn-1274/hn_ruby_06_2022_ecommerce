@@ -75,9 +75,9 @@
         <% end %>
       </div>
       <div class="header__search">
-        <%= form_tag root_path, class: "header__search", method: :GET do %>
-          <%= text_field_tag :search, params[:search], placeholder: t(".placeholder"),
-                  class: "header__search-input" %>
+        <%= search_form_for @search, url: books_path, class: "header__search", remote: true do |f| %>
+          <%= f.search_field :name_or_description_cont, class: "header__search-input",
+            placeholder: t(".placeholder") %>
           <div class="header__search-select">
             <span><%= t ".search" %></span>
             <i class="fa fa-angle-down" aria-hidden="true"></i>

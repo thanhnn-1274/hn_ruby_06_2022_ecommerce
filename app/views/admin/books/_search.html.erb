@@ -1,0 +1,10 @@
+<%= search_form_for [:admin, @search],
+      class: "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search float-end" do |f| %>
+  <%= f.search_field :name_or_description_cont,
+      class: "form-control bg-light border-0 small",
+      placeholder: t(".search") %>
+  <%= f.submit class: "btn btn-primary" do %>
+    <%= t ".search" %>
+    <i class="fa fa-search" aria-hidden="true"></i>
+  <% end %>
+<% end %>

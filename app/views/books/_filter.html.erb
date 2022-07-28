@@ -1,0 +1,20 @@
+<span class="filter-span"><%= t ".order_by" %></span>
+<%= link_to t(".popular"), books_path(q: {s: "view desc"}), class: "filter-button filter-button-active", remote: true %>
+<%= link_to t(".latest"), books_path(q: {s: "created_at desc"}), class: "filter-button", remote: true %>
+<%= link_to t(".selling"), books_path(q: {s: "sold desc"}), class: "filter-button", remote: true %>
+<div class="filter-price">
+  <span><%= t ".price" %></span>
+  <i class="fa fa-angle-down" aria-hidden="true"></i>
+  <ul class="filter-price-list">
+    <li>
+      <%= link_to t(".order_1"), books_path(q: {s: "price asc"}),
+        class: "filter-price-link", id:  "orderAsc", remote: true
+      %>
+    </li>
+    <li>
+      <%= link_to t(".order_2"), books_path(q: {s: "price desc"}),
+        class: "filter-price-link", id:  "orderAsc", remote: true
+      %>
+    </li>
+  </ul>
+</div>

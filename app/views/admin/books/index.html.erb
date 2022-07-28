@@ -11,19 +11,11 @@
 <div class="card shadow mb-4">
   <div class="card-body">
     <div class="row">
-      <div class="col"">
+      <div class="col">
         <%== pagy_bootstrap_nav(@pagy) %>
       </div>
       <div class="col">
-        <%= form_tag("#", method: :get, class: "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search float-end") do %>
-          <%= text_field_tag :admin_search, params[:admin_search],
-                                            class: "form-control bg-light border-0 small",
-                                            placeholder: t(".search") %>
-          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-            <%= t ".search" %>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          <% end %>
-        <% end %>
+        <%= render "search" %>
       </div>
     </div>
     <div class="table-responsive">

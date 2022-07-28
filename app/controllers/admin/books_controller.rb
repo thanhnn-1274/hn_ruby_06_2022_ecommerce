@@ -22,11 +22,8 @@ class Admin::BooksController < Admin::AdminController
   end
 
   def index
-    @pagy, @books = pagy Book.sort_sold(:desc).asc_name
-    return if params[:admin_search].blank?
-
-    @pagy, @books = pagy Book.search_by_name_description(params[:admin_search]
-                                                         .squish)
+    @search = Book.ransack(params[:q])
+    @pagy, @books = pagy @search.result.asc_name
   end
 
   def update
