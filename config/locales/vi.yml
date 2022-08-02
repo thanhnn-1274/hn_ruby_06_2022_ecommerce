@@ -3,6 +3,7 @@ vi:
     error_comment: "Không thể tạo bình luận! Kiểm tra đã nhập đúng nội dung và rating chưa"
   page_title: "Cửa Hàng Sách"
   admin_danger: "Bạn không có quyền truy cập trang này"
+  access_denied: "Quyền truy cập bị từ chối. Bạn không được phép truy cập trang được yêu cầu."
   price_desc: "Giá từ cao đến thấp"
   price_asc: "Giá từ thấp đến cao"
   latest: "Mới nhất"

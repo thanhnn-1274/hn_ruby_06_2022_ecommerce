@@ -19,14 +19,14 @@ user:
 image:
   default_avatar: "default-avatar.png"
 max_name_book_length: 100
-min_book_price_length: 0
+min_book_price_length: 1
 max_book_price_length: 1000000
 max_description_length: 60000
 image_format: ["image/jpeg", "image/gif", "image/png"]
 image_size: 5
 
-min_page: 0
-min_quantity: 0
+min_page: 1
+min_quantity: 1
 image_book_admin: [200, 250]
 carts:
   min_quantily: 0

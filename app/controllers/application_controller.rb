@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  protect_from_forgery with: :exception
   include SessionsHelper
   include CartsHelper
   include BooksHelper
@@ -8,7 +7,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :init_cart, :load_products
 
+  protect_from_forgery with: :exception
+  rescue_from CanCan::AccessDenied, with: :deny_access
+
   private
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
@@ -28,5 +31,10 @@ class ApplicationController < ActionController::Base
   def load_products
     clean_carts
     @products = Book.by_ids @carts.keys
+  end
+
+  def deny_access
+    flash[:danger] = t "access_denied"
+    redirect_to root_url
   end
 end
