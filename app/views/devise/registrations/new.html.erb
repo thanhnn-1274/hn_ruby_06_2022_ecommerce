@@ -50,14 +50,14 @@
             <div class="_3svg61"></div>
           </div>
           <div class="signup-form-social">
-            <a href="" class="social-facebook">
+            <%= link_to user_facebook_omniauth_authorize_path, class: "social-facebook", method: :post do %>
               <i class="footer-icon fa fa-facebook-official"></i>
               <p><%= t ".connect_facebook" %></p>
-            </a>
-            <a href="" class="social-google">
+            <% end %>
+            <%= link_to user_google_oauth2_omniauth_authorize_path, class: "social-google", method: :post do %>
               <i class="fa fa-google-plus-square" aria-hidden="true"></i>
               <p><%= t ".connect_google" %></p>
-            </a>
+            <% end %>
           </div>
           <div class="signup-form-switch">
             <%= t ".have_account" %>
