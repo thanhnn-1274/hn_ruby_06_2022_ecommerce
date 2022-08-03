@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+         :validatable
   enum role: {admin: 0, customer: 1}
   USER_ATTRS = %w(name email password password_confirmation).freeze
   GET_ALL = %w(id name email phone_num address).freeze
@@ -33,7 +35,6 @@ class User < ApplicationRecord
             content_type: {in: Settings.user.image.image_path,
                            message: :wrong_format},
                           allow_nil: true
-  has_secure_password
 
   scope :asc_name, ->{order name: :asc}
   scope :get_all, ->{select(GET_ALL).where(role: :customer)}

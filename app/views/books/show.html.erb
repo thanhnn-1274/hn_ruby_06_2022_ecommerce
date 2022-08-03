@@ -65,7 +65,7 @@
     <h5><%= t ".book_content" %><%= @book.description %></h5>
   </div>
 </div>
-<% if logged_in? %>
+<% if user_signed_in? %>
   <div class="grid">
     <div class="user-rating-book">
       <h3 class="mb-3"> <%= t ".comment_book" %> </h3>
