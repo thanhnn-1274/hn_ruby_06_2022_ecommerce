@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  include SessionsHelper
+  protect_from_forgery with: :exception
   include CartsHelper
   include BooksHelper
 
   before_action :set_locale
   before_action :init_cart, :load_products
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protect_from_forgery with: :exception
   rescue_from CanCan::AccessDenied, with: :deny_access
@@ -20,14 +21,6 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t("users.before_action.please_login")
-    redirect_to login_path
-  end
-
   def load_products
     clean_carts
     @products = Book.by_ids @carts.keys
@@ -36,5 +29,13 @@ class ApplicationController < ActionController::Base
   def deny_access
     flash[:danger] = t "access_denied"
     redirect_to root_url
+  end
+
+  def configure_permitted_parameters
+    added_attrs = %i(name email password password_confirmation remember_me)
+    added_attrs_update = %i(name email password password_confirmation
+                          remember_me address phone_num avatar)
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs_update
   end
 end
