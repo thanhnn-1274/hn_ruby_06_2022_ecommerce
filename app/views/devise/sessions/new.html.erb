@@ -1,69 +1,68 @@
 <div class="body-app">
- <div class="my-body-app">
-   <div class="login">
-     <div class="login-title"><%= t ".welcome_to" %></div>
-     <div class="login-form">
-       <div class="login-form-contain">
-         <div class="login-form-head">
-           <h3><%= t ".sign_in" %></h3>
-           <%= link_to t(".sign_up"), new_user_registration_path %>
-         </div>
-         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-           <div class="field">
-             <%= f.label :email, t(".email") %><br />
-             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
-           </div>
-           <div class="field">
-             <%= f.label :password, t(".password") %><br />
-             <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
-           </div>
-           <% if devise_mapping.rememberable? %>
-             <div class="field">
-               <%= f.check_box :remember_me %>
-               <%= f.label :remember_me, t(".remember_me") %>
-             </div>
-           <% end %>
-           <%= render "devise/shared/links" %>
-           <div class="login-form-control">
-             <%= link_to root_path do %>
-               <button class="login-form-goback"><%= t ".go_back" %></button>
-             <% end %>
-             <%= f.submit t(".sign_in"), class: "login-form-login" %>
-           </div>
-         <% end %>
-
-         <div class="login-form-policy">
-           <p><%= t ".policy_accept" %>
-             <a href="" class="login-form-policy-link">
-               <%= t ".policy_2" %>
-             </a>&
-             <a href="" class="login-form-policy-link">
-               <%= t ".policy_3" %>
-             </a>
-           </p>
-         </div>
-         <div class="alertLogin"></div>
-         <div class="IFLxoY">
-           <div class="_3svg61"></div>
-           <span class="_1ZEpVL"><%= t ".or_1" %></span>
-           <div class="_3svg61"></div>
-         </div>
-         <div class="login-form-social">
-           <a href="" class="social-facebook">
-             <i class="footer-icon fa fa-facebook-official"></i>
-             <p><%= t ".connect_facebook" %></p>
-           </a>
-           <a href="" class="social-google">
-             <i class="fa fa-google-plus-square" aria-hidden="true"></i>
-             <p><%= t ".connect_google" %></p>
-           </a>
-         </div>
-         <div class="login-form-switch">
-           <%= t ".new_member" %>
-           <%= link_to t(".sign_up"), new_user_registration_path %>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
+  <div class="my-body-app">
+    <div class="login">
+      <div class="login-title"><%= t ".welcome_to" %></div>
+      <div class="login-form">
+        <div class="login-form-contain">
+          <div class="login-form-head">
+            <h3><%= t ".sign_in" %></h3>
+            <%= link_to t(".sign_up"), new_user_registration_path %>
+          </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email, t(".email") %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+            <div class="field">
+              <%= f.label :password, t(".password") %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me, t(".remember_me") %>
+              </div>
+            <% end %>
+            <%= render "devise/shared/links" %>
+            <div class="login-form-control">
+              <%= link_to root_path do %>
+                <button class="login-form-goback"><%= t ".go_back" %></button>
+              <% end %>
+              <%= f.submit t(".sign_in"), class: "login-form-login" %>
+            </div>
+          <% end %>
+          <div class="login-form-policy">
+            <p><%= t ".policy_accept" %>
+              <a href="" class="login-form-policy-link">
+                <%= t ".policy_2" %>
+              </a>&
+              <a href="" class="login-form-policy-link">
+                <%= t ".policy_3" %>
+              </a>
+            </p>
+          </div>
+          <div class="alertLogin"></div>
+          <div class="IFLxoY">
+            <div class="_3svg61"></div>
+            <span class="_1ZEpVL"><%= t ".or_1" %></span>
+            <div class="_3svg61"></div>
+          </div>
+          <div class="login-form-social">
+            <%= link_to user_facebook_omniauth_authorize_path, class: "social-facebook", method: :post do %>
+              <i class="footer-icon fa fa-facebook-official"></i>
+              <p><%= t ".connect_facebook" %></p>
+            <% end %>
+            <%= link_to user_google_oauth2_omniauth_authorize_path, class: "social-google", method: :post do %>
+              <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+              <p><%= t ".connect_google" %></p>
+            <% end %>
+          </div>
+          <div class="login-form-switch">
+            <%= t ".new_member" %>
+            <%= link_to t(".sign_up"), new_user_registration_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
