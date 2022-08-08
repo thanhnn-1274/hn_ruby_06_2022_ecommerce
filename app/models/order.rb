@@ -19,6 +19,10 @@ class Order < ApplicationRecord
   scope :time_order, ->(type){order updated_at: type}
   scope :status_order, ->(type){where status: type}
   scope :total_money, ->(type){order total_money: type}
+  scope :created_date, ->(date){where "DATE(created_at) = ?", date}
+  scope :revenue_day, ->(d){(where "DATE(created_at) = ?", d).sum :total_money}
+  scope :created_month, ->(month){where "MONTH(created_at) = ?", month}
+  scope :revenue_m, ->(m){(where "MONTH(created_at) = ?", m).sum :total_money}
   scope :search, (lambda do |key|
     where "name LIKE ? or id LIKE ?", "%#{key}%", "%#{key}%"
   end)

@@ -5,6 +5,7 @@ ruby "2.7.1"
 
 gem "active_storage_validations", "~> 0.8"
 gem "bcrypt", "3.1.13"
+gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "cancancan"
 gem "config"
@@ -32,8 +33,7 @@ gem "sass-rails", ">= 6"
 gem "sidekiq"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
-
-gem "bootsnap", ">= 1.4.4", require: false
+gem "whenever"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

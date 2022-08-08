@@ -468,3 +468,18 @@ en:
       text_2: "includes the following products:"
       text_3: "The order value is:"
       status: "The order has been Create success."
+    daily_order:
+      text_1: "You have placed your order in our store at"
+      text_2: "includes the following products:"
+      text_3: "The order value is:"
+      hello_day: "Hello, this is revenue of: "
+      today_revenue: "Total revenue of today is: "
+      daily_revenue: "Daily revenue"
+    monthly_order:
+      text_1: "You have placed your order in our store at"
+      text_2: "includes the following products:"
+      text_3: "The order value is:"
+      hello_month: "Hello, this is revenue of: "
+      month_revenue: "This month revenue of month is: "
+      monthly_revenue: "Monthly revenue"
+      all_order: "Include thease orders"
