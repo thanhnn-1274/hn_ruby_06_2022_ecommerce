@@ -17,7 +17,6 @@ class Admin::OrdersController < Admin::AdminController
   def update
     if @order.handle_order order_params
       flash[:success] = t(".success")
-      send_mail_notification
     else
       flash.now[:danger] = t(".danger")
     end

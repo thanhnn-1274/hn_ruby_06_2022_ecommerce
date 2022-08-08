@@ -460,3 +460,11 @@ en:
       text_2: "includes the following products:"
       text_3: "The order value is:"
       status: "Order has been delivered"
+    canceled_order:
+      subject_canceled: "Order Create"
+      order_information: "Information order #ID: "
+      hello: "Hello, "
+      text_1: "You have placed your order in our store at"
+      text_2: "includes the following products:"
+      text_3: "The order value is:"
+      status: "The order has been Create success."

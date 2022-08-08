@@ -1,3 +1,4 @@
+require "sidekiq/web"
 Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   scope "(:locale)", locale: /en|vi/ do
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
     resources :carts, only: %i(create index update destroy)
     resources :orders, only: %i(new create index show update)
     resources :comments, only: :create
+    mount Sidekiq::Web => "/sidekiq"
   end
 end

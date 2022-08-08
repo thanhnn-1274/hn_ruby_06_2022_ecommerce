@@ -1,4 +1,9 @@
 class UserMailer < ApplicationMailer
+  def pending_order order
+    @order = order
+    mail to: @order.user.email, subject: t(".subject_pending")
+  end
+
   def canceled_order order
     @order = order
     mail to: @order.user.email, subject: t(".subject_canceled")
