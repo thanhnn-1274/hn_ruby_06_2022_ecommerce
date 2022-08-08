@@ -13,7 +13,7 @@ class Order < ApplicationRecord
   validates :phone_num, presence: true,
     length: {minimum: Settings.user.min_phone,
              maximum: Settings.user.max_phone}
-
+  after_save :send_mail_notification
   scope :status_order, ->(type){where status: type}
   scope :latest_order, ->{order created_at: :desc}
   scope :time_order, ->(type){order updated_at: type}
@@ -23,16 +23,20 @@ class Order < ApplicationRecord
     where "name LIKE ? or id LIKE ?", "%#{key}%", "%#{key}%"
   end)
 
+  def send_mail_pending
+    PendingOrderWorker.perform_async id
+  end
+
   def send_mail_accepted
-    AcceptedOrderJob.set(wait: Settings.number_15.seconds).perform_later self
+    AcceptedOrderWorker.perform_async id
   end
 
   def send_mail_canceled
-    CanceledOrderJob.set(wait: Settings.number_15.seconds).perform_later self
+    CanceledOrderWorker.perform_async id
   end
 
   def send_mail_complete
-    CompleteOrderJob.set(wait: Settings.number_15.seconds).perform_later self
+    CompleteOrderWorker.perform_async id
   end
 
   def handle_order order_params
@@ -52,6 +56,11 @@ class Order < ApplicationRecord
   end
 
   private
+
+  def send_mail_notification
+    status = self.status
+    send "send_mail_#{status}"
+  end
 
   def update_order order_detail, new_quantity, sold
     order_detail.book.update!(quantity: new_quantity, sold: sold)

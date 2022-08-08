@@ -1,0 +1,8 @@
+class AcceptedOrderWorker
+  include Sidekiq::Worker
+
+  def perform order_id
+    @order = Order.find_by id: order_id
+    UserMailer.accepted_order(@order).deliver_later
+  end
+end

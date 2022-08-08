@@ -457,3 +457,11 @@ vi:
       text_2: "gồm những sản phẩm sau:"
       text_3: "Giá trị đơn hàng là:"
       status: "Đơn hàng đã được giao"
+    pending_order:
+      subject_pending: "Đơn Hàng Đã Được Tạo Thành Công"
+      order_information: "Thông tin đơn hàng #ID: "
+      hello: "Xin chào, "
+      text_1: "Bạn đã đặt hàng bên cửa hàng chúng tôi vào lúc"
+      text_2: "gồm những sản phẩm sau:"
+      text_3: "Giá trị đơn hàng là:"
+      status: "Đơn hàng đã được tạo thành công, đang chờ admin xác nhận"
