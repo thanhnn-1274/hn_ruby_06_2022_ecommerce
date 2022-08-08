@@ -465,3 +465,18 @@ vi:
       text_2: "gồm những sản phẩm sau:"
       text_3: "Giá trị đơn hàng là:"
       status: "Đơn hàng đã được tạo thành công, đang chờ admin xác nhận"
+    daily_order:
+      text_1: "Đơn hàng được đặt hàng vào lúc"
+      text_2: "gồm những sản phẩm sau:"
+      text_3: "Giá trị đơn hàng là:"
+      hello_day: "Xin chào, đây là báo cáo doanh thu ngày: "
+      today_revenue: "Tổng doanh thu của ngày hôm nay là: "
+      daily_revenue: "Báo cáo doanh thu hàng ngày"
+    monthly_order:
+      text_1: "Đơn hàng được đặt hàng vào lúc"
+      text_2: "gồm những sản phẩm sau:"
+      text_3: "Giá trị đơn hàng là:"
+      hello_month: "Xin chào, đây là báo cáo doanh thu tháng: "
+      month_revenue: "Tổng doanh thu của ngày tháng này là: "
+      monthly_revenue: "Báo cáo doanh thu hàng tháng"
+      all_order: "Gồm các đơn hàng sau"

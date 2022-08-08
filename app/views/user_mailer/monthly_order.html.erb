@@ -1,0 +1,24 @@
+<h1>
+  <%= t ".hello_month" %><%= Time.zone.today.month %>
+</h1>
+<h1>
+  <%= t ".month_revenue" %><%= number_to_currency @total_revenue %>
+</h1>
+<h2>
+  <%= t ".all_order" %>
+</h2>
+<% @orders.each do |product| %>
+  <h3>
+    <%= "#{t ".text_1"} #{product.created_at}, #{t ".text_2"}" %>
+  </h3>
+  <% product.order_details.each do |item| %>
+    <li>
+      <%= "#{item.book.name} - #{number_to_currency(item.price)}
+         - #{item.quantity} - #{number_to_currency(item.total_money)}"
+        %>
+    </li>
+  <% end %>
+  <h3>
+    <%= "#{t ".text_3"} #{number_to_currency(product.total_money)}" %>
+  </h3>
+<% end %>
