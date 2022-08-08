@@ -32,4 +32,10 @@ module OrdersHelper
       sum + order_detail.price * order_detail.quantity
     end
   end
+
+  def status_value index
+    return "" if index.zero?
+
+    index - 1
+  end
 end

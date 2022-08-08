@@ -9,15 +9,7 @@
         <%== pagy_bootstrap_nav(@pagy) %>
       </div>
       <div class="col">
-        <%= form_tag("#", method: :get, class: "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search float-end") do %>
-          <%= text_field_tag :admin_search, params[:admin_search],
-                                            class: "form-control bg-light border-0 small",
-                                            placeholder: t(".search") %>
-          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-            <%= t ".search" %>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          <% end %>
-        <% end %>
+        <%= render "search" %>
       </div>
     </div>
     <div class="table-responsive">
@@ -25,12 +17,12 @@
         <thead class="thead-dark">
           <tr>
             <th><%= t ".stt" %></th>
-            <th><%= t ".name" %></th>
-            <th><%= t ".email" %></th>
-            <th><%= t ".phone" %></th>
-            <th><%= t ".address" %></th>
-            <th><%= t ".total_order" %>
-            <th><%= t ".total_money_order" %>
+            <th><%= sort_link(@search, :name, t(".name"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :email, t(".email"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :phone, t(".phone"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :address, t(".address"), class: "edit-link") %></th>
+            <th><%= t ".total_order" %></th>
+            <th><%= t ".total_money_order" %></th>
             <th><%= t ".action" %></th>
           </tr>
         </thead>

@@ -79,7 +79,9 @@ vi:
         title: "Tất cả sách"
         sold: "Đã Bán"
         new_book: "Tạo Sách Mới"
+      search:
         search: "Tìm Kiếm"
+        placeholder: "Nhập vào tên hoặc mô tả"
       edit:
         title: "Chỉnh Sửa Sách"
         button: "Chỉnh Sửa"
@@ -112,7 +114,9 @@ vi:
         action: "Hành Động"
         total_order: "Tổng Số Đơn Hàng"
         total_money_order: "Tổng Tiền"
+      search:
         search: "Tìm Kiếm"
+        placeholder: "Nhập vào tên hoặc số điện thoại"
     orders:
       index:
         title: "Tất Cả Đơn Hàng"
@@ -314,6 +318,17 @@ vi:
       book_quantity: "Số lượng: "
       add_to_cart: "Thêm Vào Giỏ Hàng"
       buy_now: "Mua Ngay"
+    index:
+      category: "Danh mục"
+    filter:
+      order_by: "Sắp xếp theo"
+      popular: "Phổ biến"
+      latest: "Mới nhất"
+      price: "Gía"
+      selling: "Bán chạy"
+      order_1: "Giá thấp đến cao"
+      order_2: "Giá cao đến thấp"
+      not_found: "Không tìm thấy đơn hàng"
 
   number:
      currency:
@@ -376,11 +391,6 @@ vi:
       order_fail: "Tạo đơn hàng thất bại"
     index:
       title: "Lịch Sử Đơn Hàng"
-      all: "Tất Cả"
-      pending: "Chờ Xác Nhận"
-      accepted: "Đang Giao Hàng"
-      complete: "Hoàn Thành"
-      canceled: "Đã Hủy"
       stt: "STT"
       code: "Mã Đơn Hàng"
       created_at: "Ngày Ghi Nhận"
@@ -416,6 +426,12 @@ vi:
     update:
       success: "Cập nhật trạng thái đơn hàng thành công!"
       danger: "Cập nhật trạng thái thất bại"
+    filter:
+      all: "Tất Cả"
+      pending: "Chờ Xác Nhận"
+      accepted: "Đang Giao Hàng"
+      complete: "Hoàn Thành"
+      canceled: "Đã Hủy"
   user_mailer:
     canceled_order:
       subject_canceled: "Đơn Hàng Đã Bị Hủy"

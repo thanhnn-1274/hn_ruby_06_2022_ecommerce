@@ -48,4 +48,8 @@ class Book < ApplicationRecord
   def update_view
     increment!(:view, 1)
   end
+
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at)")
+  end
 end

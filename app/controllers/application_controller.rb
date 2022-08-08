@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-  protect_from_forgery with: :exception
   include CartsHelper
   include BooksHelper
 
   before_action :set_locale
-  before_action :init_cart, :load_products
+  before_action :init_cart, :load_products, :ransack_books
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protect_from_forgery with: :exception
@@ -37,5 +36,17 @@ class ApplicationController < ActionController::Base
                           remember_me address phone_num avatar)
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs_update
+  end
+
+  def ransack_books
+    @search = Book.ransack(params[:q])
+  end
+
+  def after_sign_in_path_for resource
+    if resource.admin?
+      admin_root_path
+    else
+      root_path
+    end
   end
 end

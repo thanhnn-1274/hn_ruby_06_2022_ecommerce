@@ -8,11 +8,7 @@
       <div class="product-contain-body container-fluid">
         <div class="contain-body-head row">
           <div class="btn-group btn-group-lg col-12" role="group">
-            <% status = %w(all pending accepted complete canceled) %>
-            <% status.each do |item| %>
-              <%=  button_to t(".#{item}"), my_order_path, method: :get, params: {sort: item},
-                      class: "btn btn-outline-danger fs-2", remote: true %>
-            <% end %>
+            <%= render "filter" %>
           </div>
         </div>
         <div class="product-body-main fs-3", id="cart_products">

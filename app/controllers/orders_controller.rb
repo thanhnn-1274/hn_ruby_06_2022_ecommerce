@@ -24,19 +24,8 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders.latest_order
-  end
-
-  def sort
-    statuses = Order.statuses.keys
-
-    @orders = current_user.orders.latest_order
-
-    if statuses.include? params[:sort]
-      @orders = @orders.status_order(params[:sort].to_sym)
-    end
-
-    respond_to :js
+    @search_orders = Order.ransack(params[:p])
+    @orders = @search_orders.result.accessible_by(current_ability).latest_order
   end
 
   def update
