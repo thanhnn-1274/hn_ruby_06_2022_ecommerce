@@ -4,6 +4,8 @@
 // that code so it'll be compiled.
 //= require bootstrap
 //= require home
+//= require Chart.bundle
+//= require chartkick
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -17,3 +19,4 @@ ActiveStorage.start()
 require("jquery")
 import "bootstrap"
 require("home")
+import "chartkick/chart.js"

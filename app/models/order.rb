@@ -20,11 +20,24 @@ class Order < ApplicationRecord
   scope :status_order, ->(type){where status: type}
   scope :total_money, ->(type){order total_money: type}
   scope :created_date, ->(date){where "DATE(created_at) = ?", date}
-  scope :revenue_day, ->(d){(where "DATE(created_at) = ?", d).sum :total_money}
+  scope :revenue_day, (lambda do |day|
+    where("DATE(created_at) = ? AND status = ?", day, 2).sum :total_money
+  end)
   scope :created_month, ->(month){where "MONTH(created_at) = ?", month}
-  scope :revenue_m, ->(m){(where "MONTH(created_at) = ?", m).sum :total_money}
+  scope :revenue_m, (lambda do |month|
+    where("MONTH(created_at) = ? AND status = ?", month, 2).sum :total_money
+  end)
   scope :search, (lambda do |key|
     where "name LIKE ? or id LIKE ?", "%#{key}%", "%#{key}%"
+  end)
+  scope :order_by_day, (lambda do
+    group_by_day(:created_at).count
+  end)
+  scope :revenue_day_chart, (lambda do |range_d|
+    complete.group_by_day(:created_at, range: range_d).sum :total_money
+  end)
+  scope :revenue_month_chart, (lambda do
+    complete.group_by_month(:created_at).sum :total_money
   end)
 
   def send_mail_pending

@@ -32,6 +32,13 @@
   </li>
   <hr class="sidebar-divider">
   <li class="nav-item">
+    <%= link_to admin_statistic_path, class: "nav-link collapsed" do %>
+      <i class="fa fa-bar-chart"></i>
+      <span><%= t ".statistic" %></span>
+    <% end %>
+  </li>
+  <hr class="sidebar-divider">
+  <li class="nav-item">
     <%= link_to destroy_user_session_path, method: :delete, class: "nav-link collapsed" do %>
       <i class="fa fa-sign-out"></i>
       <span><%= t ".logout" %></span>

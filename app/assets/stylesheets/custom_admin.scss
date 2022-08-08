@@ -22,3 +22,18 @@
   }
 
 }
+
+.chart-contain{
+  margin: 80px 40px;
+  box-shadow: 0 4px 10px #ccc;
+}
+
+.chart-contain h3{
+  margin: 20px 0;
+  text-align: center;
+}
+
+.date-contain{
+  display: flex;
+  justify-content: space-evenly;
+}

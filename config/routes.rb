@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :users
       resources :orders
       get "/home", to: "orders#index"
+      get "/statistic", to: "statistic#index"
       root "orders#index"
       resources :categories do
         member do

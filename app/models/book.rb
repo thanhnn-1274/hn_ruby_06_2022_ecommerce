@@ -37,7 +37,9 @@ class Book < ApplicationRecord
     where "name LIKE ? or description LIKE ? or id LIKE ?",
           "%#{key}%", "%#{key}%", "%#{key}%"
   end)
-
+  scope :top_book, (lambda do
+    group(:name).order("sum_sold DESC").limit(Settings.top_book).sum(:sold)
+  end)
   delegate :name, to: :category, prefix: :category, allow_nil: true
   delegate :name, to: :author, prefix: :author, allow_nil: true
 
