@@ -1,10 +1,10 @@
 class Admin::CategoriesController < Admin::AdminController
-  before_action :find_category, only: %i(edit update destroy)
+  before_action :find_category, except: %i(new index trash create)
 
   authorize_resource
 
   def index
-    @pagy, @categories = pagy Category.asc_category_name
+    @pagy, @categories = pagy Category.without_deleted.asc_category_name
   end
 
   def new
@@ -43,6 +43,33 @@ class Admin::CategoriesController < Admin::AdminController
     redirect_to admin_categories_path
   end
 
+  def restore
+    respond_to do |format|
+      if @category.restore(recursive: true)
+        format.js{flash.now[:success] = t(".restored_success")}
+      else
+        @categories = Category.only_deleted
+        flash.now[:danger] = t(".restore_fail")
+        render :trash
+      end
+    end
+  end
+
+  def really_destroy
+    if !@category.books.exists? && @category.really_destroy!
+      flash.now[:success] = t ".really_destroy_success"
+    else
+      @categories = Category.only_deleted
+      flash.now[:danger] = t ".really_destroy_fail"
+    end
+    render :trash
+  end
+
+  def trash
+    @categories = Category.only_deleted
+    respond_to :js
+  end
+
   private
 
   def category_params
@@ -50,7 +77,7 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def find_category
-    @category = Category.find_by id: params[:id]
+    @category = Category.with_deleted.find_by id: params[:id]
 
     return if @category
 

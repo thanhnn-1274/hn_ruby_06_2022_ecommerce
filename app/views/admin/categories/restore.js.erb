@@ -1,0 +1,4 @@
+$('.book_restore').bind('ajax:success', function() {
+  $(this).closest('tr').fadeOut();
+  $("#notice").html("<%= j render "message" %>");
+});

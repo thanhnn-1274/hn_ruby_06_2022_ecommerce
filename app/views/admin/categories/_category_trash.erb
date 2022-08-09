@@ -1,0 +1,17 @@
+<tr>
+  <td><%= category_counter + 1 %></td>
+  <td><%= category.name %></td>
+  <td class="action">
+    <%= link_to restore_admin_category_path(category), class: "book_restore", remote: true do %>
+      <label class="btn btn-warning">
+        <i class="fa fa-recycle"></i>
+      </label>
+    <% end %>
+    <%= link_to really_destroy_admin_category_path(category), method: :delete,
+            data: {confirm: t(".delete")}, remote: true do %>
+      <label class="btn btn-danger">
+        <i class="fa fa-ban"></i>
+      </label>
+    <% end %>
+  </td>
+</tr>

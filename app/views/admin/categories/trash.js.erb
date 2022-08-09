@@ -1,0 +1,5 @@
+$("#trash").html("<%= j render "trash", categories: @categories %>");
+$("#trash-modal").modal('show');
+$('#trash-modal').on('hidden.bs.modal', function () {
+  window.location.href = $(location).attr('href');
+})
