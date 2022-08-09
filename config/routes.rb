@@ -3,12 +3,19 @@ Rails.application.routes.draw do
   devise_for :users, only: :omniauth_callbacks, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   scope "(:locale)", locale: /en|vi/ do
     namespace :admin do
+      get "categories/trash", to: "categories#trash"
       resources :categories
       resources :books
       resources :users
       resources :orders
       get "/home", to: "orders#index"
       root "orders#index"
+      resources :categories do
+        member do
+          get :restore
+          delete :really_destroy
+        end
+      end
     end
 
     root "books#index"

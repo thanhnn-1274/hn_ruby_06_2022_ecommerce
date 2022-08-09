@@ -52,8 +52,24 @@ vi:
         name: "Tên Danh Mục"
         action: "Hành Động"
         new_category: "Thêm mới danh mục"
+        recycle: "Thùng rác"
       category:
         delete: "Xóa"
+      trash:
+        trash: "Thùng rác"
+        stt: "STT"
+        name: "Danh mục"
+        action: "Hành Động"
+      category_trash:
+        delete: "Bạn chắc chắn muốn xóa vĩnh viễn"
+      restore:
+        restored_success: "Phục Hồi Thành Công"
+        restore_fail: "Phục Hồi Thất Bại"
+      really_destroy:
+        really_destroy_success: "Đã Xóa Vĩnh Viễn"
+        really_destroy_fail: "Không Thể Xóa"
+      find_category:
+        not_found: "Không Tìm Thấy"
     books:
       new:
         title: "Thêm mới sách"

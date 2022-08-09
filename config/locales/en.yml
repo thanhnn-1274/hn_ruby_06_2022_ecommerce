@@ -52,8 +52,24 @@ en:
         name: "Name"
         action: "Action"
         new_category: "New Category"
+        recycle: "Recycle"
       category:
         delete: "Delete"
+      trash:
+        trash: "Trash"
+        stt: "STT"
+        name: "Name"
+        action: "Action"
+      category_trash:
+        delete: Are you sure?
+      restore:
+        restored_success: "Successful Recovery!!"
+        restore_fail: "Restore Failed"
+      really_destroy:
+        really_destroy_success: "Permanently deleted"
+        really_destroy_fail: "Can Not Delete"
+      find_category:
+        not_found: "Not Found"
     books:
       new:
         title: "Add Book"

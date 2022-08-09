@@ -52,4 +52,9 @@ class Admin::OrdersController < Admin::AdminController
     flash[:danger] = t ".danger"
     redirect_to admin_orders_path
   end
+
+  def send_mail_notification
+    status = @order.status
+    @order.send "send_mail_#{status}"
+  end
 end
