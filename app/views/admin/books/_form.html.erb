@@ -7,12 +7,14 @@
   </div>
   <div class="col-md-12 required">
     <%= f.label :category_id, t(".category") %>
+    <a class="text-decoration-none ml-2" href="#" data-bs-toggle="modal" data-bs-target="#myModalCategory"><%= t ".new" %></a>
     <%= collection_select(:book, :category_id, @categories, :id, :name,
                          {},
                          {class: "form form-control"}) %>
   </div>
   <div class="col-md-12 required">
     <%= f.label :author_id, t(".book_authors") %>
+    <a class="text-decoration-none ml-2" data-bs-toggle="modal" data-bs-target="#myModalAuthor" href="#"><%= t ".new" %></a>
     <%= collection_select(:book, :author_id, @authors, :id, :name,
                          {},
                          {class: "form-control select2"}) %>
@@ -55,3 +57,45 @@
     <%= f.submit yield(:button_text), class: "btn btn-primary mt-5" %>
   </div>
 <% end %>
+
+<div class="modal" id="myModalCategory">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t ".title_category" %></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_for [:admin, @category] do |f| %>
+          <%= f.label :name, t(".name") %>
+          <%= f.text_field :name, class: "form-control" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t ".close" %></button>
+        <button type="submit" form="new_category" class="btn btn-primary"><%= t ".save" %></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="myModalAuthor">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><%= t ".title_author" %></h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_for [:admin, @author] do |f| %>
+        <%= f.label :name, t(".name") %>
+        <%= f.text_field :name, class: "form-control" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t ".close" %></button>
+        <button type="submit" form="new_author" class="btn btn-primary"><%= t ".save" %></button>
+      </div>
+    </div>
+  </div>
+</div>

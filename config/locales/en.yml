@@ -121,6 +121,11 @@ en:
         input_quantity_name: "Enter Quantity"
         input_page_label: "Page Number"
         input_page_name: "Enter Page Number"
+        title_category: "Add Category"
+        title_author: "Add Author"
+        new: "New"
+        close: "CLose"
+        save: "Save"
     users:
       index:
         title: "All User"
@@ -186,6 +191,7 @@ en:
         submit: "Submit"
         canceled: "Canceled"
         complete: "Complete"
+        rejected: "Rejected"
       show:
         order_detail: "Order Detail"
         stt: "STT"
@@ -199,7 +205,8 @@ en:
         danger: "Update Erorr!"
       filter:
         submit: "Submit"
-        statistic:
+        placeholder: "Enter name or order code"
+    statistic:
       index:
         statistic_title: "Statistic Product"
         top_10: "Top 10 best seller"
@@ -215,6 +222,9 @@ en:
         revenue_month: "Revenue by month"
         order_day: "The number orders in day"
         category_order: "The number product order by category"
+    authors:
+      success: "Success!"
+      danger: "Danger!"
   layouts:
     header:
       li_store: "In the row on app"
@@ -473,6 +483,7 @@ en:
       accepted: "Delivery"
       complete: "Complete"
       canceled: "Cancelled"
+      rejected: "Rejected"
   user_mailer:
     canceled_order:
       subject_canceled: "Order Canceled"
@@ -481,7 +492,7 @@ en:
       text_1: "You have placed your order in our store at"
       text_2: "includes the following products:"
       text_3: "The order value is:"
-      status: "The order has been cancelled."
+      status: "Your order has been canceled."
     accepted_order:
       subject_accepted: "Order Accepted"
       order_information: "Information order #ID: "
@@ -491,14 +502,14 @@ en:
       text_3: "The order value is:"
       status: "The order has been accepted by the store owner."
     complete_order:
-      subject_complete: "Đơn Hàng Đã Được Giao"
+      subject_complete: "Orders Delivered"
       order_information: "Information order #ID: "
       hello: "Hello, "
       text_1: "You have placed your order in our store at"
       text_2: "includes the following products:"
       text_3: "The order value is:"
       status: "Order has been delivered"
-    canceled_order:
+    pending_order:
       subject_canceled: "Order Create"
       order_information: "Information order #ID: "
       hello: "Hello, "
@@ -506,6 +517,14 @@ en:
       text_2: "includes the following products:"
       text_3: "The order value is:"
       status: "The order has been Create success."
+    rejected_order:
+      subject_rejected: "Order Rejected"
+      order_information: "Information order #ID: "
+      hello: "Hello, "
+      text_1: "You have placed your order in our store at"
+      text_2: "includes the following products:"
+      text_3: "The order value is:"
+      status: "The order has been reject."
     daily_order:
       text_1: "You have placed your order in our store at"
       text_2: "includes the following products:"

@@ -38,9 +38,7 @@ class OrdersController < ApplicationController
     redirect_to orders_url
   end
 
-  def show
-    respond_to :js
-  end
+  def show; end
 
   private
 
@@ -65,7 +63,7 @@ class OrdersController < ApplicationController
   end
 
   def load_order_details
-    @order_details = @order.order_details
+    @order_details = @order.order_details.includes(:book)
     return if @order_details
 
     flash[:danger] = t ".not_found"

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :books
       resources :users
       resources :orders
+      resources :authors, only: %i(create new)
       get "/home", to: "orders#index"
       get "/statistic", to: "statistic#index"
       root "orders#index"

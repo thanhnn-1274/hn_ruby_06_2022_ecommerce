@@ -13,4 +13,9 @@ $(document).ready(function() {
     $(this).parent().submit();
   });
 
+  $('.order_search :input').on('click', function() {
+    $('.order_search input').removeClass('active');
+    $(this).addClass('active');
+  });
+
 });

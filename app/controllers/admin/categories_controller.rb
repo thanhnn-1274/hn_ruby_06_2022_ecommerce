@@ -17,11 +17,10 @@ class Admin::CategoriesController < Admin::AdminController
     @category = Category.new category_params
     if @category.save
       flash[:success] = t(".success")
-      redirect_to admin_categories_path
     else
-      flash.now[:danger] = t(".danger")
-      render :new
+      flash[:danger] = t(".danger")
     end
+    redirect request.referer
   end
 
   def update
@@ -83,5 +82,13 @@ class Admin::CategoriesController < Admin::AdminController
 
     flash[:warning] = t(".not_found")
     redirect_to root_path
+  end
+
+  def redirect request
+    if request.include? :books.to_s
+      redirect_to new_admin_book_path
+    else
+      redirect_to admin_categories_path
+    end
   end
 end

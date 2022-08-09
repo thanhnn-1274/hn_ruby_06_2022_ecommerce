@@ -1,6 +1,7 @@
 class Admin::BooksController < Admin::AdminController
   before_action :load_category_author, only: %i(new edit update)
   before_action :find_book, only: %i(edit update destroy)
+  before_action :new_book, only: %i(new edit create)
 
   authorize_resource
 
@@ -23,7 +24,9 @@ class Admin::BooksController < Admin::AdminController
 
   def index
     @search = Book.ransack(params[:q])
-    @pagy, @books = pagy @search.result.asc_name
+    @pagy, @books = pagy @search.result
+                                .includes(:category, :author, :image_attachment)
+                                .asc_name
   end
 
   def update
@@ -52,6 +55,11 @@ class Admin::BooksController < Admin::AdminController
   def load_category_author
     @categories = Category.asc_category_name
     @authors = Author.asc_name
+  end
+
+  def new_book
+    @category = Category.new
+    @author = Author.new
   end
 
   def find_book

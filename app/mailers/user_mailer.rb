@@ -19,6 +19,11 @@ class UserMailer < ApplicationMailer
     mail to: @order.user.email, subject: t(".subject_complete")
   end
 
+  def rejected_order order
+    @order = order
+    mail to: @order.user.email, subject: t(".subject_rejected")
+  end
+
   def daily_order
     date = Time.zone.today
     @orders = Order.created_date date
