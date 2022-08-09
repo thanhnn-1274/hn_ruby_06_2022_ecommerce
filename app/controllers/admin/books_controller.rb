@@ -27,11 +27,10 @@ class Admin::BooksController < Admin::AdminController
   end
 
   def update
-    if @book.update book_params
-      flash[:success] = t(".success")
-      redirect_to admin_books_path
+    if params.dig(:book, :status_before_type_cast)
+      update_active
     else
-      render :edit
+      update_all
     end
   end
 
@@ -62,5 +61,23 @@ class Admin::BooksController < Admin::AdminController
 
     flash[:warning] = t(".not_found")
     redirect_to root_path
+  end
+
+  def update_active
+    if @book.update_column(:status, params[:book][:status_before_type_cast])
+      flash[:success] = t(".success")
+    else
+      flash[:danger] = t(".danger")
+    end
+    redirect_to admin_books_path
+  end
+
+  def update_all
+    if @book.update book_params
+      flash[:success] = t(".success")
+      redirect_to admin_books_path
+    else
+      render :edit
+    end
   end
 end

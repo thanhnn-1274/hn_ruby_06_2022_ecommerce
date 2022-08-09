@@ -17,6 +17,11 @@ Rails.application.routes.draw do
           delete :really_destroy
         end
       end
+      resources :users do
+        member do
+          patch :ban
+        end
+      end
     end
 
     root "books#index"

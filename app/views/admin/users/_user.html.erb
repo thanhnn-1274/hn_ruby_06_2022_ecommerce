@@ -6,19 +6,23 @@
   <td><%= user.address %></td>
   <td><%= user.orders.count %></td>
   <td><%= number_to_currency total_money_orders(user) %></td>
-  <td>
-    <%= link_to "#" do %>
-        <label class="btn btn-warning">
-        <i class="fa fa-pencil" aria-hidden="true"></i>
+  <% if user.access_locked? %>
+    <td><%= t ".locked" %></td>
+    <td>
+      <%= link_to ban_admin_user_path(user), method: :patch do %>
+        <label class="btn btn-success">
+          <i class="fa fa-get-pocket" aria-hidden="true"></i>
+        </label>
+      <% end %>
+    </td>
+  <% else %>
+    <td><%= t ".activate" %></td>
+    <td>
+      <%= link_to ban_admin_user_path(user), method: :patch do %>
+        <label class="btn btn-danger">
+        <i class="fa fa-ban" aria-hidden="true"></i>
       </label>
-    <% end %>
-    <%= link_to "#", method: :delete,
-                      data: {confirm: "Delete"},
-                      remote: true,
-                      class: "user_delete" do %>
-      <label class="btn btn-danger">
-        <i class="fa fa-trash" aria-hidden="true"></i>
-      </label>
-    <% end %>
-  </td>
+      <% end %>
+    </td>
+  <% end %>
 </tr>

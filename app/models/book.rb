@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   BOOK_ATTRS = %i(name description price page_num publisher_name
     quantity category_id author_id image).freeze
 
+  enum status: {inactive: 0, active: 1}
   has_many :order_details, dependent: :nullify
   has_many :comments, dependent: :destroy
   has_one_attached :image

@@ -12,6 +12,11 @@
     <td><%= image_tag book.thumbnail %></td>
   <% end %>
   <td>
+    <%= form_for [:admin, book], html: {class: "form-check form-switch form-switch-lg"} do |f| %>
+      <%= f.check_box :status_before_type_cast, class: "form-check-input", id: "#{book.id}" %>
+    <% end %>
+  </td>
+  <td>
     <%= link_to edit_admin_book_path(book) do %>
       <label class="btn btn-warning">
         <i class="fa fa-pencil" aria-hidden="true"></i>

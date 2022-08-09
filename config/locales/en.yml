@@ -96,6 +96,7 @@ en:
         title: "All Book"
         new_book: "New Book"
         sold: "Sold"
+        status: "Status"
       search:
         search: "Search"
         placeholder: "Enter book or description"
@@ -132,9 +133,13 @@ en:
         not_found: "Not Found Order Details"
         total_order: "Total Order"
         total_money_order: "Total Money Order"
+        status: "Status"
       search:
         search: "Search"
         placeholder: "Enter name or phone number"
+      user:
+        locked: "Locked"
+        activate: "Activate"
     orders:
       index:
         title: "All Order"
