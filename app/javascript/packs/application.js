@@ -17,6 +17,7 @@ ActiveStorage.start()
 
 require("jquery")
 require("packs/home")
+require("packs/update_cart")
 import "bootstrap"
 import "chartkick/chart.js"
 import "./custom"

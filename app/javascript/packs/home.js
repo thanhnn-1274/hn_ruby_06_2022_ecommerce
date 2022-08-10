@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
   $('.home-filter .filter-button').on('click', function() {
       $('.filter-button').removeClass('filter-button-active');
       $(this).addClass('filter-button-active');
@@ -17,5 +17,4 @@ $(document).ready(function() {
     $('.order_search input').removeClass('active');
     $(this).addClass('active');
   });
-
 });
