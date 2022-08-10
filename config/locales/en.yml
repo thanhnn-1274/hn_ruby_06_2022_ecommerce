@@ -26,6 +26,7 @@ en:
         users: "User"
         logout: "Logout"
         dashboard: "Dashboard"
+        statistic: "Statistic"
       right:
         search: "Search"
     categories:
@@ -193,6 +194,22 @@ en:
         danger: "Update Erorr!"
       filter:
         submit: "Submit"
+        statistic:
+      index:
+        statistic_title: "Statistic Product"
+        top_10: "Top 10 best seller"
+        revenue_day: "Revenue by day"
+        start_date: "Start date"
+        end_date: "End date"
+        quantity: "Quantity"
+        date_chart: "Date"
+        month_chart: "Month"
+        revenue: "Revenue"
+        product: "Product"
+        submit: "Filter"
+        revenue_month: "Revenue by month"
+        order_day: "The number orders in day"
+        category_order: "The number product order by category"
   layouts:
     header:
       li_store: "In the row on app"

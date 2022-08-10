@@ -1,0 +1,37 @@
+<h1><%= t ".statistic_title" %></h1>
+<div class="chart-contain">
+  <h3><%= t ".revenue_day" %></h3>
+  <%= form_tag admin_statistic_path, method: :get, remote: true do %>
+    <div class="date-contain">
+      <div class="start-date">
+        <label for="start"><%= t ".start_date" %></label>
+        <%= date_field_tag :start_date, params[:start_date], max: Time.zone.today, id: "start" %>
+      </div>
+      <div class="end-date">
+        <label for="end"><%= t ".end_date" %></label>
+        <%= date_field_tag :end_date, params[:end_date], max: Time.zone.today, id: "end" %>
+      </div>
+      <%= submit_tag t(".submit"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <div id="revenue-chart">
+    <%= render "day_revenue_chart"%>
+  </div>
+</div>
+<div class="chart-contain">
+  <h3><%= t ".top_10" %></h3>
+  <%= bar_chart @top_ten, xtitle: t(".quantity"), ytitle: t(".product") %>
+</div>
+
+<div class="chart-contain">
+  <h3><%= t ".revenue_month" %></h3>
+  <%= line_chart @revenue_month, xtitle: t(".month_chart"), ytitle: t(".revenue") %>
+</div>
+<div class="chart-contain">
+  <h3><%= t ".order_day" %></h3>
+  <%= line_chart @order_by_day, xtitle: t(".date_chart"), ytitle: t(".quantity") %>
+</div>
+<div class="chart-contain">
+  <h3><%= t ".category_order" %></h3>
+  <%= pie_chart @book_sold_by_category%>
+</div>

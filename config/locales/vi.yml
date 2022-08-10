@@ -26,6 +26,7 @@ vi:
         users: "Người Dùng"
         logout: "Đăng Xuất"
         dashboard: "Bảng Điều Khiển"
+        statistic: "Thống kê"
       right:
         search: "Tìm kiếm"
     categories:
@@ -189,6 +190,22 @@ vi:
         action: "Hành Động"
       filter:
         submit: "Lọc"
+    statistic:
+      index:
+        statistic_title: "Thống kê sản phẩm"
+        top_10: "Top 10 sản phẩm bán chạy nhất"
+        revenue_day: "Doanh thu theo ngày"
+        start_date: "Ngày bắt đầu"
+        end_date: "Ngày kết thúc"
+        quantity: "Số lượng"
+        date_chart: "Ngày"
+        month_chart: "Tháng"
+        revenue: "Doanh thu"
+        product: "Sản phẩm"
+        submit: "Lọc"
+        revenue_month: "Doanh thu theo tháng"
+        order_day: "Số đơn hàng được bán ra các ngày"
+        category_order: "Số lượng sản phẩm đã bán theo từng thể loại"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
