@@ -9,4 +9,8 @@ $(document).ready(function() {
     $(this).addClass('category-active');
   });
 
+  $('td .form-check-input').change(function(){
+    $(this).parent().submit();
+  });
+
 });

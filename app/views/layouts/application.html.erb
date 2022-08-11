@@ -15,6 +15,15 @@
       <% end %>
       <%= yield %>
     </div>
+
+    <div class="container mt-4 row text-center">
+      <div class="messages">
+          <div id="fb-root"></div>
+          <div id="fb-customer-chat" class="fb-customerchat">
+          </div>
+        </div>
+    </div>
     <%= render "layouts/footer" %>
+  <%= javascript_pack_tag "plugin_message.js", media: "all", "data-turbolinks-track": "reload" %>
   </body>
 </html>

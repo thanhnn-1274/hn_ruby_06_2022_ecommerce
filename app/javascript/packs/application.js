@@ -3,7 +3,6 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 //= require bootstrap
-//= require home
 //= require Chart.bundle
 //= require chartkick
 
@@ -18,5 +17,4 @@ ActiveStorage.start()
 
 require("jquery")
 import "bootstrap"
-require("home")
 import "chartkick/chart.js"

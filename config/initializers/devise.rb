@@ -14,4 +14,9 @@ Devise.setup do |config|
   config.scoped_views = true
   config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_APP_SECRET"], scope: "email", info_fields: "email, name"
   config.omniauth :google_oauth2, ENV["GOOGLE_OAUTH2_APP_ID"], ENV["GOOGLE_OAUTH2_APP_SECRET"], scope: "email", info_fields: "email, name"
+  config.lock_strategy = :failed_attempts
+  config.unlock_strategy = :time
+  config.maximum_attempts = 3
+  config.unlock_in = 10.years
+  config.last_attempt_warning = true
 end

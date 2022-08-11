@@ -95,6 +95,7 @@ vi:
         action: "Hành Động"
         title: "Tất cả sách"
         sold: "Đã Bán"
+        status: "Trạng thái"
         new_book: "Tạo Sách Mới"
       search:
         search: "Tìm Kiếm"
@@ -131,9 +132,13 @@ vi:
         action: "Hành Động"
         total_order: "Tổng Số Đơn Hàng"
         total_money_order: "Tổng Tiền"
+        status: "Trạng Thái"
       search:
         search: "Tìm Kiếm"
         placeholder: "Nhập vào tên hoặc số điện thoại"
+      user:
+        locked: "Đã Khóa"
+        activate: "Đang Hoạt Động"
     orders:
       index:
         title: "Tất Cả Đơn Hàng"
@@ -473,7 +478,7 @@ vi:
       text_1: "Bạn đã đặt hàng bên cửa hàng chúng tôi vào lúc"
       text_2: "gồm những sản phẩm sau:"
       text_3: "Giá trị đơn hàng là:"
-      status: "Đơn hàng đã được chủ cửa hủy."
+      status: "Đơn hàng đã bị bạn hủy."
     accepted_order:
       subject_accepted: "Đơn Hàng Đã Được Chấp Nhận"
       order_information: "Thông tin đơn hàng #ID: "
@@ -498,6 +503,14 @@ vi:
       text_2: "gồm những sản phẩm sau:"
       text_3: "Giá trị đơn hàng là:"
       status: "Đơn hàng đã được tạo thành công, đang chờ admin xác nhận"
+    rejected_order:
+      subject_rejected: "Đơn Hàng Đã Bị Từ Chối"
+      order_information: "Thông tin đơn hàng #ID: "
+      hello: "Xin chào, "
+      text_1: "Bạn đã đặt hàng bên cửa hàng chúng tôi vào lúc"
+      text_2: "gồm những sản phẩm sau:"
+      text_3: "Giá trị đơn hàng là:"
+      status: "Đơn hàng đã bị từ chối, bởi chủ của hàng"
     daily_order:
       text_1: "Đơn hàng được đặt hàng vào lúc"
       text_2: "gồm những sản phẩm sau:"

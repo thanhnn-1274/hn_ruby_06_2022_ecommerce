@@ -1,10 +1,11 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :validatable, :omniauthable,
+         :validatable, :omniauthable, :lockable,
          omniauth_providers: [:facebook, :google_oauth2]
   enum role: {admin: 0, customer: 1}
   USER_ATTRS = %w(name email password password_confirmation).freeze
-  GET_ALL = %w(id name email phone_num address).freeze
+  GET_ALL = %w(id name email phone_num address locked_at
+                failed_attempts unlock_token).freeze
   UPDATE_ATTRS = %w(name email password password_confirmation phone_num address
                   avatar).freeze
   has_many :orders, dependent: :destroy
