@@ -21,8 +21,8 @@
             <th><%= sort_link(@search, :email, t(".email"), class: "edit-link") %></th>
             <th><%= sort_link(@search, :phone, t(".phone"), class: "edit-link") %></th>
             <th><%= sort_link(@search, :address, t(".address"), class: "edit-link") %></th>
-            <th><%= t ".total_order" %></th>
-            <th><%= t ".total_money_order" %></th>
+            <th><%= sort_link(@search, :orders_count, t(".total_order"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :total_money_orders, t(".total_money_order"), class: "edit-link") %></th>
             <th><%= t ".status" %></th>
             <th><%= t ".action" %></th>
           </tr>

@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  enum status: {pending: 0, accepted: 1, complete: 2, canceled: 3}
+  enum status: {pending: 0, accepted: 1, complete: 2, canceled: 3, rejected: 4}
   ORDER_ATTRS = %w(name address phone_num total_money).freeze
   has_many :order_details, dependent: :destroy
   belongs_to :user
@@ -40,6 +40,10 @@ class Order < ApplicationRecord
     complete.group_by_month(:created_at).sum :total_money
   end)
 
+  ransacker :id do
+    Arel.sql("CONVERT(`#{table_name}`.`id`, CHAR(8))")
+  end
+
   def send_mail_pending
     PendingOrderWorker.perform_async id
   end
@@ -56,6 +60,10 @@ class Order < ApplicationRecord
     CompleteOrderWorker.perform_async id
   end
 
+  def send_mail_rejected
+    RejectedOrderWorker.perform_async id
+  end
+
   def handle_order order_params
     ActiveRecord::Base.transaction do
       update!(status: order_params["status"].to_i)
@@ -64,12 +72,14 @@ class Order < ApplicationRecord
       ActiveRecord::Base.transaction(requires_new: true) do
         order_details.each do |order_detail|
           new_quantity = order_detail.book.quantity - order_detail.quantity
-          sold = order_detail.book.sold + order_detail.quantity
-          update_order order_detail, new_quantity, sold
+          update_order order_detail, new_quantity
           raise ActiveRecord::Rollback if new_quantity.negative?
         end
       end
     end
+  rescue ActiveRecord::RecordInvalid => e
+    errors.add(:base, e.message)
+    false
   end
 
   private
@@ -79,7 +89,8 @@ class Order < ApplicationRecord
     send "send_mail_#{status}"
   end
 
-  def update_order order_detail, new_quantity, sold
+  def update_order order_detail, new_quantity
+    sold = order_detail.book.sold + order_detail.quantity
     order_detail.book.update!(quantity: new_quantity, sold: sold)
   end
 end

@@ -1,4 +1,5 @@
 class Admin::AdminController < ApplicationController
+  include Admin::OrdersHelper
   before_action :require_admin
   layout "admin/layouts/application"
 

@@ -16,5 +16,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require("jquery")
+require("packs/home")
 import "bootstrap"
 import "chartkick/chart.js"
+import "./custom"

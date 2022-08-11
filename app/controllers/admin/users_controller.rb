@@ -3,7 +3,7 @@ class Admin::UsersController < Admin::AdminController
 
   def index
     @search = User.ransack(params[:q])
-    @pagy, @users = pagy @search.result.get_all.asc_name
+    @pagy, @users = pagy @search.result.includes(:orders).get_all.asc_name
   end
 
   def ban

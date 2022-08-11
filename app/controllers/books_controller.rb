@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   authorize_resource
 
   def index
-    @pagy, @books = pagy @search.result.includes(:category).active
+    @pagy, @books = pagy @search.result.includes(:image_attachment).active
     @categories = Category.latest_category
   end
 

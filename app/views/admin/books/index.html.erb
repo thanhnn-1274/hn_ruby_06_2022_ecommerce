@@ -23,14 +23,14 @@
         <thead class="thead-dark">
           <tr>
             <th><%= t ".stt" %></th>
-            <th><%= t ".name" %></th>
-            <th><%= t ".price" %></th>
-            <th><%= t ".category" %></th>
-            <th><%= t ".author" %></th>
-            <th><%= t ".quantity" %></th>
-            <th><%= t ".sold" %></th>
+            <th><%= sort_link(@search, :name, t(".name"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :price, t(".price"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :category, t(".category"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :author, t(".author"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :quantity, t(".quantity"), class: "edit-link") %></th>
+            <th><%= sort_link(@search, :sold, t(".sold"), class: "edit-link") %></th>
             <th><%= t ".image" %></th>
-            <th><%= t ".status" %></th>
+            <th><%= sort_link(@search, :status, t(".status"), class: "edit-link") %></th>
             <th><%= t ".action" %></th>
           </tr>
         </thead>

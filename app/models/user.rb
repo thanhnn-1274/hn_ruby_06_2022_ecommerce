@@ -45,6 +45,18 @@ class User < ApplicationRecord
     where "name LIKE ? or phone_num LIKE ? ", "%#{key}%", "%#{key}%"
   end)
 
+  ransacker :orders_count do
+    query = "(SELECT COUNT(orders.user_id) FROM orders
+              WHERE orders.user_id = users.id GROUP BY orders.user_id)"
+    Arel.sql(query)
+  end
+
+  ransacker :total_money_orders do
+    query = "(SELECT SUM(orders.total_money) FROM orders
+              WHERE orders.user_id = users.id GROUP BY orders.user_id)"
+    Arel.sql(query)
+  end
+
   class << self
     def omniauth_user auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

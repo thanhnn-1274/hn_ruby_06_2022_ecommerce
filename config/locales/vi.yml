@@ -121,6 +121,11 @@ vi:
         input_quantity_name: "Enter Quantity"
         input_page_label: "Số trang"
         input_page_name: "Enter Page Number"
+        title_category: "Thêm thể loại"
+        title_author: "Thêm tác giả"
+        new: "Thêm mới"
+        close: "Đóng"
+        save: "Lưu"
     users:
       index:
         title: "Tất Cả Người Dùng"
@@ -179,6 +184,7 @@ vi:
         submit: "Xác Nhận"
         canceled: "Đã Hủy"
         complete: "Hoàn Thành"
+        rejected: "Đã Từ Chối"
       show:
         order_detail: "Chi Tiết Đơn Hàng"
         stt: "STT"
@@ -195,6 +201,7 @@ vi:
         action: "Hành Động"
       filter:
         submit: "Lọc"
+        placeholder: "Nhập tên hoặc mã đơn hàng"
     statistic:
       index:
         statistic_title: "Thống kê sản phẩm"
@@ -211,6 +218,9 @@ vi:
         revenue_month: "Doanh thu theo tháng"
         order_day: "Số đơn hàng được bán ra các ngày"
         category_order: "Số lượng sản phẩm đã bán theo từng thể loại"
+    authors:
+      success: "Thêm thành công"
+      danger: "Thêm thất bại"
   layouts:
     header:
       li_store: "Vào cửa hàng trên ứng dụng"
@@ -470,6 +480,7 @@ vi:
       accepted: "Đang Giao Hàng"
       complete: "Hoàn Thành"
       canceled: "Đã Hủy"
+      rejected: "Đã từ chối"
   user_mailer:
     canceled_order:
       subject_canceled: "Đơn Hàng Đã Bị Hủy"

@@ -18,7 +18,7 @@ class Admin::OrdersController < Admin::AdminController
     if @order.handle_order order_params
       flash[:success] = t(".success")
     else
-      flash.now[:danger] = t(".danger")
+      flash[:danger] = split_content_error @order.errors[:base]
     end
     redirect_to admin_orders_path
   end
@@ -30,7 +30,7 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   def load_order_details
-    @order_details = @order.order_details
+    @order_details = @order.order_details.includes(:book)
     return if @order_details
 
     flash[:danger] = t ".not_found"
