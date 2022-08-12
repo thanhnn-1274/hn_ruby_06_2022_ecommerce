@@ -15,3 +15,8 @@ mail_user_name: ""
 mail_user_password: ""
 mail_address: "smtp.mailtrap.io"
 mail_port: "2525"
+
+FACEBOOK_APP_ID: ""
+FACEBOOK_APP_SECRET: ""
+GOOGLE_OAUTH2_APP_ID: ""
+GOOGLE_OAUTH2_APP_SECRET: ""

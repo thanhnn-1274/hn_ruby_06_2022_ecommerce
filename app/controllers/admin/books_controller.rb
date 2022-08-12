@@ -1,6 +1,6 @@
 class Admin::BooksController < Admin::AdminController
   before_action :load_category_author, only: %i(new edit update)
-  before_action :find_book, only: %i(edit update destroy)
+  before_action :find_book, only: %i(edit update)
   before_action :new_book, only: %i(new edit create)
 
   authorize_resource
@@ -35,15 +35,6 @@ class Admin::BooksController < Admin::AdminController
     else
       update_all
     end
-  end
-
-  def destroy
-    if @book.destroy
-      flash[:success] = t(".success")
-    else
-      flash[:danger] = t(".danger")
-    end
-    redirect_to admin_books_path
   end
 
   private

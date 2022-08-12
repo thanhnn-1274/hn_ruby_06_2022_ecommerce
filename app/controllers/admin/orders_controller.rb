@@ -31,10 +31,6 @@ class Admin::OrdersController < Admin::AdminController
 
   def load_order_details
     @order_details = @order.order_details.includes(:book)
-    return if @order_details
-
-    flash[:danger] = t ".not_found"
-    redirect_to admin_order_path
   end
 
   def find_order
@@ -42,8 +38,8 @@ class Admin::OrdersController < Admin::AdminController
 
     return if @order
 
-    flash[:warning] = t(".not_found")
-    redirect_to root_path
+    flash[:warning] = t ".not_found"
+    redirect_to admin_root_path
   end
 
   def check_status_order
@@ -51,10 +47,5 @@ class Admin::OrdersController < Admin::AdminController
 
     flash[:danger] = t ".danger"
     redirect_to admin_orders_path
-  end
-
-  def send_mail_notification
-    status = @order.status
-    @order.send "send_mail_#{status}"
   end
 end

@@ -2,7 +2,7 @@ require "faker"
 
 FactoryBot.define do
   factory :book do |f|
-    f.name {Faker::Book.unique.title}
+    f.name {Faker::Book.title}
     f.description {Faker::Lorem.sentence(word_count: 50)}
     f.price {Faker::Commerce.price(range: 1..100.0)}
     f.publisher_name {Faker::Book.publisher}

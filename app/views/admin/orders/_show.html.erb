@@ -19,24 +19,28 @@
           </div>
         </div>
         <hr>
-        <div class="table-responsive table-striped">
-          <table class=" table table-sm" id="dataTable" width="100%" cellspacing="0">
-            <thead>
-              <tr class="table-info">
-                <th><%= t ".stt" %></th>
-                <th><%= t ".book_name" %></th>
-                <th><%= t ".price" %></th>
-                <th><%= t ".quantity" %></th>
-                <th><%= t ".total_money" %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <%= render partial: "order_details", collection: order_details,
-                                            as: :od %>
-            </tbody>
-          </table>
-        </div>
-        <%= render partial: "reason", locals: {order: order, order_details: order_details} %>
+        <% if order_details.empty? %>
+          <h3><%= t ".not_found_order_details" %></h3>
+        <% else %>
+          <div class="table-responsive table-striped">
+            <table class=" table table-sm" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr class="table-info">
+                  <th><%= t ".stt" %></th>
+                  <th><%= t ".book_name" %></th>
+                  <th><%= t ".price" %></th>
+                  <th><%= t ".quantity" %></th>
+                  <th><%= t ".total_money" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <%= render partial: "order_details", collection: order_details,
+                                              as: :od %>
+              </tbody>
+            </table>
+          </div>
+          <%= render partial: "reason", locals: {order: order, order_details: order_details} %>
+        <% end %>
       </div>
 
       <div class="modal-footer">
