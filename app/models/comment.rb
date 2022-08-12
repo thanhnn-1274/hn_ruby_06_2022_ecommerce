@@ -8,7 +8,9 @@ class Comment < ApplicationRecord
   validates :content, presence: true,
     length: {minimum: Settings.comment.content_min_length,
              maximum: Settings.comment.content_max_length}
-  validates :rate, presence: true
+  validates :rate, presence: true,
+    numericality: {greater_than_or_equal_to: Settings.min_rate,
+                   less_than_or_equal_to: Settings.max_rate}
   validates :image, content_type: {in: Settings.user.image.image_path,
                                    message: :wrong_format}
 

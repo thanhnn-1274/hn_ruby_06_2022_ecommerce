@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
   $('.btn-subtract-qty').click(function(){
     var $button = $(this);
     var oldValue = parseInt($button.parent().find("input").val());

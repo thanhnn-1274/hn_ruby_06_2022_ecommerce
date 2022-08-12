@@ -240,7 +240,7 @@ vi:
       no_product: "Chưa có sản phẩm"
       have_add: "Sản phẩm đã thêm"
       see_cart: "Xem giỏ hàng"
-      placeholder: "Nhập để tìm kiếm sản phẩm"
+      placeholder: "Nhập tên, mô tả để tìm kiếm sản phẩm"
     footer:
       h3_take: "Chăm sóc khách hàng"
       h3_into: "Giới thiệu"
@@ -311,7 +311,7 @@ vi:
       posted: "Đăng"
       ago: "trước"
     comment_form:
-      comment_btn: "đánh giá"
+      comment_btn: "Đánh giá"
       compost_new: "Nhập nội dung đánh giá"
   sessions:
     new:
@@ -429,12 +429,13 @@ vi:
       submit_pay: "Mua hàng"
       cart: "Cart"
       total: "Tổng cộng"
-      danger_quantity: "Sản phẩm %{prod_id} đã hết hàng, vui lòng xóa hoắc cập nhật số lượng"
+      danger_quantity: "Sản phẩm có mã %{prod_id} đã hết hàng, vui lòng xóa hoặc cập nhật số lượng"
       name: "Tên"
       address: "Địa chỉ"
       phone_num: "Số điện thoại"
     create:
       success_checkout: "Đặt hàng thành công"
+      danger_quantity: "Sản phẩm có mã %{prod_id} đã hết hàng, vui lòng xóa hoặc cập nhật số lượng"
       danger_checkout: "Đặt hàng thất bại"
       order_fail: "Tạo đơn hàng thất bại"
     index:
