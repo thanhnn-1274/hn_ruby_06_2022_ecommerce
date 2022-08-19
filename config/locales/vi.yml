@@ -36,6 +36,8 @@ vi:
       edit:
         title: "Sửa Danh Mục"
         button: "Sửa"
+        not_found: "Không tìm danh mục"
+
       create:
         success: "Success!"
         danger: "Erorr!"
@@ -97,12 +99,14 @@ vi:
         sold: "Đã Bán"
         status: "Trạng thái"
         new_book: "Tạo Sách Mới"
+        not_found: "Không tìm thấy sách"
       search:
         search: "Tìm Kiếm"
         placeholder: "Nhập vào tên hoặc mô tả"
       edit:
         title: "Chỉnh Sửa Sách"
         button: "Chỉnh Sửa"
+        not_found: "Không tìm thấy sách"
       form:
         input_name_label: "Tên Sách"
         input_name: "Enter Name"
@@ -193,6 +197,8 @@ vi:
         quantity: "Số lượng"
         total_money: "Tổng"
         order_id: "Mã Đơn Hàng"
+        not_found: "Không tìm thấy đơn hàng"
+        not_found_order_details: "Không tìm thấy chi tiết đơn hàng"
       update:
         success: "Cập nhật trạng thái đơn hàng thành công!"
         danger: "Cập nhật trạng thái thất bại"

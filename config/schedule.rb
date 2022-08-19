@@ -24,6 +24,12 @@ set :output, "log/cron_log.log"
 env :PATH, ENV['PATH']
 
 # send mail every end of the day
+every "56 13 * * *" do
+  rake "daily_namespace:send_mail_daily", :environment => "development"
+end
+
+
+# send mail every end of the day
 every "55 23 * * *" do
   rake "daily_namespace:send_mail_daily", :environment => "development"
 end

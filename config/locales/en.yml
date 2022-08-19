@@ -36,6 +36,7 @@ en:
       edit:
         title: "Edit Category"
         button: "Edit"
+        not_found: "Not Found"
       create:
         success: "Success!"
         danger: "Erorr!"
@@ -97,12 +98,14 @@ en:
         new_book: "New Book"
         sold: "Sold"
         status: "Status"
+        not_found: "Not Found"
       search:
         search: "Search"
         placeholder: "Enter book or description"
       edit:
         title: "Edit Book"
         button: "Edit"
+        not_found: "Not Found"
       form:
         input_name_label: "Name"
         input_name: "Enter Name"
@@ -177,6 +180,7 @@ en:
         created_at: "Updated At"
         status: "Status"
         action: "Action"
+        not_found: "Not Found!"
       order:
         pending: "Pending"
         accepted: "Accepted"
@@ -200,12 +204,16 @@ en:
         quantity: "Quantity"
         total_money: "Total Money"
         order_id: "Order Code"
+        not_found: "Not Found"
+        not_found_order_details: "Order details not found"
       update:
         success: "Success!"
         danger: "Update Erorr!"
       filter:
         submit: "Submit"
         placeholder: "Enter name or order code"
+      load_order_details:
+        not_found: "Not Found Order Details"
     statistic:
       index:
         statistic_title: "Statistic Product"

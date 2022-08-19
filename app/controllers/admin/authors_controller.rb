@@ -1,8 +1,6 @@
 class Admin::AuthorsController < Admin::AdminController
   load_and_authorize_resource
 
-  def new; end
-
   def create
     @author = Author.new author_params
     if @author.save
