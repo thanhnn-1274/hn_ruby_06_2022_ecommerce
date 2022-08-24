@@ -1,4 +1,8 @@
 en:
+  api:
+    unexpected:
+      code: 400
+      message: "Opps... Unexpected error."
   js:
     error_comment: "Can not comment! Check the contain and rating is true or not"
   page_title: "Book Store"

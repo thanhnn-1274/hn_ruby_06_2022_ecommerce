@@ -34,4 +34,14 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     mount Sidekiq::Web => "/sidekiq"
   end
+  scope module: "api", path: "api" do
+    scope module: "v1", path: "v1" do
+      scope module: "admin", path: "admin" do
+        resources :users
+        resources :books
+        resources :orders
+      end
+      post 'auth/login', to: 'auth#sign_in'
+    end
+  end
 end

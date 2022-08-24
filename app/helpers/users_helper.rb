@@ -9,4 +9,10 @@ module UsersHelper
       sum + order.total_money
     end
   end
+
+  def api_current_user
+    token = request.headers["auth-token"]
+    user_id = JsonWebToken.decode(token)["user_id"] if token
+    @api_current_user ||= User.find_by(id: user_id)
+  end
 end

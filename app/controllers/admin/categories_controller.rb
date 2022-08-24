@@ -17,6 +17,7 @@ class Admin::CategoriesController < Admin::AdminController
     @category = Category.new category_params
     if @category.save
       flash[:success] = t(".success")
+      render json: @category, status: :created
     else
       flash[:danger] = t(".danger")
     end

@@ -17,7 +17,6 @@ class Order < ApplicationRecord
   scope :status_order, ->(type){where status: type}
   scope :latest_order, ->{order created_at: :desc}
   scope :time_order, ->(type){order updated_at: type}
-  scope :status_order, ->(type){where status: type}
   scope :total_money, ->(type){order total_money: type}
   scope :created_date, ->(date){where "DATE(created_at) = ?", date}
   scope :revenue_day, (lambda do |day|
